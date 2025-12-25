@@ -1,0 +1,8 @@
+{
+    "mineru_parse": {
+        "service_url": "http://114.94.137.250:8002",
+        "output_dir":"/Users/ailabuser7-1/Documents/test_output",
+        "timeout": 300,
+        "retry_times": 1
+    }
+}
