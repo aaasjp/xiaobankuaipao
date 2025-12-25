@@ -4,5 +4,10 @@
         "output_dir":"/Users/ailabuser7-1/Documents/test_output",
         "timeout": 300,
         "retry_times": 1
-    }
+    },
+    "llm": {
+        "model": "qwen3-235b-a22b",
+        "base_url": "https://mgallery.haier.net/v1",
+        "api_key": "sk-IrTGDWBvflR3iKCr127449E60119437589937d077bE3B31b"
+      }
 }
