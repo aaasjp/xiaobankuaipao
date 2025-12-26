@@ -109,9 +109,7 @@ class MaterialReader:
         
         if not md_files:
             raise ValueError(f"目录中没有找到有效的markdown文件: {parsed_course_dir}")
-        
-        logger.info(f"已读取 {len(md_files)} 个文件")
-        logger.info(f"文件列表: {md_files.keys()}")
+
         return md_files
     
     def read_file(self, file_path: str) -> str:
@@ -175,29 +173,29 @@ class Planner:
             file_summaries[file_path] = preview
         
         prompt = f"""
-请分析以下课程资料的文件结构，识别章节信息：
+Please analyze the file structure of the following course materials and identify chapter information:
 
-课程名称：{course_name}
-文件列表：
+Course Name: {course_name}
+File List:
 {json.dumps(file_list, ensure_ascii=False, indent=2)}
 
-文件内容预览：
+File Content Preview:
 {json.dumps(file_summaries, ensure_ascii=False, indent=2)}
 
-请分析并返回JSON格式：
+Please analyze and return in JSON format:
 {{
     "chapters": [
         {{
-            "name": "章节名称",
-            "files": ["文件路径1", "文件路径2"],
-            "description": "章节描述"
+            "name": "Chapter Name",
+            "files": ["file_path1", "file_path2"],
+            "description": "Chapter Description"
         }}
     ],
-    "extraction_strategy": "提取策略说明"
+    "extraction_strategy": "Extraction Strategy Description"
 }}
 """
         
-        system_prompt = "你是一个课程分析专家，擅长分析课程资料的结构和组织方式。"
+        system_prompt = "You are a course analysis expert, skilled in analyzing the structure and organization of course materials."
         
         try:
             result = self.llm_client.call_json(prompt, system_prompt)
@@ -269,55 +267,69 @@ class Extractor:
     
     def _extract_from_chunk(self, chunk: str, source_file: str, chunk_num: int, total_chunks: int, context: Optional[str]) -> List[KeyPoint]:
         """从单个chunk中提取考点"""
+        # 根据chunk长度计算应该提取的考点数量
+        # 1000字符对应1个考点，最大不超过5个
+        chunk_length = len(chunk)
+        max_keypoints = min(5, max(1, chunk_length // 1000))
+        
         # 限制内容长度
         content_preview = chunk[:6000]
-        context_info = f"\n上下文信息：{context}" if context else ""
+        context_info = f"\nContext Information: {context}" if context else ""
         
         prompt = f"""
-请从以下课程内容中提取重要考点。每个考点应该包括：
-1. 考点名称（简洁明确）
-2. 考点说明（详细描述）
-3. 重要程度（1-5级，5为最重要）
-4. 重要原因（为什么这个考点重要）
-5. 来源位置（在内容中的具体位置描述）
+Please extract important key points from the following course content. Each key point should include:
+1. Topic name (concise and clear)
+2. Description (detailed explanation)
+3. Importance level (1-5 scale, 5 being the most important)
+4. Importance reason (why this key point is important)
+5. Source location (specific location description in the content)
 
-课程内容：
+IMPORTANT: You must extract no more than {max_keypoints} key point(s) from this content. Focus on the most important and exam-relevant points only.
+
+Course Content:
 {content_preview}
 {context_info}
 
-请以JSON格式返回，格式如下：
+Please return in JSON format as follows:
 {{
     "keypoints": [
         {{
-            "topic": "考点名称",
-            "description": "考点说明",
+            "topic": "Topic Name",
+            "description": "Description",
             "importance": 3,
-            "importance_reason": "重要原因",
-            "source_snippet": "来源片段（原文引用）"
+            "importance_reason": "Importance Reason",
+            "source_snippet": "Source Snippet (original text quote)"
         }}
     ]
 }}
 """
         
-        system_prompt = """你是一个教育专家，擅长从课程资料中识别和提取重要考点。
-请关注：
-- 核心概念和定义
-- 重要公式和定理
-- 关键方法和技巧
-- 常见考点和易错点
-- 考试重点内容
+        system_prompt = """You are an education expert, skilled in identifying and extracting important key points from course materials.
+Please focus on:
+- Core concepts and definitions
+- Important formulas and theorems
+- Key methods and techniques
+- Common exam points and error-prone areas
+- Exam-focused content
 
-重要程度评估标准：
-5级：核心概念，考试必考，基础中的基础
-4级：重要知识点，高频考点
-3级：一般重要，需要掌握
-2级：了解即可
-1级：补充知识，非重点
+Importance Level Assessment Criteria:
+Level 5: Core concepts, must-know for exams, fundamental basics
+Level 4: Important knowledge points, high-frequency exam topics
+Level 3: Generally important, needs to be mastered
+Level 2: Understanding is sufficient
+Level 1: Supplementary knowledge, non-essential
 """
         
         try:
             result = self.llm_client.call_json(prompt, system_prompt, temperature=0.3)
             keypoints_data = result.get("keypoints", [])
+            
+            # 如果返回的考点数量超过限制，按重要性排序后只取前max_keypoints个
+            if len(keypoints_data) > max_keypoints:
+                # 按重要性排序（降序）
+                keypoints_data.sort(key=lambda x: x.get("importance", 0), reverse=True)
+                keypoints_data = keypoints_data[:max_keypoints]
+                logger.warning(f"Chunk {chunk_num} 提取的考点数量({len(result.get('keypoints', []))})超过限制({max_keypoints})，已截取前{max_keypoints}个最重要的考点")
             
             keypoints = []
             for kp_data in keypoints_data:
@@ -371,22 +383,22 @@ class Evaluator:
         keypoints_json = [asdict(kp) for kp in refined_keypoints]
         
         prompt = f"""
-请评估和优化以下考点列表。要求：
-1. 检查重要程度是否合理，必要时调整
-2. 完善重要原因说明
-3. 确保考点说明清晰准确
-4. 去除重复或过于相似的考点
-5. 确保来源信息准确
+Please evaluate and optimize the following list of key points. Requirements:
+1. Check if the importance levels are reasonable, adjust if necessary
+2. Improve the importance reason descriptions
+3. Ensure key point descriptions are clear and accurate
+4. Remove duplicate or overly similar key points
+5. Ensure source information is accurate
 
-课程上下文：{course_context}
+Course Context: {course_context}
 
-考点列表：
+Key Points List:
 {json.dumps(keypoints_json, ensure_ascii=False, indent=2)}
 
-请返回优化后的JSON格式，格式相同。
+Please return the optimized JSON format with the same structure.
 """
         
-        system_prompt = "你是一个教育评估专家，擅长评估和优化课程考点的质量和重要性。"
+        system_prompt = "You are an education evaluation expert, skilled in evaluating and optimizing the quality and importance of course key points."
         
         try:
             result = self.llm_client.call_json(prompt, system_prompt, temperature=0.3)
@@ -621,6 +633,8 @@ class KeyPointExtractionWorkflow:
         logger.info("步骤1: 读取课程资料...")
         material_files = self.material_reader.read_directory(course_dir)
         logger.info(f"已读取 {len(material_files)} 个文件")
+        for file_path, content in material_files.items():
+            logger.info(f"  文件: {file_path}")
         
         # 步骤2: 创建提取计划
         logger.info("步骤2: 创建提取计划...")
@@ -634,7 +648,7 @@ class KeyPointExtractionWorkflow:
         total_files = len(material_files)
         processed_files = []
         
-        for idx, (file_path, content) in enumerate[tuple[str, str]](material_files.items(), 1):
+        for idx, (file_path, content) in enumerate(material_files.items(), 1):
             logger.info(f"  处理文件 {idx}/{total_files}: {file_path}")
             try:
                 keypoints = self.extractor.extract_keypoints(content, file_path)

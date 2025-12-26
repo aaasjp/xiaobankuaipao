@@ -175,7 +175,7 @@ class LlmService:
                 for msg in log_params['messages']
             ]
             log_params['messages'] = messages_summary
-        logger.info(f"请求参数: {json.dumps(log_params, ensure_ascii=False, indent=2)}")
+        #logger.info(f"请求参数: {json.dumps(log_params, ensure_ascii=False, indent=2)}")
         
         try:
             # 使用OpenAI客户端调用API
@@ -382,6 +382,6 @@ class LLMClient:
         Raises:
             Exception: 当无法解析JSON时
         """
-        json_prompt = prompt + "\n\n请以JSON格式返回结果，确保返回的是有效的JSON。"
+        json_prompt = prompt + "\n\nPlease return the result in JSON format, ensuring that the returned content is valid JSON."
         response = self.call(json_prompt, system_prompt, temperature)
         return self._parse_json_response(response)
