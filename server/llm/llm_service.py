@@ -247,6 +247,126 @@ class LLMClient:
         except Exception as e:
             raise Exception(f"LLM调用失败: {str(e)}")
     
+    def _fix_latex_escapes(self, text: str) -> str:
+        """
+        修复JSON字符串中的LaTeX转义序列
+        
+        将LaTeX转义序列（如 \{, \}, \ldots等）转换为有效的JSON转义序列（\\{, \\}, \\ldots等）
+        只在JSON字符串值内部修复，不破坏JSON结构
+        
+        Args:
+            text: 需要修复的JSON字符串
+        
+        Returns:
+            修复后的JSON字符串
+        """
+        # 使用正则表达式匹配JSON字符串值（在双引号内的内容）
+        # 模式：从 " 开始，到未转义的 " 结束
+        def fix_string_content(match):
+            """修复字符串内容中的LaTeX转义序列"""
+            string_content = match.group(1)  # 获取引号内的内容（不包括引号）
+            
+            # 修复字符串内容中的转义序列
+            result = []
+            i = 0
+            while i < len(string_content):
+                if string_content[i] == '\\':
+                    if i + 1 < len(string_content):
+                        next_char = string_content[i + 1]
+                        # 有效的JSON转义序列，保留原样
+                        if next_char in ['"', '\\', '/', 'b', 'f', 'n', 'r', 't']:
+                            result.append(string_content[i:i+2])
+                            i += 2
+                        # Unicode转义序列 \uXXXX
+                        elif next_char == 'u' and i + 5 < len(string_content):
+                            unicode_part = string_content[i+2:i+6]
+                            if re.match(r'[0-9a-fA-F]{4}', unicode_part):
+                                result.append(string_content[i:i+6])
+                                i += 6
+                            else:
+                                # 不是有效的Unicode转义，转义反斜杠和u
+                                result.append('\\\\u')
+                                i += 2
+                        else:
+                            # 其他转义序列（如LaTeX的 \{, \}, \ldots等），需要转义为双反斜杠
+                            result.append('\\\\' + next_char)
+                            i += 2
+                    else:
+                        # 反斜杠在字符串末尾，转义它
+                        result.append('\\\\')
+                        i += 1
+                else:
+                    result.append(string_content[i])
+                    i += 1
+            
+            return '"' + ''.join(result) + '"'
+        
+        # 匹配JSON字符串：从 " 开始，到未转义的 " 结束
+        # 使用负向前瞻来确保匹配到正确的结束引号
+        pattern = r'"((?:[^"\\]|\\.)*)"'
+        return re.sub(pattern, fix_string_content, text)
+    
+    def _parse_json_response(self, response: str) -> Dict[str, Any]:
+        """
+        解析LLM返回的JSON响应
+        
+        处理可能被markdown代码块包裹的JSON响应，并修复LaTeX转义序列
+        
+        Args:
+            response: LLM返回的原始响应字符串
+        
+        Returns:
+            解析后的JSON字典
+        
+        Raises:
+            Exception: 当无法解析JSON时
+        """
+        # 清理响应：去除 markdown 代码块标记
+        cleaned_response = response.strip()
+        
+        # 去除 markdown 代码块标记（```json 或 ```）
+        if cleaned_response.startswith("```"):
+            # 找到第一个换行符
+            first_newline = cleaned_response.find("\n")
+            if first_newline != -1:
+                cleaned_response = cleaned_response[first_newline + 1:]
+            else:
+                cleaned_response = cleaned_response[3:]
+            
+            # 去除结尾的 ```
+            if cleaned_response.endswith("```"):
+                cleaned_response = cleaned_response[:-3]
+        
+        cleaned_response = cleaned_response.strip()
+        
+        # 尝试提取JSON（使用更精确的正则表达式）
+        json_match = re.search(r'\{.*\}', cleaned_response, re.DOTALL)
+        if json_match:
+            json_str = json_match.group()
+            try:
+                return json.loads(json_str)
+            except json.JSONDecodeError as e:
+                # 如果解析失败，尝试修复LaTeX转义序列后重新解析
+                try:
+                    fixed_json = self._fix_latex_escapes(json_str)
+                    return json.loads(fixed_json)
+                except json.JSONDecodeError:
+                    pass
+        
+        # 如果提取失败，尝试直接解析清理后的响应
+        try:
+            return json.loads(cleaned_response)
+        except json.JSONDecodeError:
+            # 如果解析失败，尝试修复LaTeX转义序列后重新解析
+            try:
+                fixed_response = self._fix_latex_escapes(cleaned_response)
+                return json.loads(fixed_response)
+            except json.JSONDecodeError as e:
+                # 只显示前500字符，避免错误信息过长
+                #error_preview = response[:500] + "..." if len(response) > 500 else response
+                error_preview = response
+                raise Exception(f"无法解析LLM返回的JSON: {str(e)}\n原始响应: {error_preview}")
+    
     def call_json(self, prompt: str, system_prompt: Optional[str] = None, temperature: float = 0.3) -> Dict[str, Any]:
         """
         调用LLM并解析JSON响应
@@ -264,17 +384,4 @@ class LLMClient:
         """
         json_prompt = prompt + "\n\n请以JSON格式返回结果，确保返回的是有效的JSON。"
         response = self.call(json_prompt, system_prompt, temperature)
-        
-        # 尝试提取JSON
-        json_match = re.search(r'\{.*\}', response, re.DOTALL)
-        if json_match:
-            try:
-                return json.loads(json_match.group())
-            except json.JSONDecodeError:
-                pass
-        
-        # 如果提取失败，尝试直接解析
-        try:
-            return json.loads(response)
-        except json.JSONDecodeError:
-            raise Exception(f"无法解析LLM返回的JSON: {response}")
+        return self._parse_json_response(response)

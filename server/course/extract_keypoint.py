@@ -12,12 +12,21 @@
 
 import os
 import json
+import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass, asdict
 from enum import Enum
 
 from server.llm.llm_service import LLMClient
+
+# 配置日志
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 
 class ImportanceLevel(Enum):
@@ -95,12 +104,14 @@ class MaterialReader:
                     if content.strip():  # 只添加非空文件
                         md_files[str(rel_path)] = content
             except Exception as e:
-                print(f"警告: 读取文件失败 {md_file}: {e}")
+                logger.warning(f"读取文件失败 {md_file}: {e}")
                 continue
         
         if not md_files:
             raise ValueError(f"目录中没有找到有效的markdown文件: {parsed_course_dir}")
         
+        logger.info(f"已读取 {len(md_files)} 个文件")
+        logger.info(f"文件列表: {md_files.keys()}")
         return md_files
     
     def read_file(self, file_path: str) -> str:
@@ -193,7 +204,7 @@ class PlannerAgent:
             chapters = result.get("chapters", [])
             strategy = result.get("extraction_strategy", "按章节顺序提取")
         except Exception as e:
-            print(f"LLM分析失败，使用默认策略: {e}")
+            logger.warning(f"LLM分析失败，使用默认策略: {e}")
             chapters = [{"name": "全部内容", "files": file_list, "description": "未分类"}]
             strategy = "按文件顺序提取"
         
@@ -323,7 +334,7 @@ class ExtractorAgent:
             
             return keypoints
         except Exception as e:
-            print(f"提取考点失败: {e}")
+            logger.error(f"提取考点失败: {e}")
             return []
 
 
@@ -397,7 +408,7 @@ class EvaluatorAgent:
             
             return refined_keypoints
         except Exception as e:
-            print(f"评估优化失败，使用原始结果: {e}")
+            logger.warning(f"评估优化失败，使用原始结果: {e}")
             return refined_keypoints
     
     def _merge_similar_keypoints(self, keypoints: List[KeyPoint]) -> List[KeyPoint]:
@@ -503,7 +514,7 @@ class OrganizerAgent:
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
         
-        print(f"结果已保存到: {output_path}")
+        logger.info(f"结果已保存到: {output_path}")
 
 
 class KeyPointExtractionWorkflow:
@@ -543,52 +554,52 @@ class KeyPointExtractionWorkflow:
         Returns:
             提取结果字典
         """
-        print(f"开始提取课程考点: {course_dir}")
+        logger.info(f"开始提取课程考点: {course_dir}")
         
         # 步骤1: 读取资料
-        print("步骤1: 读取课程资料...")
+        logger.info("步骤1: 读取课程资料...")
         material_files = self.material_reader.read_directory(course_dir)
-        print(f"已读取 {len(material_files)} 个文件")
+        logger.info(f"已读取 {len(material_files)} 个文件")
         
         # 步骤2: 创建提取计划
-        print("步骤2: 创建提取计划...")
+        logger.info("步骤2: 创建提取计划...")
         plan = self.planner.create_plan(course_dir, material_files)
-        print(f"提取计划已创建: {plan.extraction_strategy}")
-        print(f"识别到 {len(plan.chapters)} 个章节")
+        logger.info(f"提取计划已创建: {plan.extraction_strategy}")
+        logger.info(f"识别到 {len(plan.chapters)} 个章节")
         
         # 步骤3: 提取考点
-        print("步骤3: 提取考点...")
+        logger.info("步骤3: 提取考点...")
         all_keypoints = []
         total_files = len(material_files)
         
-        for idx, (file_path, content) in enumerate(material_files.items(), 1):
-            print(f"  处理文件 {idx}/{total_files}: {file_path}")
+        for idx, (file_path, content) in enumerate[tuple[str, str]](material_files.items(), 1):
+            logger.info(f"  处理文件 {idx}/{total_files}: {file_path}")
             try:
                 keypoints = self.extractor.extract_keypoints(content, file_path)
                 all_keypoints.extend(keypoints)
-                print(f"    提取到 {len(keypoints)} 个考点")
+                logger.info(f"    提取到 {len(keypoints)} 个考点")
             except Exception as e:
-                print(f"    提取失败: {e}")
+                logger.error(f"    提取失败: {e}")
                 continue
         
-        print(f"共提取到 {len(all_keypoints)} 个考点")
+        logger.info(f"共提取到 {len(all_keypoints)} 个考点")
         
         # 步骤4: 评估和优化
-        print("步骤4: 评估和优化考点...")
+        logger.info("步骤4: 评估和优化考点...")
         course_context = f"课程: {plan.course_name}, 共{plan.total_files}个文件"
         refined_keypoints = self.evaluator.evaluate_and_refine(all_keypoints, course_context)
-        print(f"优化后剩余 {len(refined_keypoints)} 个考点")
+        logger.info(f"优化后剩余 {len(refined_keypoints)} 个考点")
         
         # 步骤5: 整理结果
-        print("步骤5: 整理结果...")
+        logger.info("步骤5: 整理结果...")
         results = self.organizer.organize_results(refined_keypoints, plan)
         
         # 步骤6: 保存结果
         if output_path:
-            print(f"步骤6: 保存结果到 {output_path}...")
+            logger.info(f"步骤6: 保存结果到 {output_path}...")
             self.organizer.save_results(results, output_path)
         
-        print("提取完成！")
+        logger.info("提取完成！")
         return results
 
 
@@ -597,8 +608,8 @@ def main():
     import sys
     
     if len(sys.argv) < 2:
-        print("用法: python extract_keypoint.py <课程目录路径> [输出文件路径]")
-        print("示例: python extract_keypoint.py data/样品课件2 output/keypoints.json")
+        logger.error("用法: python extract_keypoint.py <课程目录路径> [输出文件路径]")
+        logger.error("示例: python extract_keypoint.py data/金融实证方法 output/keypoints.json")
         sys.exit(1)
     
     course_dir = sys.argv[1]
@@ -609,15 +620,15 @@ def main():
     results = workflow.extract(course_dir, output_path)
     
     # 打印摘要
-    print("\n" + "="*50)
-    print("提取摘要")
-    print("="*50)
-    print(f"课程名称: {results['course_name']}")
-    print(f"总考点数: {results['total_keypoints']}")
-    print(f"重要程度统计:")
+    logger.info("\n" + "="*50)
+    logger.info("提取摘要")
+    logger.info("="*50)
+    logger.info(f"课程名称: {results['course_name']}")
+    logger.info(f"总考点数: {results['total_keypoints']}")
+    logger.info(f"重要程度统计:")
     for level, count in results['importance_statistics'].items():
-        print(f"  {level}级: {count}个")
-    print(f"章节数: {len(results['keypoints_by_chapter'])}")
+        logger.info(f"  {level}级: {count}个")
+    logger.info(f"章节数: {len(results['keypoints_by_chapter'])}")
 
 
 if __name__ == "__main__":

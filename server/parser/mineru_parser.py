@@ -629,7 +629,7 @@ def test_parse_dir():
     # 获取项目根目录
     project_root = Path(__file__).parent.parent.parent
     #test_dir = project_root / "data" / "样品课件" / "样品课件-会计" / "课件"
-    test_dir = project_root / "data" / "样品课件2" 
+    test_dir = project_root / "data" / "金融实证方法" 
     
     # 检查目录是否存在
     if not os.path.exists(str(test_dir)):
