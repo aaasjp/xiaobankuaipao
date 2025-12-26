@@ -140,12 +140,12 @@ class MaterialReader:
             return f.read()
 
 
-class PlannerAgent:
-    """规划Agent - 负责任务规划"""
+class Planner:
+    """规划 - 负责任务规划"""
     
     def __init__(self, llm_client: LLMClient):
         """
-        初始化规划Agent
+        初始化规划组件
         
         Args:
             llm_client: LLM客户端
@@ -217,12 +217,12 @@ class PlannerAgent:
         )
 
 
-class ExtractorAgent:
-    """提取Agent - 负责提取考点"""
+class Extractor:
+    """提取 - 负责提取考点"""
     
     def __init__(self, llm_client: LLMClient):
         """
-        初始化提取Agent
+        初始化提取组件
         
         Args:
             llm_client: LLM客户端
@@ -338,12 +338,12 @@ class ExtractorAgent:
             return []
 
 
-class EvaluatorAgent:
-    """评估Agent - 负责评估和优化考点"""
+class Evaluator:
+    """评估 - 负责评估和优化考点"""
     
     def __init__(self, llm_client: LLMClient):
         """
-        初始化评估Agent
+        初始化评估组件
         
         Args:
             llm_client: LLM客户端
@@ -442,8 +442,8 @@ class EvaluatorAgent:
         return merged
 
 
-class OrganizerAgent:
-    """整理Agent - 负责整理和输出结果"""
+class Organizer:
+    """整理 - 负责整理和输出结果"""
     
     def organize_results(self, keypoints: List[KeyPoint], plan: ExtractionPlan) -> Dict[str, Any]:
         """
@@ -515,6 +515,67 @@ class OrganizerAgent:
             json.dump(results, f, ensure_ascii=False, indent=2)
         
         logger.info(f"结果已保存到: {output_path}")
+    
+    def save_intermediate_results(
+        self, 
+        keypoints: List[KeyPoint], 
+        plan: ExtractionPlan,
+        processed_files: List[str],
+        output_path: str,
+        status: str = "extracting"
+    ):
+        """
+        保存中间结果（提取过程中的临时结果）
+        
+        Args:
+            keypoints: 已提取的考点列表
+            plan: 提取计划
+            processed_files: 已处理的文件列表
+            output_path: 最终输出文件路径（用于生成中间结果文件路径）
+            status: 当前状态，可选值：extracting（提取中）、evaluating（评估中）、completed（已完成）
+        """
+        output_path_obj = Path(output_path)
+        # 生成中间结果文件路径：原文件名.intermediate.json
+        intermediate_path = output_path_obj.parent / f"{output_path_obj.stem}.intermediate.json"
+        
+        # 整理中间结果
+        sorted_keypoints = sorted(keypoints, key=lambda x: x.importance, reverse=True)
+        
+        # 统计信息
+        importance_stats = {}
+        for level in range(1, 6):
+            count = sum(1 for kp in keypoints if kp.importance == level)
+            importance_stats[level] = count
+        
+        intermediate_result = {
+            "course_name": plan.course_name,
+            "status": status,  # 状态：extracting（提取中）、evaluating（评估中）、completed（已完成）
+            "progress": {
+                "processed_files": len(processed_files),
+                "total_files": plan.total_files,
+                "processed_file_list": processed_files
+            },
+            "current_keypoints_count": len(keypoints),
+            "importance_statistics": importance_stats,
+            "all_keypoints": [asdict(kp) for kp in sorted_keypoints],
+            "extraction_plan": {
+                "total_files": plan.total_files,
+                "strategy": plan.extraction_strategy,
+                "chapters": plan.chapters
+            }
+        }
+        
+        intermediate_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(intermediate_path, "w", encoding="utf-8") as f:
+            json.dump(intermediate_result, f, ensure_ascii=False, indent=2)
+        
+        status_msg = {
+            "extracting": "提取中",
+            "evaluating": "评估中",
+            "completed": "已完成"
+        }.get(status, status)
+        
+        logger.info(f"中间结果已保存到: {intermediate_path} ({status_msg}, 已处理 {len(processed_files)}/{plan.total_files} 个文件, {len(keypoints)} 个考点)")
 
 
 class KeyPointExtractionWorkflow:
@@ -537,11 +598,11 @@ class KeyPointExtractionWorkflow:
         self.llm_client = llm_client or LLMClient()
         self.material_reader = material_reader or MaterialReader(parsed_dir=parsed_dir)
         
-        # 初始化各个Agent
-        self.planner = PlannerAgent(self.llm_client)
-        self.extractor = ExtractorAgent(self.llm_client)
-        self.evaluator = EvaluatorAgent(self.llm_client)
-        self.organizer = OrganizerAgent()
+        # 初始化各个组件
+        self.planner = Planner(self.llm_client)
+        self.extractor = Extractor(self.llm_client)
+        self.evaluator = Evaluator(self.llm_client)
+        self.organizer = Organizer()
     
     def extract(self, course_dir: str, output_path: Optional[str] = None) -> Dict[str, Any]:
         """
@@ -571,15 +632,38 @@ class KeyPointExtractionWorkflow:
         logger.info("步骤3: 提取考点...")
         all_keypoints = []
         total_files = len(material_files)
+        processed_files = []
         
         for idx, (file_path, content) in enumerate[tuple[str, str]](material_files.items(), 1):
             logger.info(f"  处理文件 {idx}/{total_files}: {file_path}")
             try:
                 keypoints = self.extractor.extract_keypoints(content, file_path)
                 all_keypoints.extend(keypoints)
+                processed_files.append(file_path)
                 logger.info(f"    提取到 {len(keypoints)} 个考点")
+                
+                # 每处理完一个文件就保存中间结果
+                if output_path:
+                    self.organizer.save_intermediate_results(
+                        all_keypoints, 
+                        plan, 
+                        processed_files,
+                        output_path,
+                        status="extracting"
+                    )
             except Exception as e:
                 logger.error(f"    提取失败: {e}")
+                # 即使失败也记录已处理的文件
+                processed_files.append(file_path)
+                # 保存中间结果（包含失败的文件信息）
+                if output_path:
+                    self.organizer.save_intermediate_results(
+                        all_keypoints, 
+                        plan, 
+                        processed_files,
+                        output_path,
+                        status="extracting"
+                    )
                 continue
         
         logger.info(f"共提取到 {len(all_keypoints)} 个考点")
@@ -589,6 +673,16 @@ class KeyPointExtractionWorkflow:
         course_context = f"课程: {plan.course_name}, 共{plan.total_files}个文件"
         refined_keypoints = self.evaluator.evaluate_and_refine(all_keypoints, course_context)
         logger.info(f"优化后剩余 {len(refined_keypoints)} 个考点")
+        
+        # 保存评估优化后的中间结果
+        if output_path:
+            self.organizer.save_intermediate_results(
+                refined_keypoints, 
+                plan, 
+                processed_files,
+                output_path,
+                status="evaluating"
+            )
         
         # 步骤5: 整理结果
         logger.info("步骤5: 整理结果...")
