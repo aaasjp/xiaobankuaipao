@@ -1,0 +1,46 @@
+{
+  "step": "提取策略创建",
+  "strategy": {
+    "strategy_name": "Exam-Centric考点提取策略",
+    "approach": "采用分层提取与优先级过滤相结合的方法，首先聚焦答案文件与考试样题文件，从中归纳高频考点与核心概念。随后对理论章节文件进行系统性分析，提取关键模型、公式及其解释。基于内容复杂度，建议将每个文件内容按逻辑段落划分为约8000字符的块，以确保每块内容的完整性和可解析性。提取过程中使用关键词识别与上下文理解相结合的方式，识别核心概念、公式及其在考试中的重要性。",
+    "file_priority": [
+      "Midterm___Answers.pdf.md",
+      "Sample Midterm 1 - Answers.md",
+      "Sample Midterm 2 - Answers.md",
+      "Sample Midterm 1.md",
+      "Sample Midterm 2.md",
+      "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "03Conditional CAPM\\03 Conditional CAPM.md",
+      "08 Momentum\\08 Momentum.md",
+      "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "05 EMH and Trading Costs\\05 EMH and Trading Costs.md",
+      "02 Return Predictability\\02 Return Predictability.md",
+      "01 alpha\\01 Alpha.md"
+    ],
+    "chunk_size": 12000,
+    "extraction_focus": [
+      "核心概念",
+      "重要公式",
+      "考试重点"
+    ],
+    "reasoning": "根据文档结构分析，本课程文档为混合式结构，以主题/章节为主，同时包含考试与答案文件。用户目标是提取不超过100个考点，且重点关注考试相关内容。因此，优先提取包含答案的考试文件，从中总结高频考点和考试重点。随后对理论章节进行提取，重点识别核心概念（如模型定义、理论假设）和重要公式（如CAPM、Conditional CAPM、动量计算公式等）。由于文档内容复杂且公式较多，较大的分块（8000字符）有助于保留公式的上下文。根据章节描述，流动性与资产价格、动量效应等内容具有更高的考点密度，因此在理论章节中优先处理这些文件。最终确保提取的考点简洁、重要、不重复，并具有明确的来源文件信息。"
+  },
+  "extraction_goal": {
+    "goal": "提取课程中的重要考点，重点关注考试相关内容,考点总个数不要超过100个",
+    "requirements": [
+      "考点名称要简洁明确",
+      "重要程度评估要合理",
+      "来源信息要准确",
+      "避免重复和过于相似的考点"
+    ],
+    "focus_areas": [
+      "核心概念",
+      "重要公式",
+      "考试重点"
+    ],
+    "importance_criteria": "根据考试频率和重要性评估"
+  },
+  "timestamp": "2025-12-29T00:05:26.157818"
+}

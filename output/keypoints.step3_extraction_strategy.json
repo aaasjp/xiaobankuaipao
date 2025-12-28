@@ -1,0 +1,46 @@
+{
+  "step": "提取策略创建",
+  "strategy": {
+    "strategy_name": "Exam-Oriented Keypoint Extraction Strategy",
+    "approach": "This strategy prioritizes extracting keypoints from exam-related documents first, as they directly reflect assessment content and expected student knowledge. The extraction method involves scanning high-priority files for repeated or emphasized concepts, formulas, and terminology, especially those appearing in both exams and their answer keys. For topic-based chapters, key concepts and formulas are extracted with a focus on definitions, economic intuition, and empirical relevance. The content is chunked into logical sections of at least 8000 characters to ensure comprehensive context while avoiding redundancy. Natural Language Processing (NLP) techniques are used to identify named entities, formula patterns, and question-answer patterns to determine考点. Duplicate or highly similar keypoints across files are merged to ensure uniqueness and clarity.",
+    "file_priority": [
+      "Sample Midterm 1.md",
+      "Sample Midterm 1 - Answers.md",
+      "Sample Midterm 2.md",
+      "Sample Midterm 2 - Answers.md",
+      "Midterm___Answers.pdf.md",
+      "01 alpha\\01 Alpha.md",
+      "02 Return Predictability\\02 Return Predictability.md",
+      "03Conditional CAPM\\03 Conditional CAPM.md",
+      "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "05 EMH and Trading Costs\\05 EMH and Trading Costs.md",
+      "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "08 Momentum\\08 Momentum.md"
+    ],
+    "chunk_size": 12000,
+    "extraction_focus": [
+      "核心概念",
+      "重要公式",
+      "考试重点"
+    ],
+    "reasoning": "The document structure is mixed, with both topic-based chapters and exam/assessment-based files. Since the user's primary goal is to extract important考点 with a focus on exams, the strategy begins with exam files to identify frequently tested content. Answer keys are placed immediately after their corresponding exams to cross-reference and validate考点. Topic-based chapters are then processed in order, focusing on core financial theories and models such as CAPM, EMH, and anomalies. The presence of formulas requires careful parsing to ensure mathematical expressions are captured accurately. Chunk size is set to at least 8000 characters to maintain context while enabling efficient processing. Emphasis is placed on avoiding repetition by comparing extracted keypoints across related chapters and exams, especially for topics like liquidity that span multiple files. The extraction approach aligns with the complexity and theoretical nature of the content, ensuring clarity and relevance for exam preparation."
+  },
+  "extraction_goal": {
+    "goal": "提取课程中的重要考点，重点关注考试相关内容。",
+    "requirements": [
+      "考点名称要简洁明确",
+      "重要程度评估要合理",
+      "来源信息要准确",
+      "避免重复和过于相似的考点"
+    ],
+    "focus_areas": [
+      "核心概念",
+      "重要公式",
+      "考试重点"
+    ],
+    "importance_criteria": "根据考试频率和重要性评估"
+  },
+  "timestamp": "2025-12-29T00:42:33.244164"
+}

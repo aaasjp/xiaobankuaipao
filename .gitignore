@@ -9,7 +9,6 @@ node_modules/
 .env.production
 
 dist/
-output/
 .DS_Store
 .idea/
 .vscode/

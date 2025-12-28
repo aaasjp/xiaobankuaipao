@@ -1,0 +1,1476 @@
+{
+  "step": "反思评估迭代 1",
+  "iteration": 1,
+  "quality_score": 0.75,
+  "issues": [
+    "存在重复或高度相似的考点，如多个关于价值效应与风险解释的条目（例如Keypoint 0、4、6、39）",
+    "部分考点名称不够简洁明确，如'Equilibrium Level of Disequilibrium'和'The Three Liquidity Betas'",
+    "某些考点的重要性评分不合理，如'Clientèle Effects in Liquidity Preference'（重要性5）与'Endogenous Trading Horizons in General Equilibrium'（重要性4）相比，前者可能不如后者核心",
+    "部分描述冗长或缺乏聚焦，未能突出考试重点，如'Amihud Measure'和'Roll Measure'的描述可以合并",
+    "来源信息未充分利用，部分考点未准确反映其出处或上下文"
+  ],
+  "improvements": [
+    "合并重复或高度相似的Keypoint，确保每个考点唯一且全面",
+    "优化考点命名，使其更符合考试常见术语，如'Value Effect: Risk-Based Explanation'替代'Value Effect and Risk Explanation'",
+    "对Keypoint的重要性进行再评估，确保与考试频率和理论核心性一致",
+    "简化描述内容，聚焦于公式、定义和考试常见解释，减少冗余背景",
+    "加强来源信息的准确性，确保每个Keypoint都能对应到具体考试材料或理论模型"
+  ],
+  "corrections": [
+    {
+      "keypoint_index": 4,
+      "issue": "与Keypoint 0重复，且描述角度不同但核心内容一致",
+      "corrected_topic": "Value Effect: Risk-Based Explanation",
+      "corrected_description": "The value effect refers to the phenomenon where value stocks (those with high book-to-market ratios) tend to outperform growth stocks. If this outperformance is due to risk, then the value-minus-growth portfolio (HML factor) should exhibit specific risk-related behaviors, such as negative correlation with future labor income and Treasury yields. This distinction is crucial for determining whether the value effect is a risk factor or a mispricing anomaly.",
+      "corrected_importance": 5,
+      "corrected_reason": "This is a core concept in empirical asset pricing and is frequently tested in exams. It helps distinguish between risk-based and behavioral explanations for the value effect."
+    },
+    {
+      "keypoint_index": 6,
+      "issue": "与Keypoint 0和4重复，且描述角度一致",
+      "corrected_topic": "Value Effect: Risk-Based Explanation",
+      "corrected_description": "The value effect refers to the phenomenon where value stocks (those with high book-to-market ratios) tend to outperform growth stocks. If this outperformance is due to risk, then the realized returns to the HML factor should be negatively correlated with future labor income and Treasury yields, as these are indicators of economic downturns. This supports the interpretation of the HML factor as a risk factor in the ICAPM framework.",
+      "corrected_importance": 5,
+      "corrected_reason": "This is a core concept in empirical asset pricing and is directly tied to the CAPM/ICAPM models, which are fundamental to finance exams."
+    },
+    {
+      "keypoint_index": 39,
+      "issue": "与Keypoint 0、4、6重复，且描述角度一致",
+      "corrected_topic": "Value Effect: Risk-Based Explanation",
+      "corrected_description": "If the value effect is explained by risk, the value-minus-growth portfolio (HML factor) should react to macroeconomic signals such as dividend yield and GDP growth. A positive response to dividend yield suggests that the portfolio performs well during economic downturns, which contradicts the idea that it is simply risky. This distinction is crucial for determining whether the value effect is a risk factor or a mispricing anomaly.",
+      "corrected_importance": 5,
+      "corrected_reason": "This is a fundamental concept in asset pricing and is frequently tested in exams. It helps distinguish between risk-based and behavioral explanations for financial anomalies."
+    },
+    {
+      "keypoint_index": 13,
+      "issue": "描述不够清晰，且与Keypoint 3有重叠",
+      "corrected_topic": "Roll and Amihud Measures in Trading Cost Estimation",
+      "corrected_description": "The Roll measure estimates the bid-ask spread, while the Amihud measure estimates price impact per dollar traded. These are used to calculate the total cost of executing a trade, including both liquidity cost (Roll) and market impact (Amihud), which are averaged over the trade horizon to determine holding costs and equilibrium asset returns in the presence of trading frictions.",
+      "corrected_importance": 4,
+      "corrected_reason": "These measures are essential for understanding liquidity risk and trading costs in empirical finance and are commonly used in exam problems involving portfolio execution and equilibrium pricing."
+    },
+    {
+      "keypoint_index": 3,
+      "issue": "与Keypoint 13部分重复，且描述角度相似",
+      "corrected_topic": "Roll and Amihud Measures in Trading Cost Estimation",
+      "corrected_description": "The Roll measure estimates the bid-ask spread, while the Amihud measure estimates price impact per dollar traded. These are used to calculate the total cost of executing a trade, including both liquidity cost (Roll) and market impact (Amihud), which are averaged over the trade horizon to determine holding costs and equilibrium asset returns in the presence of trading frictions.",
+      "corrected_importance": 4,
+      "corrected_reason": "These measures are essential for understanding liquidity risk and trading costs in empirical finance and are commonly used in exam problems involving portfolio execution and equilibrium pricing."
+    }
+  ],
+  "duplicates": [
+    {
+      "keypoint_indices": [
+        0,
+        4,
+        6,
+        39
+      ],
+      "similarity_reason": "这四个Keypoint均围绕价值效应是否由风险驱动展开，强调HML因子与宏观经济变量（如劳动收入、国债收益率）的相关性，以及如何区分风险与错误定价解释。",
+      "suggested_merge": {
+        "topic": "Value Effect: Risk-Based Explanation",
+        "description": "The value effect refers to the phenomenon where value stocks (those with high book-to-market ratios) tend to outperform growth stocks. If this outperformance is due to risk, then the value-minus-growth portfolio (HML factor) should exhibit specific risk-related behaviors, such as negative correlation with future labor income and Treasury yields. This distinction is crucial for determining whether the value effect is a risk factor or a mispricing anomaly.",
+        "importance": 5,
+        "importance_reason": "This is a core concept in empirical asset pricing and is frequently tested in exams. It helps distinguish between risk-based and behavioral explanations for financial anomalies."
+      }
+    },
+    {
+      "keypoint_indices": [
+        13,
+        3
+      ],
+      "similarity_reason": "这两个Keypoint均描述了Roll和Amihud流动性测度的定义和在交易成本中的应用，内容高度重合。",
+      "suggested_merge": {
+        "topic": "Roll and Amihud Measures in Trading Cost Calculation",
+        "description": "The Roll measure estimates the bid-ask spread, while the Amihud measure estimates price impact per dollar traded. These are used to calculate the total cost of executing a trade, including both liquidity cost (Roll) and market impact (Amihud), which are averaged over the investment horizon to determine holding costs and equilibrium asset returns in the presence of trading frictions.",
+        "importance": 4,
+        "importance_reason": "These measures are essential for understanding liquidity risk and trading costs in empirical finance and are commonly used in exam problems involving portfolio execution and equilibrium pricing."
+      }
+    }
+  ],
+  "keypoints_before": 151,
+  "keypoints_after": 138,
+  "refined_keypoints": [
+    {
+      "topic": "Value Effect: Risk-Based Explanation",
+      "description": "The value effect refers to the phenomenon where value stocks (those with high book-to-market ratios) tend to outperform growth stocks. If this outperformance is due to risk, then the value-minus-growth portfolio (HML factor) should exhibit specific risk-related behaviors, such as negative correlation with future labor income and Treasury yields. This distinction is crucial for determining whether the value effect is a risk factor or a mispricing anomaly.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in empirical asset pricing and is frequently tested in exams. It helps distinguish between risk-based and behavioral explanations for financial anomalies.",
+      "source": "Sample Midterm 1.md (片段 1/1)",
+      "source_file": "Sample Midterm 1.md",
+      "source_page": null,
+      "source_snippet": "If the value effect is explained by risk, then the value minus growth portfolio should... / Assuming that the value effect is caused by risk, you would expect the realized returns to the HML factor to be..."
+    },
+    {
+      "topic": "Roll and Amihud Measures in Trading Cost Calculation",
+      "description": "The Roll measure estimates the bid-ask spread, while the Amihud measure estimates price impact per dollar traded. These are used to calculate the total cost of executing a trade, including both liquidity cost (Roll) and market impact (Amihud), which are averaged over the investment horizon to determine holding costs and equilibrium asset returns in the presence of trading frictions. The Roll measure estimates the bid-ask spread, while the Amihud measure estimates price impact per dollar traded. ",
+      "importance": 4,
+      "importance_reason": "These measures are essential for understanding liquidity risk and trading costs in empirical finance and are commonly used in exam problems involving portfolio execution and equilibrium pricing.",
+      "source": "Sample Midterm 2.md (片段 1/1)",
+      "source_file": "Sample Midterm 2.md",
+      "source_page": null,
+      "source_snippet": "You are creating a multifactor model with the factor that mimics the changes in unemployment. You can call this model the ICAPM..."
+    },
+    {
+      "topic": "Momentum Factor in ICAPM",
+      "description": "The momentum factor, constructed by going long on past winner stocks and short on past losers, can be interpreted within the Intertemporal Capital Asset Pricing Model (ICAPM) if it represents systematic risk. The ICAPM allows for multiple factors that capture hedging demands against changing investment opportunities. Whether momentum is due to risk or mispricing affects how it is incorporated into asset pricing models and its interpretation in multifactor regressions.",
+      "importance": 4,
+      "importance_reason": "Momentum is a high-frequency exam topic and its treatment in ICAPM is a key model interpretation point in empirical finance.",
+      "source": "Sample Midterm 1.md (片段 1/1)",
+      "source_file": "Sample Midterm 1.md",
+      "source_page": null,
+      "source_snippet": "You are creating a multifactor model with the momentum factor... You can interpret this model as the ICAPM... if momentum is risk"
+    },
+    {
+      "topic": "CAPM vs Portfolio Performance",
+      "description": "The Capital Asset Pricing Model (CAPM) predicts expected returns based on beta. A portfolio with a beta of 1.2, annual return of 17%, and risk-free rate of 4% can be evaluated against the CAPM's expected return given the market return of 12%. If the portfolio beats the CAPM return, it suggests mispricing or additional risk factors not captured by the model, such as those in the ICAPM.",
+      "importance": 4,
+      "importance_reason": "This is a frequent exam topic involving CAPM application and performance evaluation, essential for understanding asset pricing and portfolio management.",
+      "source": "Sample Midterm 1.md (片段 1/1)",
+      "source_file": "Sample Midterm 1.md",
+      "source_page": null,
+      "source_snippet": "A portfolio generates an annual return of 17%, a beta of 1.2... The portfolio beats the CAPM prediction, but not necessarily the ICAPM prediction"
+    },
+    {
+      "topic": "Limits to Arbitrage and Mispricing",
+      "description": "Mispricing or apparent mispricing tends to be stronger in firms with high limits to arbitrage or high trading costs. These include small firms, volatile firms, firms with high Roll measure, and firms with low institutional ownership. Such firms are more likely to deviate from fundamental value due to the difficulty in executing arbitrage effectively.",
+      "importance": 4,
+      "importance_reason": "This is a commonly tested concept in empirical finance, especially in multiple-choice questions assessing understanding of market inefficiencies and trading frictions.",
+      "source": "Sample Midterm 1 - Answers.md (片段 1/2)",
+      "source_file": "Sample Midterm 1 - Answers.md",
+      "source_page": null,
+      "source_snippet": "Mispricing or apparent mispricing should be stronger for... Small firms, firms with high Roll measure, firms with low institutional ownership..."
+    },
+    {
+      "topic": "CAPM vs ICAPM Evaluation Using Alpha and Correlation",
+      "description": "A portfolio with positive CAPM alpha and a positive correlation with GDP growth is riskier in the context of intertemporal CAPM (ICAPM), because it performs poorly during economic downturns. This implies that while it may beat the CAPM prediction, it may not beat the ICAPM prediction, which accounts for time-varying risk factors.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency exam topic that tests understanding of both CAPM and ICAPM, as well as how macroeconomic correlations affect risk-adjusted performance evaluation.",
+      "source": "Sample Midterm 1 - Answers.md (片段 1/2)",
+      "source_file": "Sample Midterm 1 - Answers.md",
+      "source_page": null,
+      "source_snippet": "The portfolio return is positively correlated with changes in GDP growth... The portfolio beats the CAPM, but not necessarily ICAPM - if its losses when GDP growth dips are really big, even 3.4% extra per year may be inadequate compensation."
+    },
+    {
+      "topic": "Carhart Model and Hedging Defense",
+      "description": "When a fund manager claims to be hedging against market volatility and default risk, the fund should outperform the CAPM benchmark when these risks increase. If Fund M underperformed the CAPM in 2005, it implies that market volatility and default risk actually declined during that year, making the manager's hedging explanation invalid as a defense for poor performance.",
+      "importance": 4,
+      "importance_reason": "This concept tests understanding of how risk factors influence fund performance and how to evaluate manager claims using asset pricing models. It is relevant for interpreting empirical results and constructing valid arguments in performance analysis.",
+      "source": "Sample Midterm 1 - Answers.md (片段 2/2)",
+      "source_file": "Sample Midterm 1 - Answers.md",
+      "source_page": null,
+      "source_snippet": "If the manager hedges you against market volatility and default risk, the fund should beat the CAPM when those variables increase (because they are high in bad times). Hence, if the fund was trailing the CAPM in 2005, market volatility and default risk must have declined in 2005. Otherwise mentioning the hedging effort is not a valid defence of the poor performance."
+    },
+    {
+      "topic": "Liquidity Risk",
+      "description": "Liquidity risk refers to the uncertainty investors face regarding future transaction costs when selling an asset. It introduces additional volatility to asset prices and represents a new type of risk beyond fundamental cash-flow risk. This risk affects both current prices and future expected returns, and is a key factor in asset pricing models that incorporate liquidity frictions. A study claiming to explain the value effect through liquidity risk by using the Roll factor is flawed. The correct ",
+      "importance": 5,
+      "importance_reason": "Liquidity risk is central to the liquidity-adjusted CAPM and is a high-frequency exam topic due to its relevance in modern asset pricing theory and its extension of traditional CAPM concepts.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 4/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Liquidity varies over time. This means that investors are uncertain what transactions cost they will incur in the future when they need to sell an asset. Further, since liquidity affects the level of prices, liquidity fluctuations can affect the asset price volatility itself. For both of these reasons, liquidity fluctuations constitute a new type of risk that augments the fundamental cash-flow risk."
+    },
+    {
+      "topic": "Equilibrium Allocation with Liquidity and Investment Horizons",
+      "description": "In an economy with two stocks (A and B) with different liquidity costs and three investors (X, Y, Z) with different investment horizons, two possible equilibria exist: (1) X and Y hold B, Z holds A; and (2) X holds B, Y and Z hold A. The equilibrium returns must account for the liquidity cost (Roll measure divided by investment horizon) to ensure no arbitrage or switching incentives.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how liquidity costs and investment horizons affect portfolio allocation and equilibrium returns. It combines both the Roll measure and investor behavior, and is fundamental to asset pricing and exam questions involving liquidity and equilibrium models.",
+      "source": "Sample Midterm 1 - Answers.md (片段 2/2)",
+      "source_file": "Sample Midterm 1 - Answers.md",
+      "source_page": null,
+      "source_snippet": "The two equilibria are: 'X and Y hold B, Z holds A' and 'X holds B, Y and Z hold A'. In the first equilibrium, B makes just enough to make sure X wants to hold it. The cost of holding B for X is 1.2%/2 = 0.6%, hence B should be making 13.6%..."
+    },
+    {
+      "topic": "Post Earnings Announcement Drift",
+      "description": "Post earnings announcement drift is a financial anomaly where stocks with positive (negative) earnings surprises tend to have positive (negative) CAPM alphas in the period following the announcement. If this drift is due to risk, it implies that the returns of these stocks are systematically related to macroeconomic or risk factors, and investors are compensated for bearing such risk. The correct interpretation involves realized and expected returns behavior in recessions for positive and negati",
+      "importance": 5,
+      "importance_reason": "This is a core anomaly in empirical finance, frequently tested in exams. Understanding its implications under risk-based explanations is essential for interpreting asset pricing models like CAPM and ICAPM.",
+      "source": "Sample Midterm 2.md (片段 1/1)",
+      "source_file": "Sample Midterm 2.md",
+      "source_page": null,
+      "source_snippet": "Post earnings announcement drift is an anomaly documenting that stocks with positive (negative) earnings surprises have positive (negative) CAPM alphas in the quarter following the earnings announcement. Assume that the post earnings announcement drift is risk..."
+    },
+    {
+      "topic": "Momentum Anomaly",
+      "description": "Momentum is the phenomenon in financial markets where stocks that have performed well in the past (winners) continue to outperform those that have performed poorly (losers) in the future. If momentum is due to risk, the realized returns of the winners-minus-losers portfolio should be correlated with macroeconomic indicators like unemployment and default premiums, reflecting systematic risk exposure. Momentum is the phenomenon where past winners continue to outperform past losers. If momentum is ",
+      "importance": 5,
+      "importance_reason": "Momentum is a high-frequency exam topic and a key empirical finding in asset pricing. It is often analyzed in the context of risk-based versus behavioral explanations for market anomalies.",
+      "source": "Sample Midterm 2.md (片段 1/1)",
+      "source_file": "Sample Midterm 2.md",
+      "source_page": null,
+      "source_snippet": "Momentum is an anomaly documenting that in the stock market past winners beat past losers not only historically, but also going forward. Assuming that momentum is caused by risk, you would expect the realized returns to the winners-minus-losers portfolio to be..."
+    },
+    {
+      "topic": "Distress Risk Puzzle and Liquidity Risk",
+      "description": "The distress risk puzzle refers to the counterintuitive observation that healthy firms tend to have higher expected returns than distressed firms. A potential explanation for this puzzle is liquidity risk, particularly if distressed firms are more sensitive to market illiquidity or if healthy firms are less so, altering their risk-return tradeoff.",
+      "importance": 4,
+      "importance_reason": "This is a well-known puzzle in finance and often appears in exams in the context of discussing liquidity risk and alternative asset pricing explanations. It tests the understanding of empirical asset pricing and market efficiency.",
+      "source": "Sample Midterm 2.md (片段 1/1)",
+      "source_file": "Sample Midterm 2.md",
+      "source_page": null,
+      "source_snippet": "Distress risk puzzle refers to the puzzling tendency of healthy firms to have higher expected returns than distressed firms. What of the following suggests that liquidity risk can be an explanation of the distress risk puzzle?"
+    },
+    {
+      "topic": "ICAPM Factor Requirements",
+      "description": "For a factor to be considered valid in the Intertemporal Capital Asset Pricing Model (ICAPM), it must meet three conditions: (1) be related to the marginal utility of consumption, (2) predict the market risk premium, and (3) earn a significant risk premium. These ensure the factor captures time-varying risk preferences and is priced in the market.",
+      "importance": 4,
+      "importance_reason": "Understanding the requirements for a factor to be part of the ICAPM is essential for modeling time-varying risk and is a common exam question in asset pricing and empirical methods.",
+      "source": "Sample Midterm 2 - Answers.md (片段 1/2)",
+      "source_file": "Sample Midterm 2 - Answers.md",
+      "source_page": null,
+      "source_snippet": "You can call this model the ICAPM a Only if unemployment is related to the marginal utility of consumption... the correct answer is (d)"
+    },
+    {
+      "topic": "Accrual Anomaly and Mutual Fund Attractiveness",
+      "description": "A mutual fund that has a negative correlation with high accruals firms and a zero CAPM alpha is not an attractive investment regardless of whether the accrual anomaly is due to risk or mispricing. This is because the fund should earn a positive CAPM alpha due to its negative correlation with firms that have negative alphas, indicating poor fund performance if it does not.",
+      "importance": 4,
+      "importance_reason": "This concept tests the understanding of anomalies, their implications for portfolio management, and the interpretation of CAPM alphas in the context of correlation and performance evaluation.",
+      "source": "Sample Midterm 2 - Answers.md (片段 1/2)",
+      "source_file": "Sample Midterm 2 - Answers.md",
+      "source_page": null,
+      "source_snippet": "Consider a mutual fund with a zero CAPM alpha and negative correlation of returns with returns to high accruals firms... The fund is not an attractive investment no matter how we view the negative alpha of high accruals firms..."
+    },
+    {
+      "topic": "CAPM Alpha and HML Beta Interpretation",
+      "description": "A positive CAPM alpha may not necessarily indicate strong stock-picking ability if the fund has a positive HML beta, as value stock tilts naturally produce positive alphas under CAPM. However, a negative correlation between abnormal returns and inflation changes suggests the fund performs well in bad times, enhancing the credibility of the manager's skill.",
+      "importance": 5,
+      "importance_reason": "This concept tests understanding of multifactor models and how to distinguish between skill and factor exposure — a frequent and critical topic in asset pricing and portfolio management exams.",
+      "source": "Sample Midterm 2 - Answers.md (片段 2/2)",
+      "source_file": "Sample Midterm 2 - Answers.md",
+      "source_page": null,
+      "source_snippet": "A mutual fund with a positive CAPM alpha has a positive HML beta and a negative correlation of its abnormal returns with the unexpected changes in the inflation rate. How do both pieces of evidence impact your view of the manager's stock-picking ability?"
+    },
+    {
+      "topic": "Relative Short Interest (RSI) Effect and Risk Explanation",
+      "description": "The RSI effect, where high RSI firms have negative alphas, can be explained by showing that these firms are low-risk, especially in bad economic times. A positive correlation between the returns of high RSI firms and the lagged DND ratio supports this explanation, as it indicates lower risk during recessions.",
+      "importance": 4,
+      "importance_reason": "This question tests the ability to link empirical anomalies with macroeconomic risk factors, a common exam theme in advanced asset pricing topics.",
+      "source": "Sample Midterm 2 - Answers.md (片段 2/2)",
+      "source_file": "Sample Midterm 2 - Answers.md",
+      "source_page": null,
+      "source_snippet": "What should be the sign of the correlation between the returns to high RSI firms and the lagged value of the DND ratio in order to help explain the RSI effect?"
+    },
+    {
+      "topic": "Conditional CAPM and Time-Varying Risk",
+      "description": "The Conditional CAPM allows for time-varying betas by incorporating interaction terms like (MKT - RF)·DIV and (MKT - RF)·DEF. A positive coefficient on (MKT - RF)·DIV indicates increased risk in bad times (high dividend yield), while a negative coefficient on (MKT - RF)·DEF suggests reduced risk during economic downturns (high default spread).",
+      "importance": 5,
+      "importance_reason": "Understanding how risk varies with economic conditions is central to modern asset pricing and is a high-frequency exam topic in finance courses covering dynamic models.",
+      "source": "Sample Midterm 2 - Answers.md (片段 2/2)",
+      "source_file": "Sample Midterm 2 - Answers.md",
+      "source_page": null,
+      "source_snippet": "Looking at the signs of the coefficients on (MKT_t - RF_t)·DEF_{t-1} and (MKT_t - RF_t)·DIV_{t-1}, does the strategy look riskier than what the static CAPM implies? Explain."
+    },
+    {
+      "topic": "Amihud Illiquidity Measure and Investor Equilibrium",
+      "description": "The Amihud measure quantifies price impact per unit of trading volume. In equilibrium, larger investors (with higher trade sizes) will hold more liquid stocks (lower Amihud measure) to minimize trading costs. This model explains how trading costs influence expected returns and investor behavior. The Amihud (2002) measure of illiquidity is calculated as the ratio of the absolute daily return to the dollar trading volume, averaged over a firm-month or firm-year. It captures the price impact of tra",
+      "importance": 4,
+      "importance_reason": "This is a key application of liquidity risk and trading cost models in portfolio theory, often tested in advanced asset pricing and empirical finance exams.",
+      "source": "Sample Midterm 2 - Answers.md (片段 2/2)",
+      "source_file": "Sample Midterm 2 - Answers.md",
+      "source_page": null,
+      "source_snippet": "Consider an economy with three stocks A, B and C with the Amihud measures of 0.5%, 0.3%, and 0.2%, respectively, and three investors X, Y, and Z with the average trade size of $5 million, $2 million, and $1 million, respectively. What is the equilibrium, in which each investor holds only one stock?"
+    },
+    {
+      "topic": "CAPM and Alpha Calculation",
+      "description": "The Capital Asset Pricing Model (CAPM) is used to determine the expected return of a stock based on its beta and the market risk-free rate. Alpha is calculated as the difference between the stock's actual return and the return predicted by the CAPM. A negative alpha indicates underperformance relative to the CAPM prediction.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental concept in asset pricing and a core part of the exam content. Alpha and CAPM are essential for evaluating stock performance and are frequently tested.",
+      "source": "Midterm___Answers.pdf.md (片段 1/2)",
+      "source_file": "Midterm___Answers.pdf.md",
+      "source_page": null,
+      "source_snippet": "We can compute the alpha of the stock as\n$$\n\\alpha = (\\overline {{R e t}} - \\overline {{R F}}) - \\beta \\cdot (\\overline {{M K T}} - \\overline {{R F}}) = (1 6 \\% - 4 \\% ) - 1.6 \\cdot (1 2 \\% - 4 \\% ) = - 0.8 \\%\n$$"
+    },
+    {
+      "topic": "ICAPM and Macroeconomic Risk",
+      "description": "The Intertemporal Capital Asset Pricing Model (ICAPM) extends the CAPM by incorporating additional risk factors, such as macroeconomic variables like GDP growth. A stock that is positively correlated with future GDP growth may be considered riskier under ICAPM, leading to a higher required return than CAPM.",
+      "importance": 4,
+      "importance_reason": "This concept is crucial for understanding how macroeconomic factors influence asset pricing models and is a high-frequency exam topic.",
+      "source": "Midterm___Answers.pdf.md (片段 1/2)",
+      "source_file": "Midterm___Answers.pdf.md",
+      "source_page": null,
+      "source_snippet": "The positive correlation with future values of GDP growth that the stock loses just before the GDP growth drops and the economy as a whole dips, which makes it riskier than what the CAPM says. Hence, the stock also trails the ICAPM..."
+    },
+    {
+      "topic": "Liquidity Risk and Accrual Anomaly",
+      "description": "The accrual anomaly suggests that firms with low (high) accruals earn positive (negative) alphas. A potential explanation is liquidity risk: if low accrual firms are more liquid or less affected by market liquidity shocks, they can offer higher risk-adjusted returns.",
+      "importance": 4,
+      "importance_reason": "This is a commonly tested topic in empirical finance, linking accounting anomalies with market liquidity risk. Understanding its economic intuition is key for exams.",
+      "source": "Midterm___Answers.pdf.md (片段 1/2)",
+      "source_file": "Midterm___Answers.pdf.md",
+      "source_page": null,
+      "source_snippet": "We are looking for either high liquidity risk of low accruals firms (which have positive alphas) or low liquidity risk of high accruals firms... (b) fits the bill: it says that low accruals firms become illiquid when the market becomes illiquid."
+    },
+    {
+      "topic": "Equilibrium Return and Holding Costs",
+      "description": "In an equilibrium where investors with different trade sizes or investment horizons hold different stocks, expected returns must reflect the liquidity costs (e.g., bid-ask spreads or price impact) that each investor incurs. These costs are factored into the required return to prevent arbitrage opportunities.",
+      "importance": 4,
+      "importance_reason": "This concept is essential for understanding how liquidity and investor heterogeneity affect asset pricing and is a recurring exam theme.",
+      "source": "Midterm___Answers.pdf.md (片段 1/2)",
+      "source_file": "Midterm___Answers.pdf.md",
+      "source_page": null,
+      "source_snippet": "X, the investor with the shorter horizon, holds B, the stock with the smaller bid-ask spread, and receives no abnormal return. For that to happen, B has to make just enough to compensate him for his holding costs, 1.5% / 3 = 0.5% per year..."
+    },
+    {
+      "topic": "Portfolio Return Correlation and Business Cycle Risk",
+      "description": "The behavior of expected returns over the business cycle can be analyzed by regressing arbitrage portfolio returns on lagged and future values of industrial production growth. A negative coefficient in the regression on lagged values indicates that the portfolio is riskier during recessions, while a positive coefficient on future values suggests the portfolio reacts negatively to bad news before recessions, reflecting risk anticipation. This method helps determine whether returns are due to risk compensation or anomalies.",
+      "importance": 5,
+      "importance_reason": "This concept is central to understanding how asset returns reflect risk over the business cycle and is frequently tested in exams related to empirical asset pricing and investment strategies.",
+      "source": "Midterm___Answers.pdf.md (片段 2/2)",
+      "source_file": "Midterm___Answers.pdf.md",
+      "source_page": null,
+      "source_snippet": "When we look at the portfolio return correlation with lagged values of industrial production growth, we look at the behavior of expected returns (aka risk) over the business cycle... the coefficient should be negative... the coefficient should be positive."
+    },
+    {
+      "topic": "CAPM Alpha and Two-Factor Model Interpretation",
+      "description": "A positive and significant CAPM alpha indicates abnormal returns, but when the HML factor is added and the alpha becomes insignificant, it suggests that the return was compensation for exposure to value risk rather than a true anomaly. This distinction is critical in evaluating whether a strategy represents risk or mispricing.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in asset pricing, often tested in exams to assess understanding of factor models and the nature of alphas (risk vs. mispricing).",
+      "source": "Midterm___Answers.pdf.md (片段 2/2)",
+      "source_file": "Midterm___Answers.pdf.md",
+      "source_page": null,
+      "source_snippet": "If the value effect is risk... the CAPM alpha of the investment strategy is not abnormal return, but rather a fair compensation... If you believe that the value effect is mispricing... the 'investment anomaly' is just another reincarnation of the value effect."
+    },
+    {
+      "topic": "CAPM Formula and Expected Return",
+      "description": "The Capital Asset Pricing Model (CAPM) defines the expected return of an asset as the sum of the risk-free rate and the product of the asset's beta and the market risk premium. This formula provides a benchmark for evaluating whether an asset is fairly valued given its risk exposure. The CAPM equation is: E(Rₜ) = RFₜ + β·(E(MKTₜ) - RFₜ).",
+      "importance": 5,
+      "importance_reason": "This is a foundational model in finance and a high-frequency exam topic. It is essential for understanding asset pricing, risk-adjusted returns, and alpha estimation.",
+      "source": "01 alpha\\01 Alpha.md (片段 1/1)",
+      "source_file": "01 alpha\\01 Alpha.md",
+      "source_page": null,
+      "source_snippet": "E (R _ {t}) = R F _ {t} + \\beta \\cdot \\left(E (M K T _ {t}) - R F _ {t}\\right)"
+    },
+    {
+      "topic": "Definition and Interpretation of Alpha",
+      "description": "Alpha (α) is the intercept in a regression model that measures the abnormal return of an asset or portfolio after accounting for systematic risk (beta). According to CAPM, alpha should be zero, indicating that any deviation from this benchmark could represent mispricing or outperformance not explained by risk exposure. In empirical testing, alpha is often derived from regressions like Rₜ - RFₜ = α + β·(MKTₜ - RFₜ).",
+      "importance": 5,
+      "importance_reason": "Alpha is a core concept in empirical finance and a frequent exam topic. It is crucial for evaluating fund performance, arbitrage opportunities, and asset pricing anomalies.",
+      "source": "01 alpha\\01 Alpha.md (片段 1/1)",
+      "source_file": "01 alpha\\01 Alpha.md",
+      "source_page": null,
+      "source_snippet": "When you run the regression with real data, you estimate  R_{t} - RF_{t} = \\alpha + \\beta \\cdot (MKT_{t} - RF_{t})"
+    },
+    {
+      "topic": "Alpha in Zero-Investment Portfolios",
+      "description": "Zero-investment portfolios, such as HML or MOM, do not require capital outlay because they involve long and short positions that offset each other. Therefore, the risk-free rate should not be subtracted from the left-hand side of the regression equation when analyzing such portfolios. For example, in the regression HMLₜ = α + β·(MKTₜ - RFₜ), the intercept α represents the abnormal return without a risk-free component.",
+      "importance": 4,
+      "importance_reason": "This is a common source of confusion and error in exams. Understanding how to correctly model alpha for zero-investment portfolios is essential for empirical asset pricing questions.",
+      "source": "01 alpha\\01 Alpha.md (片段 1/1)",
+      "source_file": "01 alpha\\01 Alpha.md",
+      "source_page": null,
+      "source_snippet": "Notice no RF_{t} on the LHS - this is because HML is a zero-investment portfolio"
+    },
+    {
+      "topic": "Common Mistakes in Alpha Estimation",
+      "description": "Common mistakes in estimating alpha include incorrectly subtracting the risk-free rate from zero-investment portfolios, mismatching units (percentages vs. decimals), and misaligned data dates. For example, if the beta is unusually high or low, it may indicate a unit mismatch. Similarly, alpha should not be adjusted for zero-investment portfolios on the LHS, but should be on the RHS for market returns.",
+      "importance": 4,
+      "importance_reason": "This reflects frequent pitfalls in empirical finance assessments. Understanding these mistakes helps avoid errors in regression setup and interpretation, which are commonly tested in exams.",
+      "source": "01 alpha\\01 Alpha.md (片段 1/1)",
+      "source_file": "01 alpha\\01 Alpha.md",
+      "source_page": null,
+      "source_snippet": "First rule: deduct the risk-free rate (RF) from all assets you have to invest in, do not deduct it from the zero-investment portfolios"
+    },
+    {
+      "topic": "Expected Risk Premium and Marginal Utility of Consumption",
+      "description": "Investors demand a higher risk premium during economic downturns when consumption is low and marginal utility of consumption is high. In contrast, during economic expansions, both consumption and marginal utility are low, leading to a lower expected risk premium. This implies that expected market returns are higher in recessions and lower in expansions, reflecting the trade-off between risk and compensation.",
+      "importance": 5,
+      "importance_reason": "This is a foundational concept that explains the economic intuition behind market risk premium predictability and is central to understanding investor behavior and return expectations over the business cycle.",
+      "source": "02 Return Predictability\\02 Return Predictability.md (片段 1/1)",
+      "source_file": "02 Return Predictability\\02 Return Predictability.md",
+      "source_page": null,
+      "source_snippet": "We normally assume that investors require a high risk premium in bad times, when their consumption is low and their marginal utility of consumption is high; In bad times, investors are reluctant to bet their precious consumption and have to be compensated well for doing so; In good times, the marginal utility of consumption and the expected risk premium are low"
+    },
+    {
+      "topic": "Predictive Regression of Market Risk Premium",
+      "description": "A predictive regression model is used to estimate the expected market risk premium using lagged GDP growth or Treasury bill yields as predictors. The model assumes that under rational expectations and the Efficient Market Hypothesis (EMH), predictable returns reflect predictable risk premiums. The regression equation shows a negative relationship between the Treasury bill yield and the market risk premium, indicating that higher expected inflation (proxied by T-bill yield) leads to lower expected risk premiums.",
+      "importance": 5,
+      "importance_reason": "This is a core empirical method used in the course to quantify and predict market risk premiums, and it appears directly in exams and key examples.",
+      "source": "02 Return Predictability\\02 Return Predictability.md (片段 1/1)",
+      "source_file": "02 Return Predictability\\02 Return Predictability.md",
+      "source_page": null,
+      "source_snippet": "$$M K T _ {t} - R F _ {t} = \\gamma_ {0} + \\gamma_ {1} \\Delta G D P _ {t - 1}$$; Assume that real risk-free rate is constant. Then the nominal T-bill rate is the constant plus expected inflation; Inflation expectations from T-bills use all information available to the market"
+    },
+    {
+      "topic": "Treasury Bill Yield as a Proxy for Expected Inflation",
+      "description": "The Treasury bill (T-bill) yield is used as a proxy for expected inflation under the assumption that the real risk-free rate is constant. Therefore, changes in the nominal T-bill rate reflect changes in inflation expectations. This relationship is used to interpret how inflation affects the market risk premium and investor expectations.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency exam topic and key empirical proxy used in predictive models of market returns and risk premiums.",
+      "source": "02 Return Predictability\\02 Return Predictability.md (片段 1/1)",
+      "source_file": "02 Return Predictability\\02 Return Predictability.md",
+      "source_page": null,
+      "source_snippet": "Fama and Schwert (JFE 1977) use Treasury bill rate as a proxy for expected inflation; Assume that real risk-free rate is constant. Then the nominal T-bill rate is the constant plus expected inflation; What you will get from T-bill at time t is already known at time t-1, so we get inflation directly from the prices of Treasuries"
+    },
+    {
+      "topic": "Behavioral Finance vs. EMH Interpretation of Predictability",
+      "description": "The Efficient Market Hypothesis (EMH) interprets return predictability as a reflection of changing risk over time, while behavioral finance argues that predictability reflects market inefficiencies and investor sentiment. For example, in February 2011, EMH suggests that the high expected risk premium (16.2% annualized) reflects increased risk, whereas behavioral finance sees the excess return as a 'free lunch' opportunity due to mispricing.",
+      "importance": 4,
+      "importance_reason": "This is a key conceptual contrast in finance and appears frequently in exam discussions and essay questions regarding market efficiency and investor behavior.",
+      "source": "02 Return Predictability\\02 Return Predictability.md (片段 1/1)",
+      "source_file": "02 Return Predictability\\02 Return Predictability.md",
+      "source_page": null,
+      "source_snippet": "EMH says this predictability is all about risk; Behavioral people will tell you that the market is the market, and 6% per year, 0.5% per month risk premium is fair enough in February 2011; Then 0.85% = 1.35% - 0.5% is your 'free lunch' you can expect to get in March 2011"
+    },
+    {
+      "topic": "Conditional CAPM vs Static CAPM",
+      "description": "The Conditional CAPM differs from the Static CAPM in that it allows betas and risk premiums to vary over time, assuming the CAPM holds period-by-period rather than on average. In contrast, the Static CAPM assumes constant beta and market risk premium across all periods. This leads to the Conditional CAPM capturing the covariance between beta and market risk premium, which the Static CAPM ignores, potentially misestimating expected returns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding the limitations and improvements of asset pricing models. It is essential for interpreting empirical results and alpha estimation in multi-period settings, and appears repeatedly in both examples and theoretical explanation.",
+      "source": "03Conditional CAPM\\03 Conditional CAPM.md (片段 1/2)",
+      "source_file": "03Conditional CAPM\\03 Conditional CAPM.md",
+      "source_page": null,
+      "source_snippet": "CAPM is a one-period model, but the world is multi-period... Conditional CAPM lets betas and risk premiums vary across time... Static CAPM missed the covariance between the beta and the market risk premium"
+    },
+    {
+      "topic": "Covariance Between Beta and Market Risk Premium",
+      "description": "The expected excess return of a stock in the Conditional CAPM includes both the product of average beta and average market risk premium, and the covariance between beta and market risk premium. This covariance is ignored in the Static CAPM and is crucial for accurate pricing when both variables vary over time.",
+      "importance": 4,
+      "importance_reason": "This concept explains the key mathematical reason why the Static CAPM fails and the Conditional CAPM improves upon it. It is central to understanding alpha misestimation and appears in the derivation of expected returns.",
+      "source": "03Conditional CAPM\\03 Conditional CAPM.md (片段 1/2)",
+      "source_file": "03Conditional CAPM\\03 Conditional CAPM.md",
+      "source_page": null,
+      "source_snippet": "E \\left[ R _ {S} ^ {e} \\right] = E \\left[ \\beta_ {S} \\cdot R _ {M K T} ^ {e} \\right] = E \\left(\\beta_ {S}\\right) \\cdot E \\left(R _ {M K T} ^ {e}\\right) + C o v \\left(\\beta_ {S}, R _ {M K T} ^ {e}\\right)"
+    },
+    {
+      "topic": "Procyclical vs Countercyclical Beta",
+      "description": "Procyclical beta refers to a stock's beta increasing during economic booms and decreasing during recessions, while countercyclical beta behaves oppositely. Investors prefer procyclical beta stocks because they expose investors to less risk during bad times, leading to higher prices and lower expected returns for such stocks.",
+      "importance": 4,
+      "importance_reason": "This concept is critical for understanding how time-varying risk exposure affects asset pricing and investor behavior. It is directly tied to empirical testing and interpretation of CAPM anomalies.",
+      "source": "03Conditional CAPM\\03 Conditional CAPM.md (片段 1/2)",
+      "source_file": "03Conditional CAPM\\03 Conditional CAPM.md",
+      "source_page": null,
+      "source_snippet": "Higher risk during risky (bad) times is undesirable, hence investors would appreciate stocks with procyclical betas (low in recessions, high in booms)... Stocks with procyclical betas witness smaller increase in risk and smaller losses during recessions, which makes investors want them"
+    },
+    {
+      "topic": "Time-Varying Market Beta of HML and Its Implications",
+      "description": "The market beta of HML (value minus growth portfolio) is not constant and varies over time depending on macroeconomic variables such as dividend yield and expected inflation. Specifically, if dividend yield increases by 1% per year, HML's beta increases by 0.2, while a 1% increase in expected inflation decreases HML's beta by 0.07. Empirical results show that HML's beta is -0.41 during economic expansions and -0.135 during recessions. This countercyclicality of beta implies that hedging based on average beta (-0.27) leads to losses in both market conditions—either under-buying the market in expansions or over-buying it in recessions. This dynamic challenges traditional CAPM assumptions and has implications for dynamic hedging strategies.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how risk exposure (beta) changes with economic conditions and why traditional hedging may fail. It is central to discussions around Conditional CAPM and appears frequently in both theoretical and applied contexts in exams and solutions.",
+      "source": "03Conditional CAPM\\03 Conditional CAPM.md (片段 2/2)",
+      "source_file": "03Conditional CAPM\\03 Conditional CAPM.md",
+      "source_page": null,
+      "source_snippet": "If dividend yield increases by 1% per year, the market beta of HML increases by 0.2... Market beta of HML is -0.41 in expansion, -0.135 in recession... The countercyclicality of the beta means that if you hedge your position based on average beta, you lose no matter where the market goes."
+    },
+    {
+      "topic": "Intertemporal CAPM (ICAPM)",
+      "description": "ICAPM extends the traditional CAPM by incorporating consumption smoothing behavior of investors. It argues that assets that help investors transfer wealth from good to bad consumption periods should have higher prices and lower expected returns because they provide insurance against consumption risk. Unlike CAPM, ICAPM considers how investors adjust their portfolios over time in response to changing economic conditions.",
+      "importance": 5,
+      "importance_reason": "ICAPM is a core concept in asset pricing and is frequently tested in advanced finance courses. It builds upon CAPM and introduces time-varying risk considerations and consumption-based risk factors, which are essential for understanding modern financial theory.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 1/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "ICAPM acknowledges the consumption smoothing desire and argues that the assets that let investors transfer wealth from good to bad periods... should have higher prices and lower expected returns"
+    },
+    {
+      "topic": "Consumption CAPM",
+      "description": "Consumption CAPM defines risk in terms of losses during periods of declining aggregate consumption. It emphasizes that investors care more about losses when their marginal utility of consumption is high, typically during economic downturns. This model explains why expected market returns are higher in recessions, which traditional CAPM cannot account for.",
+      "importance": 4,
+      "importance_reason": "Consumption CAPM is a key theoretical foundation for ICAPM and is often compared with CAPM in exams. It is important for understanding the economic intuition behind risk premiums and how consumption patterns influence asset pricing.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 1/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "Consumption CAPM answers these two questions: We care because losses mean lower consumption... Consumption CAPM explains why expected market return is high in recessions, while CAPM cannot do it"
+    },
+    {
+      "topic": "Use of Proxies in ICAPM",
+      "description": "Since aggregate consumption is difficult to measure directly, proxies such as market volatility or interest rate changes (e.g., TB_t - TB_{t-1}) are used in ICAPM to represent consumption risk. These proxies must be correlated with consumption and must predict market returns to be valid ICAPM factors.",
+      "importance": 4,
+      "importance_reason": "This is a common exam topic and a practical issue in empirical finance. Understanding which variables are valid proxies and why is crucial for applying ICAPM in real-world asset pricing models.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 1/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "We have to use proxies that are correlated with consumption... only those variables that predict market return should be considered for an ICAPM factor"
+    },
+    {
+      "topic": " Tradable Factor Construction",
+      "description": "In ICAPM, when using non-traded factors, the alpha in time-series regressions does not necessarily equal zero. To assess the importance of a factor, it must be made tradable by constructing a factor-mimicking portfolio or an arbitrage portfolio (e.g., HML or similar), which can then be used to test whether it explains cross-sectional variation in returns.",
+      "importance": 4,
+      "importance_reason": "This is a frequently tested method in empirical asset pricing. It addresses a key limitation of non-traded factors and is essential for validating ICAPM models in practice.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 1/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "We have to make the factor Tradable... Create a factor-mimicking portfolio by projecting the innovation to the non-traded factor into the return space"
+    },
+    {
+      "topic": "Error-in-Variables Problem",
+      "description": "The error-in-variables problem arises when an explanatory variable in a regression is measured with noise or error, leading to attenuation bias—specifically, a downward bias in the estimated coefficient. This issue is more pronounced when using changes in variables like VIX, which may contain measurement errors or irrelevant components, affecting the reliability of regression results.",
+      "importance": 4,
+      "importance_reason": "This is a common econometric issue in asset pricing models and is directly tied to the interpretation of VIX-based regressions and their empirical validity.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 2/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "Error-in-variables problem means that if the explanatory variable is measured with noise, its coefficient will be biased downwards"
+    },
+    {
+      "topic": "Factor-Mimicking Portfolio",
+      "description": "A factor-mimicking portfolio is a constructed portfolio designed to correlate strongly with a particular risk factor, such as changes in the VIX. It allows researchers to translate abstract factors into tradable returns, enabling their use in asset pricing models like the ICAPM. This portfolio should ideally be a zero-investment portfolio and helps in isolating the risk premium associated with the factor. Liu (2004b) constructs a factor-mimicking portfolio based on high-minus-low illiquidity, si",
+      "importance": 5,
+      "importance_reason": "This concept is central to understanding how non-market risk factors (like volatility risk via VIX) can be incorporated into asset pricing models and tested empirically.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 2/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "What we need is a combination of stocks that would correlate well with VIX changes...we will use the return to the factor-mimicking portfolio as the second ICAPM factor along with the market factor"
+    },
+    {
+      "topic": "FVIX Portfolio and Volatility Risk",
+      "description": "FVIX is a factor-mimicking portfolio constructed to mimic daily changes in the VIX index. It is used to hedge against volatility risk and has a negative beta with the market. Empirical results show that FVIX loses money when volatility increases, and it has a significant negative correlation with the market, making it a useful proxy for volatility risk premium.",
+      "importance": 5,
+      "importance_reason": "FVIX is a key empirical construct in explaining the value effect through volatility risk and is directly tied to testing asset pricing anomalies and models.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 2/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "FVIX mimics daily changes in VIX...negative FVIX beta is volatility risk (losing money when volatility increases)"
+    },
+    {
+      "topic": "Alpha as a Tradable Strategy Return",
+      "description": "In asset pricing regressions, alpha represents the return from a trading strategy that is orthogonal to the market. When a factor like VIX change is included, alpha can be interpreted as the excess return from a zero-net-investment strategy involving value and growth stocks, and it must be tested for significance to determine whether abnormal returns exist after risk adjustment.",
+      "importance": 4,
+      "importance_reason": "Understanding alpha in this context is essential for interpreting empirical asset pricing results and evaluating whether a strategy generates abnormal returns.",
+      "source": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md (片段 2/2)",
+      "source_file": "04 Intertemporal CAPM\\04 Intertemporal CAPM.md",
+      "source_page": null,
+      "source_snippet": "Alpha is the return from performing those two operations...intercept alpha does not have to be zero"
+    },
+    {
+      "topic": "Efficient Market Hypothesis (EMH)",
+      "description": "The Efficient Market Hypothesis (EMH) posits that stock prices reflect all available information on average, making it impossible to consistently achieve abnormal returns. The intuition is that if a stock is undervalued, traders will buy it until the price adjusts to its true value. EMH implies that one cannot profit from information that is already known to the market. It is primarily concerned with the unpredictability of abnormal returns rather than total returns.",
+      "importance": 5,
+      "importance_reason": "EMH is the central theme of the course content and a fundamental concept in empirical finance. It is directly tied to exam expectations and appears repeatedly in both definitions and implications, indicating high-frequency testing potential.",
+      "source": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md (片段 1/2)",
+      "source_file": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md",
+      "source_page": null,
+      "source_snippet": "- EMH: Stock prices reflect all available information (on average, the price is right)\n- Intuition: If I know that the price of a stock is $10, but the stock is really worth $12, I will continue buying until the price becomes $12...\n- Implication: you cannot profit from what someone else already knows"
+    },
+    {
+      "topic": "Market Predictability and Trading Costs",
+      "description": "While market returns may show some predictability, such as in the autoregressive model where a 1% increase in today's market return predicts an 8.5 basis point increase tomorrow, this predictability is not economically significant enough to generate profits after accounting for trading costs like the bid-ask spread. The market is still considered efficient if the abnormal returns net of trading costs are not exploitable.",
+      "importance": 4,
+      "importance_reason": "This concept bridges EMH with practical trading constraints and is likely to appear in exam questions that test understanding of market efficiency boundaries. It also demonstrates how empirical models are used in testing EMH.",
+      "source": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md (片段 1/2)",
+      "source_file": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md",
+      "source_page": null,
+      "source_snippet": "$$\nM K T _ {t} = \\begin{array}{c} 0. 0 3 6 \\n (0. 0 0 9) \\end{array} + \\begin{array}{c} 0. 0 8 5 \\n (0. 0 0 9) \\end{array} M K T _ {t - 1} + \\epsilon_ {t}\n$$\n- The slope is significant: we can indeed predict tomorrow market return from today's return\n- Even abnormal returns can be predictable, but if this predictability is too small to beat trading costs, the market is still efficient"
+    },
+    {
+      "topic": "Role of Information Production",
+      "description": "Information production is essential for market efficiency. Investors who uncover new information and trade on it drive prices toward their fair value, earning profits in the process. However, if the market is already efficient, there is no incentive to produce new information. The Grossman-Stiglitz paradox suggests that the market cannot be perfectly efficient because some traders must profit from information to maintain efficiency.",
+      "importance": 4,
+      "importance_reason": "This is a key theoretical insight into how markets remain efficient and is tied to empirical behavior of informed traders. It is likely to be tested in questions about the sustainability of market efficiency and the role of informed trading.",
+      "source": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md (片段 1/2)",
+      "source_file": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md",
+      "source_page": null,
+      "source_snippet": "- Suppose we have analyzed the financial statements for Google and figured it should be selling for $700\n- But somebody has to produce information and get it into stock prices!\n- Grossman and Stiglitz (AER 1980) - market cannot be efficient in the sense that nobody makes profit from trading there"
+    },
+    {
+      "topic": "Bid-Ask Spread and Market-Maker Risk",
+      "description": "The bid-ask spread is created due to the role of market-makers who facilitate trading by holding inventory and facing two main risks: inventory risk (from price fluctuations) and adverse selection risk (from trading with informed traders). The spread compensates them for these risks. Spread widens with higher uncertainty, volatility, and tick size, and narrows with higher liquidity and stock price.",
+      "importance": 4,
+      "importance_reason": "Understanding bid-ask spreads and their determinants is crucial for empirical analysis of trading costs and market efficiency. It is a frequently discussed topic in both definitions and numerical examples, indicating its relevance for exams.",
+      "source": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md (片段 1/2)",
+      "source_file": "05 EMH and Trading Costs\\05 EMH and Trading Costs.md",
+      "source_page": null,
+      "source_snippet": "- The easy way to understand the bid-ask spread is to imagine that there is one market-maker who keeps an inventory of the stock and is obligated to make sure every buyer finds a seller...\n- Bid-ask spread increases with Uncertainty, Volatility, Tick size\n- Bid-ask spread decreases with Liquidity, Stock price"
+    },
+    {
+      "topic": "Liquidity and Expected Returns Relationship",
+      "description": "Liquidity of an individual stock can directly impact its expected returns. Investors demand higher returns for holding illiquid assets to compensate for higher trading costs. For example, if an asset has a round-trip trading cost of 1%, the pre-cost return must be higher than the risk-adjusted fair return to achieve the desired net return. This concept is foundational in understanding how liquidity is priced in asset returns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in the course and a central theme in empirical asset pricing. It appears repeatedly in both the lecture and examples, and is directly tied to exam content as emphasized in the paper by Amihud and Mendelson (1986), which is a cornerstone in liquidity research.",
+      "source": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md (片段 1/2)",
+      "source_file": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "source_page": null,
+      "source_snippet": "- Liquidity is special: the liquidity of an individual stock (characteristic) can impact the expected returns to this stock\n- If we are to hold A for a year, its return before trading cost should be 13%, so that we get the fair compensation for risk (12%) net of the trading costs"
+    },
+    {
+      "topic": "Clientèle Effects in Liquidity Preference",
+      "description": "Different investor groups (based on investment horizon) prefer different levels of stock liquidity. Short-term investors favor liquid stocks, while long-term investors can earn abnormal returns (rents) by holding illiquid stocks due to lower per-year trading costs over time. This leads to a segmentation of the market based on liquidity.",
+      "importance": 5,
+      "importance_reason": "This is a key theoretical and empirical concept in liquidity risk modeling. It is central to the Amihud and Mendelson (1986) model and has been used in later studies to explain cross-sectional differences in expected returns. It is also a high-frequency exam topic.",
+      "source": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md (片段 1/2)",
+      "source_file": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "source_page": null,
+      "source_snippet": "- Short-term investors have strong preferences for liquid stocks (low trading costs)\n- Long-term investors earn rents (positive abnormal returns) by holding illiquid stock with high expected returns"
+    },
+    {
+      "topic": "Bid-Ask Spread and Convex Return Relation",
+      "description": "The relationship between bid-ask spreads (as a proxy for liquidity) and expected returns is convex. That is, the difference in returns between very illiquid and moderately illiquid stocks is smaller than the difference between moderately illiquid and very liquid stocks. This implies that investors are not significantly penalized for holding very illiquid assets beyond a certain point.",
+      "importance": 4,
+      "importance_reason": "This is a key empirical finding from Amihud and Mendelson (1986) and is frequently referenced in exam questions to test understanding of how liquidity affects asset pricing differently than traditional risk factors.",
+      "source": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md (片段 1/2)",
+      "source_file": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "source_page": null,
+      "source_snippet": "- They claim that the spread-return relation should be convex: high and very high spread stocks command similar return, low spread stock command much smaller return\n- They divide all stock in seven groups based on past bid-ask spread and find that the least liquid stocks earn by 86 bp per month (10.5% per year) more than the most liquid stocks"
+    },
+    {
+      "topic": "Liquidity Beta and Risk Measurement",
+      "description": "Liquidity beta refers to a stock's return exposure to innovations in market-wide liquidity risk, as defined by Pastor and Stambaugh. It is derived from a four-factor model that includes the Fama-French factors and liquidity innovations. A high liquidity beta indicates greater sensitivity to market-wide illiquidity shocks, which represent risk because they lead to potential losses during market downturns or periods of reduced liquidity. This concept is central to understanding how liquidity affects asset pricing and portfolio risk.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in modern asset pricing models and directly relates to how liquidity risk is quantified and priced in financial markets. It frequently appears in exams and is essential for interpreting empirical asset pricing results.",
+      "source": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md (片段 2/2)",
+      "source_file": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "source_page": null,
+      "source_snippet": "Liquidity betas are the stock return exposure to innovation in the market-wide gamma. The exposures are estimated from the four-factor model with the Fama-French factors and the innovation."
+    },
+    {
+      "topic": "Acharya and Pedersen Liquidity CAPM",
+      "description": "Acharya and Pedersen extended the traditional CAPM to incorporate liquidity risk by introducing three additional betas related to trading costs and market liquidity. The model suggests that the expected return of an asset depends on its covariance with market returns and its sensitivity to liquidity changes, including trading costs during market declines and co-movements with market liquidity shocks. The four betas together represent different dimensions of liquidity risk, though empirical results show challenges in their joint significance when separated.",
+      "importance": 4,
+      "importance_reason": "This model is frequently referenced in advanced asset pricing exams and is important for understanding how liquidity affects expected returns. It builds on the CAPM and introduces multiple liquidity risk factors that are tested in empirical studies.",
+      "source": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md (片段 2/2)",
+      "source_file": "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+      "source_page": null,
+      "source_snippet": "Acharya and Pedersen (JFE 2005) complete the ICAPM-style analysis with the Amihud liquidity measure... They compute innovations to the market-wide average price impact. Then they do the real liquidity CAPM: they look at all three covariances that measure liquidity risk."
+    },
+    {
+      "topic": "Liquidity and Required Returns",
+      "description": "The key theoretical concept is that liquidity affects the required returns of capital assets. Illiquid assets are expected to offer higher returns to compensate investors for the difficulty in trading them and the associated risks such as transaction costs, inventory risk, and asymmetric information. This relationship is central to understanding how asset prices are determined in real-world markets.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in asset pricing theory and directly relates to how investors evaluate and price securities. Frequently appears in exams and is essential for understanding empirical asset pricing models.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 1/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "We review the theories on how liquidity affects the required returns of capital assets and the empirical studies that test these theories."
+    },
+    {
+      "topic": "Liquidity Risk Pricing",
+      "description": "Liquidity risk, or the risk that liquidity might suddenly deteriorate, is also priced into asset returns. Investors demand compensation for exposure to liquidity risk, which is distinct from traditional market risk. This implies that even if two assets have the same cash flows and market risk, the one with higher liquidity risk will have a lower price and higher expected return.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental concept that explains cross-sectional differences in asset returns and is linked to major financial puzzles like the equity premium puzzle. It is a high-frequency exam topic.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 1/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Because liquidity varies over time, risk-averse investors may require a compensation for being exposed to liquidity risk."
+    },
+    {
+      "topic": "Sources of Illiquidity",
+      "description": "Illiquidity can arise from multiple sources including exogenous transaction costs, inventory risk borne by market makers, asymmetric information between traders, and search frictions in over-the-counter markets. These factors increase the cost of trading and reduce the ease with which assets can be converted into cash.",
+      "importance": 4,
+      "importance_reason": "Understanding the causes of illiquidity is essential for analyzing asset pricing anomalies and market behavior. Frequently tested in exam questions related to market microstructure and asset pricing.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 1/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Liquidity is a complex concept... Another source of illiquidity is demand pressure and inventory risk... Also, trading a security may be costly because the traders on the other side may have private information."
+    },
+    {
+      "topic": "Empirical Effects of Liquidity on Asset Prices",
+      "description": "Empirical studies confirm that liquidity has statistically significant and economically meaningful effects on asset prices. For example, reductions in liquidity lead to lower prices and higher expected returns, and liquidity differences help explain yield spreads and pricing discrepancies between otherwise similar securities.",
+      "importance": 5,
+      "importance_reason": "This is a core exam point and a frequently tested empirical finding. It ties together theory with real-world applications and is essential for answering questions on asset pricing anomalies and market efficiency.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 1/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Empirical studies find the effects of liquidity on asset prices to be statistically significant and economically important, controlling for traditional risk measures and asset characteristics."
+    },
+    {
+      "topic": "Equilibrium Level of Disequilibrium",
+      "description": "This concept refers to the idea that in an illiquid market, there exists an equilibrium where the level of illiquidity is just enough to compensate liquidity providers for their role, without attracting excessive new entrants. It implies that market liquidity is not absolute but exists on a spectrum influenced by the behavior of market participants.",
+      "importance": 4,
+      "importance_reason": "This is a critical concept in understanding how liquidity is priced in markets and directly relates to models of market behavior under frictions, which are high-frequency topics in advanced asset pricing exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 2/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "There must be an 'equilibrium level of disequilibrium,' that is, an equilibrium level of illiquidity: the market must be illiquid enough to compensate liquidity providers (or information gatherers), and not so illiquid that it is profitable for new liquidity providers to enter."
+    },
+    {
+      "topic": "Failure of Stochastic Discount Factor in Illiquid Markets",
+      "description": "In standard asset pricing, the stochastic discount factor (SDF) aggregates utility functions and prices securities based on consumption. However, in illiquid markets, trading frictions prevent investors from being marginal on all securities, making it difficult or impossible to derive the SDF from consumption data, especially at the aggregate level.",
+      "importance": 5,
+      "importance_reason": "This is a foundational insight in asset pricing with frictions and is central to understanding the limitations of traditional models in real-world, illiquid markets. Frequently tested in exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 2/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "illiquidity implies that we cannot easily derive the stochastic discount factor from consumption, much less from aggregate consumption."
+    },
+    {
+      "topic": "Violation of Put-Call Parity Due to Liquidity Constraints",
+      "description": "Put-call parity is a key principle in derivatives pricing stating that the price of a call option and a put option with the same strike price and expiration should be in a specific relationship. However, when short selling is difficult or costly, this parity can be violated, leading to discrepancies in asset pricing and synthetic replication.",
+      "importance": 4,
+      "importance_reason": "This is an important empirical phenomenon and often appears in exams related to options and derivatives. It highlights the impact of liquidity on arbitrage mechanisms.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 2/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The put-call parity is sometimes violated when it is difficult to sell short, implying that a stock trades at a higher price than a synthetic stock created in the option market (Ofek et al., 2004)."
+    },
+    {
+      "topic": "Securities with Identical Cash Flows Trading at Different Prices",
+      "description": "In real-world markets, securities that offer identical cash flows often trade at different prices due to liquidity differences. Examples include on-the-run vs. off-the-run Treasuries, restricted vs. freely traded shares, and non-tradable vs. tradable options. This challenges the law of one price and standard asset pricing assumptions.",
+      "importance": 5,
+      "importance_reason": "This is a high-frequency exam topic and a key empirical finding that directly illustrates the breakdown of frictionless market theories. It shows the real-world relevance of liquidity effects in asset pricing.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 2/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Do real-world securities with the same cash flows have the same price? Perhaps surprisingly, the answer is 'no,' certainly not always... options that cannot be traded over their life trade at large discounts relative to identical tradable options (Brenner et al., 2001)."
+    },
+    {
+      "topic": "Equilibrium Price with Liquidity Shocks",
+      "description": "When investors are risk-neutral and face a probability μ of exiting the market due to liquidity shocks, the equilibrium price of a security is determined by discounting expected future dividends and adjusting for transaction costs and exit probability. The formula for equilibrium price is given by: P^i = (d̄^i - μC^i) / r^f, where d̄^i is the expected dividend, C^i is the transaction cost, and r^f is the risk-free rate.",
+      "importance": 5,
+      "importance_reason": "This formula (2.11) is a core result derived from the model and directly links liquidity shocks, transaction costs, and asset pricing. It is essential for understanding how liquidity affects equilibrium prices and is likely to be a frequent exam topic.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 3/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Proposition 1. When investors are risk neutral with identical trading intensity μ, the equilibrium price of any security i is given by P^i = (d̄^i - μC^i) / r^f."
+    },
+    {
+      "topic": "Required Return with Transaction Costs",
+      "description": "The required return on a security is the risk-free rate plus a term that accounts for the transaction cost per period, expressed as μ(C^i / P^i). This shows how investors demand higher returns when transaction costs are higher or when they trade more frequently.",
+      "importance": 4,
+      "importance_reason": "This equation (2.12) is a transformation of the equilibrium price formula and is crucial for analyzing how transaction costs influence returns. It is likely to appear in exams in the form of numerical or theoretical questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 3/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The required return on security i is: E(r^i) = r^f + μ(C^i / P^i)."
+    },
+    {
+      "topic": "Clientele Effects in Asset Pricing",
+      "description": "Investors with different liquidity shock probabilities (μ_j) sort into different assets based on their expected holding periods. Long-term investors tend to hold illiquid assets because they face transaction costs less frequently, while short-term investors prefer liquid assets. This sorting leads to differential pricing and liquidity premiums across asset classes.",
+      "importance": 5,
+      "importance_reason": "This is a key theoretical insight from Amihud and Mendelson (1986a) and is central to understanding how investor heterogeneity affects asset pricing. It is a core concept in asset pricing models with liquidity effects and likely to be a high-frequency exam topic.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 3/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "This idea is presented by Amihud and Mendelson (1986a), who study the effect of having different types of investors with different expected holding periods."
+    },
+    {
+      "topic": "Liquidity-Adjusted Return",
+      "description": "The liquidity-adjusted return is the expected return on a security adjusted for transaction costs and the investor's trading intensity μ^j. Investors choose assets that maximize this return, expressed as: max_i (d̄^i - μ^j C^i) / P^i. This captures the trade-off between dividend yield and transaction cost burden based on investor type.",
+      "importance": 4,
+      "importance_reason": "This expression (2.13) is a key optimization criterion used by investors in the model. It is likely to appear in exams in the form of comparative analysis or application to investor behavior.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 3/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The optimal trading strategy of agent j is to invest all his wealth in securities with the highest liquidity-adjusted return: max_i (d̄^i - μ^j C^i) / P^i."
+    },
+    {
+      "topic": "Liquidity-Adjusted CAPM (LCAPM)",
+      "description": "The Liquidity-Adjusted Capital Asset Pricing Model (LCAPM) extends the traditional CAPM by incorporating liquidity risk through three additional betas: β^L1, β^L2, and β^L3. These betas capture the covariance of an asset’s liquidity cost and return with the market’s liquidity cost and return, thereby adjusting expected gross returns to account for liquidity fluctuations.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in asset pricing under liquidity constraints and is directly tied to exam questions that test understanding of how liquidity affects expected returns and equilibrium pricing.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 4/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Acharya and Pedersen (2005) introduce three liquidity betas β^{L1}, β^{L2}, and β^{L3}, which complement the standard market beta β... Equation (2.31) shows the conditional expected gross return incorporating these liquidity betas."
+    },
+    {
+      "topic": "Three Liquidity Betas",
+      "description": "The liquidity-adjusted CAPM introduces three liquidity betas: β^L1 captures the covariance between the asset’s liquidity cost and the market’s liquidity cost; β^L2 captures the covariance between the asset’s return and the market’s liquidity cost; and β^L3 captures the covariance between the asset’s liquidity cost and the market’s return. These betas quantify how liquidity risk affects the expected return of an asset.",
+      "importance": 4,
+      "importance_reason": "Understanding the three liquidity betas is essential for grasping how liquidity risk is incorporated into the CAPM framework and is often tested in advanced asset pricing questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 4/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Acharya and Pedersen (2005) introduce three liquidity betas β^{L1}, β^{L2}, and β^{L3}... where β^L1 = cov(c^{i}_{t+1}, c^{M}_{t+1}) / var(...), β^L2 = cov(r^{i}_{t+1}, c^{M}_{t+1}) / var(...), and β^L3 = cov(c^{i}_{t+1}, r^{M}_{t+1}) / var(...)."
+    },
+    {
+      "topic": "Net Return CAPM Equivalence",
+      "description": "The model shows that equilibrium prices in an economy with liquidity frictions are equivalent to those in a frictionless economy where dividends are adjusted by liquidity costs. This equivalence arises because investors in the frictionless economy can achieve feasible returns in the original economy, and their optimization remains valid even with transaction costs.",
+      "importance": 4,
+      "importance_reason": "This concept is crucial for understanding how liquidity-adjusted returns relate to traditional CAPM and is a frequently referenced theoretical result in exam problems involving asset pricing with frictions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 4/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "We claim that the equilibrium prices in the original economy with frictions are the same as those of the imagined economy. This follows from two facts: (i) the net return on a long position is the same in both economies; and, (ii) all investors in the imagined economy hold a long position in the market portfolio..."
+    },
+    {
+      "topic": "No-Trade Region in Portfolio Rebalancing",
+      "description": "In the presence of trading costs, investors do not rebalance their portfolios continuously. Instead, they maintain a 'no-trade region' around the optimal asset ratio. Trading only occurs when the asset ratio moves outside this boundary, at which point the investor transacts to bring it back to the nearest edge of the region. The width of this region increases with trading costs, leading to less frequent trading and lower demand for risky assets.",
+      "importance": 5,
+      "importance_reason": "This concept is central to understanding how transaction costs affect portfolio management decisions and is a key result from Constantinides (1986), which is frequently referenced in asset pricing and trading cost literature.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 5/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The solution is setting a boundary around (above and below) the optimal asset ratio within which there is no trading, and when the ratio is outside of the boundary, the investor transacts to the nearest boundary."
+    },
+    {
+      "topic": "Liquidity Premium",
+      "description": "Liquidity premium refers to the additional return investors demand for holding less liquid assets. It compensates for the difficulty in converting such assets into cash without significant price concessions. The concept is central in understanding asset pricing in markets with frictions, such as those with high transaction costs or limited trading opportunities. The liquidity premium is defined as the decrease in the risky asset's expected return that would make an investor indifferent between t",
+      "importance": 5,
+      "importance_reason": "Frequently appears in asset pricing models and empirical studies; key to understanding market behavior under liquidity constraints; tested in exams related to financial economics and market microstructure.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Longstaff, F. A. (2001), 'Optimal portfolio choice and the valuation of illiquid securities'. Review of Financial Studies 14, 407-431."
+    },
+    {
+      "topic": "Endogenous Trading Horizons in General Equilibrium",
+      "description": "Vayanos (1998) introduces a general equilibrium model where trading horizons are determined endogenously. Investors trade risky assets with transaction costs over their deterministic lifespan, and their trading behavior is influenced by life-cycle risk aversion. This model shows that transaction costs can sometimes increase asset prices due to longer holding periods.",
+      "importance": 4,
+      "importance_reason": "This model expands on Constantinides by introducing equilibrium effects and life-cycle trading behavior, making it important for understanding dynamic asset allocation and equilibrium pricing with frictions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 5/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Vayanos (1998) constructs a general equilibrium model with endogenous trading horizons... transaction costs can actually raise an asset's price."
+    },
+    {
+      "topic": "Trading Intensity and Liquidity Premium",
+      "description": "Models that incorporate additional trading motives—such as high-frequency trading needs or time-varying investment opportunities—predict larger liquidity premiums. These models (e.g., Lo et al. 2004, Jang et al. 2005) extend the basic framework by introducing more realistic trading behaviors and market dynamics.",
+      "importance": 3,
+      "importance_reason": "This concept is essential for understanding the limitations of earlier models and how modern extensions improve the explanatory power of liquidity effects in asset markets.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 5/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "These motivations for trading in..."
+    },
+    {
+      "topic": "Information Asymmetry and Bid-Ask Spread",
+      "description": "The bid-ask spread exists due to the risk of trading with informed traders. Market makers are willing to trade because of the possibility that the counterparty is uninformed, allowing them to profit by selling at the ask or buying at the bid. However, in a competitive market, market makers earn zero profit, meaning that informed traders profit at the expense of uninformed ones. The spread increases with the probability of informed trading and reflects market illiquidity.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how asymmetric information affects market liquidity and pricing. It is central to models analyzing bid-ask spreads and is frequently tested in exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 6/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The quoted bid price reflects the risk that a seller is informed of bad news, and the ask reflects the risk that a buyer is informed of good news... Since in a competitive market the market maker ends up with zero profit, the gains of the informed traders are at the expense of the uninformed trade."
+    },
+    {
+      "topic": "Kyle Model of Market Impact (λ)",
+      "description": "In Kyle (1985), the market maker sets the price based on aggregate order flow. The parameter λ represents the market impact per unit of order flow and is a measure of illiquidity. λ increases with the variance of the asset value (v), indicating greater information asymmetry, and decreases with the variance of uninformed order flow (u), which provides camouflage for informed traders.",
+      "importance": 5,
+      "importance_reason": "The Kyle model is foundational in asset pricing and market microstructure, and λ (market impact) is a key formula often tested in exams to assess understanding of liquidity and information effects.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 6/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Kyle shows that there exists a linear equilibrium in which the market maker sets the price as $$ p _ {t} = E \\left(v \\mid \\mathfrak {S} _ {t}, u _ {t} + x _ {t}\\right) = p _ {t - 1} + \\lambda_ {t} \\left(u _ {t} + x _ {t}\\right), $$ where λ describes the price change per unit of net order flow... λ increases in the variance about v... and it declines in the variance of u."
+    },
+    {
+      "topic": "Inventory Risk and Market Makers",
+      "description": "Market makers provide liquidity by holding inventories of securities, but they face inventory risk—the risk of price changes between the time they buy and sell. Models by Amihud and Mendelson (1980) and Ho and Stoll (1981) show that market makers adjust bid-ask quotes based on their inventory levels to manage risk and avoid ruin. This adjustment contributes to illiquidity.",
+      "importance": 4,
+      "importance_reason": "This concept is crucial for understanding the supply-side behavior of market makers and how it affects liquidity and pricing. Frequently appears in exam questions related to liquidity models.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 6/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "A fundamental source of illiquidity is the fragmentation of investors and markets... Amihud and Mendelson assume a market maker who constrains his inventory position... Ho and Stoll assume a risk-averse market maker who manages inventory to reduce his risk exposure."
+    },
+    {
+      "topic": "Endogenous Illiquidity in Asset Pricing",
+      "description": "Endogenous illiquidity arises from internal market frictions such as asymmetric information or inventory risk. Section 2.8 discusses how these liquidity effects can be integrated into asset pricing models to determine how liquidity costs affect required returns and equilibrium prices, offering deeper insights than models with exogenous liquidity costs.",
+      "importance": 4,
+      "importance_reason": "This topic connects liquidity frictions with asset pricing, a key area in advanced finance exams. Understanding how liquidity is determined within a model rather than assumed exogenously is important for comprehensive exam preparation.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 6/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "We are interested in determining how these frictions ultimately affect asset prices. One approach is to take the endogenously derived liquidity costs and 'plug them into' the asset pricing models with exogenous trading costs... we can sometimes get additional insights by considering asset pricing directly in a model of endogenous illiquidity."
+    },
+    {
+      "topic": "Liquidity Premium and Illiquidity Cost",
+      "description": "The liquidity premium represents the additional return investors demand for holding an illiquid asset. In Longstaff's (1995) model, the value of liquidity is likened to an option on the maximum value of a security, with the strike price being the value of the security when the restriction period ends. This provides an upper bound on the cost of illiquidity, which is the opportunity cost of not being able to optimally time the sale of an asset. The model shows that with a 2-year restriction and 30% volatility, the liquidity discount can reach up to 38.6% of the asset value.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in liquidity-based asset pricing models and directly relates to empirical studies and exam questions on the magnitude of liquidity effects. It provides a theoretical foundation for understanding how liquidity constraints affect asset prices and returns.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 7/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Longstaff (1995) considers the liquidity premium in a partial equilibrium model... the price discount in this model is the upper bound on the cost of illiquidity."
+    },
+    {
+      "topic": "Liquidity Effect and Asset Pricing",
+      "description": "Empirical studies test the liquidity effect by comparing prices or expected returns of assets with identical or controlled cash flows but different liquidity measures. If two assets have the same cash flow but different liquidity (L1 > L2), standard asset pricing theory predicts P1 = P2, while liquidity-based pricing predicts P1 > P2. This forms the basis for testing whether liquidity has a significant effect on asset pricing. This keypoint explores how liquidity affects asset prices, particular",
+      "importance": 5,
+      "importance_reason": "This is a fundamental empirical question in asset pricing and a high-frequency exam topic. It directly addresses whether liquidity affects prices independently of cash flows, which is central to the course.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 7/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "To test the existence of a liquidity effect, the researcher identifies two assets 1 and 2 with cash flows d1 and d2 and different measures of liquidity L1 and L2... the null hypothesis P1 = P2, whereas liquidity-based asset pricing implies the alternative hypothesis P1 > P2."
+    },
+    {
+      "topic": "Liquidity Risk vs. Liquidity Level",
+      "description": "Empirical studies distinguish between the level of liquidity and liquidity risk. While the former refers to the current degree of marketability or tradability of an asset, the latter refers to the uncertainty or variability in liquidity over time. Liquidity risk has been shown to have a significant effect on asset pricing, often requiring separate modeling and analysis.",
+      "importance": 4,
+      "importance_reason": "This distinction is crucial for advanced understanding and often appears in exam questions that require students to differentiate between static liquidity effects and dynamic liquidity risk in asset pricing models.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 7/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "We distinguish between cross-section tests and studies of the effect of changes in liquidity over time, examine separately studies that focus on the effects of liquidity risk (rather than the level of liquidity) on asset prices..."
+    },
+    {
+      "topic": "Challenges in Measuring Liquidity",
+      "description": "Selecting an appropriate liquidity measure (L) is a central empirical challenge. Liquidity can be measured using bid-ask spreads, turnover ratios, price impact, or market depth. Each has its advantages and drawbacks, and the choice affects the validity and interpretation of empirical results. Researchers often use multiple proxies to ensure robustness.",
+      "importance": 4,
+      "importance_reason": "Understanding how liquidity is measured is essential for interpreting empirical results and answering exam questions on liquidity effects in asset pricing. This is a frequently tested area in applied empirical finance.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 7/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "We consider first the challenges of choosing a liquidity measure L."
+    },
+    {
+      "topic": "Bid-Ask Spread and Stock Return Relationship",
+      "description": "Amihud and Mendelson (1986b) estimate a model where stock returns are influenced by systematic risk (beta) and relative bid-ask spreads. A stock with a 1.5% spread earns about 0.087% lower monthly return than a stock with a 1% spread, holding beta constant. This corresponds to roughly 1% annual return difference. The relationship indicates that higher bid-ask spreads are associated with lower returns, reflecting liquidity costs.",
+      "importance": 5,
+      "importance_reason": "This is a core empirical finding in asset pricing literature, directly linking liquidity (as measured by bid-ask spreads) to expected returns. It frequently appears in exams and is a fundamental concept in understanding liquidity risk premiums.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 8/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "By this estimation, the return difference between a stock with a 1.5% spread and a stock with 1% spread (and the same β) is 0.087% per month or roughly 1% per year."
+    },
+    {
+      "topic": "Effect of Unsystematic Risk in Return Models",
+      "description": "Amihud and Mendelson (1989) extended their model to include unsystematic risk (standard deviation of market-model residuals). Their findings show that while the bid-ask spread effect remains positive and significant, the effect of unsystematic risk on returns is generally negative but statistically insignificant, suggesting that diversifiable risk does not strongly influence expected returns in the presence of liquidity considerations.",
+      "importance": 4,
+      "importance_reason": "This point is important for understanding how different types of risk (systematic vs unsystematic) affect returns, especially in the context of liquidity. It often appears in exam questions that test knowledge of risk factors and their significance.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 8/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The results show that while the bid-ask spread effect remains positive and significant, the effect of the unsystematic risk is generally negative but insignificantly different from zero."
+    },
+    {
+      "topic": "Liquidity and Seasonality: January Effect",
+      "description": "Eleswarapu (1997) finds that the liquidity effect (as measured by bid-ask spreads) is consistently significant across both January and non-January months. This contrasts with earlier findings by Eleswarapu and Reinganum (1993), who found that liquidity only significantly affected returns in January. The January Effect refers to the tendency of small-firm stocks to outperform the market only during January.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency exam topic that explores the interaction between liquidity and seasonal patterns in stock returns. Understanding the January Effect and its implications for liquidity premiums is crucial for empirical asset pricing questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 8/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The liquidity effect in non-January months is inconsistent with an earlier finding by Eleswarapu and Reinganum (1993) that liquidity affects stock returns only in January... Brennan and Subrahmanyam estimate λ by regressing the trade-by-trade price change, Δp_t, on the signed transaction size, q_t."
+    },
+    {
+      "topic": "Kyle's Lambda as a Measure of Illiquidity",
+      "description": "Kyle's lambda (λ) is a measure of illiquidity that captures the price impact of a unit of trade size. It is estimated by regressing price changes on signed transaction sizes, with higher values indicating lower liquidity. Brennan and Subrahmanyam (1996) use this measure along with fixed trading costs (ψ/P) to estimate the marginal cost of trading (C_q or C_n), which are then used in cross-sectional regressions of stock returns.",
+      "importance": 4,
+      "importance_reason": "Kyle’s lambda is a key concept in empirical finance and frequently appears in advanced asset pricing and liquidity-related exam questions. It provides a microstructure-based foundation for measuring and understanding illiquidity.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 8/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Brennan and Subrahmanyam estimate λ by regressing the trade-by-trade price change, Δp_t, on the signed transaction size, q_t. The slope coefficient from this regression is Kyle’s λ, which measures the price impact of a unit of trade size, being larger for less liquid stock."
+    },
+    {
+      "topic": "Liquidity Effect and Turnover",
+      "description": "Turnover is used as a proxy for liquidity in financial studies. Research indicates that high turnover generally correlates with lower stock returns, suggesting a liquidity effect. However, without controlling for variables like firm size and risk, the effect may be confounded. Nguyen et al. (2005) find that turnover has a negative and significant coefficient when controlling for beta, size, book-to-market ratio, and co-skewness, supporting the liquidity effect.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in asset pricing models and is frequently examined in finance exams. Understanding the relationship between turnover and returns, especially with proper controls, is essential for interpreting liquidity effects in empirical studies.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 9/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Nguyen et al. perform a cross-section analysis using individual stocks... they find that turnover has a negative and significant coefficient, which is consistent with the liquidity effect."
+    },
+    {
+      "topic": "ILLIQ (Amihud's Illiquidity Measure)",
+      "description": "Amihud (2002) proposes a measure of illiquidity defined as $ILLIQ = |R| / (P * VOL)$, where $R$ is daily return, $P$ is closing price, and $VOL$ is daily trading volume. This measure reflects the price impact of trading volume and is used in cross-sectional regressions to assess the effect of illiquidity on stock returns. The results show that $ILLIQ$ has a positive and significant effect on returns, consistent with liquidity risk theory.",
+      "importance": 5,
+      "importance_reason": "Amihud's illiquidity measure is widely used in empirical finance and is a standard tool in asset pricing research. It is crucial for understanding liquidity risk and is often tested in advanced finance exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 9/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Amihud (2002) examines the effect of illiquidity... $ILLIQ = |R| / (P * VOL)$... The results show that $ILLIQ$ has a positive and significant effect on stock returns."
+    },
+    {
+      "topic": "Confounding Variables in Liquidity Studies",
+      "description": "Several studies, including Rouwenhorst (1999), highlight that liquidity effects can be confounded with other variables such as firm size and beta. Without proper controls, the observed relationship between liquidity and returns may not be accurate, leading to biased conclusions.",
+      "importance": 4,
+      "importance_reason": "This is a common pitfall in empirical finance and is often tested in exams to assess understanding of methodology and interpretation in liquidity research.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 9/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Absent controls for size and risk in analyzing the return-turnover relationship... there may be a confounding of the turnover effect with that of size and risk."
+    },
+    {
+      "topic": "Amortized Spread and Expected Returns",
+      "description": "Chalmers and Kadlec (1998) use amortized spread, defined as the product of the effective relative spread and turnover, to study the impact of transaction costs on returns. They find a positive and large coefficient (7.9) for amortized spread in a regression model, which exceeds predictions from simple liquidity theory, suggesting omitted variables or additional liquidity risk factors.",
+      "importance": 4,
+      "importance_reason": "This concept is important for understanding how transaction costs influence expected returns and how empirical results may deviate from theoretical predictions, a key point in advanced finance assessments.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 9/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Chalmers and Kadlec (1998) consider the effect of amortized spread... they find that the coefficient on amortized spread is positive and large, 7.9, and statistically significant."
+    },
+    {
+      "topic": "Liquidity and Asset Prices Relationship",
+      "description": "The theory that liquidity affects asset prices implies that a decline in perceived liquidity should lead to a decline in stock prices, and vice versa. This was tested during the 1987 stock market crash, where stocks with the greatest drop in liquidity (measured by bid-ask spreads and depth) experienced the largest price declines. Similarly, stocks whose liquidity recovered faster also saw stronger price recoveries.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in asset pricing theory and has been repeatedly tested in empirical studies, including major market events like the 1987 crash. It is fundamental for understanding how market structure and liquidity influence financial asset valuation.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 10/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Liquidity asset pricing theory implies that a downward revision in liquidity should cause a decline in stock prices. Amihud, Mendelson and Wood test this hypothesis as follows. They regress cross-sectionally the risk-adjusted returns of NYSE stocks that are included in the S&P 500 index on October 19, 1987 on the change in liquidity during that day, measured by the average daily bid-ask spread or by depth (the number of shares that could be traded at the quoted bid and ask prices). The results show that stocks that suffered the greatest decline in liquidity on that day also suffered the greatest decline in prices."
+    },
+    {
+      "topic": "Effect of Trading System Changes on Liquidity and Prices",
+      "description": "When stocks were transferred from a once-a-day call auction to a semi-continuous trading system on the Tel Aviv Stock Exchange, they experienced increased liquidity, higher trading volume, and price increases of 5–6%. The price increases were more pronounced for stocks that experienced larger liquidity improvements, and even related stocks (e.g., with different voting rights) saw price gains due to liquidity externalities.",
+      "importance": 4,
+      "importance_reason": "This provides empirical validation of the liquidity theory of asset pricing and illustrates how changes in market structure can directly impact stock prices. It is a high-frequency exam topic in asset pricing and market microstructure.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 10/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Stocks that were transferred to the semi-continuous trading system obviously enjoyed greater liquidity in general... their trading volume increased significantly... and their liquidity ratio declined. Consequently, the prices of the transferred stocks rose by at least 5%–6% and remained high. Cross-sectionally, the price increase was greater for stocks that enjoyed a greater increase in liquidity."
+    },
+    {
+      "topic": "Liquidity Externality in Trading Systems",
+      "description": "Liquidity improvements in certain stocks can have positive spillover effects on closely-related stocks (e.g., shares of the same company with different voting rights). These non-transferred but related stocks also experienced price increases, albeit smaller, when the primary stocks were moved to a more liquid trading system.",
+      "importance": 3,
+      "importance_reason": "This concept demonstrates indirect effects of liquidity changes and is important for understanding market dynamics and externalities in asset pricing, though less frequently tested than core theories.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 10/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Moreover, there was a liquidity externality: The prices of closely-related stocks (stocks of the same company with different voting rights) that were not transferred also rose, although by less."
+    },
+    {
+      "topic": "Impact of Forward Trading Facility (Badla) on Liquidity and Prices",
+      "description": "The abolition and reinstatement of the Badla system on the Bombay Stock Exchange provided a controlled setting to observe the effects of liquidity changes. When Badla was abolished in 1993, liquidity declined and stock prices dropped by about 15% compared to non-Badla stocks. Upon reinstatement in 1994, prices rebounded, confirming the liquidity-based pricing mechanism.",
+      "importance": 4,
+      "importance_reason": "This is a well-documented example of how regulatory changes in trading mechanisms affect liquidity and asset prices. It is commonly referenced in exams to illustrate real-world applications of liquidity theory.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 10/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Berkman and Eleswarapu (1998) examined the effect of changes in the forward trading facility (Badla) for 91 stocks on the Bombay Stock Exchange – the abolition on 12/1993 and the reinstatement on 3/1994... When it was abolished, the liquidity of the affected stocks declined sharply and their price fell by about 15% compared to the price of non-Badla stocks."
+    },
+    {
+      "topic": "Time-Series Liquidity-Expected Return Relationship",
+      "description": "Bekaert et al. (2005) examine the relationship between liquidity and expected returns using data from 19 emerging markets and the U.S. They use a VAR analysis and a measure of illiquidity based on the frequency of zero-return days, which reflects transaction costs and trading likelihood. The findings indicate that liquidity negatively predicts returns, while unexpected liquidity positively correlates with contemporaneous returns. These results align with Amihud (2002) and are consistent with theoretical expectations.",
+      "importance": 5,
+      "importance_reason": "This is a core empirical finding in asset pricing literature, directly linking liquidity to expected returns, a frequent topic in advanced financial economics exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 11/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The time-series liquidity-expected return relationship is further studied by Bekaert et al. (2005) using data from 19 emerging markets and the U.S. ... The results show that (a) liquidity predicts return (monthly data) with the effect being negative, and (b) unexpected liquidity is positively correlated with contemporaneous returns."
+    },
+    {
+      "topic": "Pricing of Systematic Liquidity Risk",
+      "description": "Pastor and Stambaugh (2003) propose that stocks with higher sensitivity to market-wide liquidity shocks (measured by liquidity beta, β^L) should earn higher returns. They estimate β^L by regressing stock returns on a market liquidity factor derived from residuals of an AR1 model of liquidity changes. They find a positive relationship between expected returns and liquidity beta, indicating that liquidity risk is priced in the cross-section of stock returns.",
+      "importance": 5,
+      "importance_reason": "This is a cornerstone model in liquidity risk pricing and is often tested in finance exams, especially in asset pricing and risk factor modeling contexts.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 11/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Pastor and Stambaugh sort stocks in each year by their predicted β^L ... and find that these portfolio alphas are increasing over the 10 beta portfolios ranked from low to high β^L. That is, the expected return is an increasing function of the stock’s sensitivity to market-wide liquidity shocks, which means that liquidity risk is priced."
+    },
+    {
+      "topic": "Liquidity Beta (β^L) Estimation Method",
+      "description": "Pastor and Stambaugh (2003) estimate liquidity risk exposure using a regression model that includes signed lagged dollar volume. The coefficient γ_j captures liquidity effects, with more negative values indicating less liquid stocks. The market liquidity factor L_t is derived from the residuals of an AR1 model of γ_t changes. Stock exposure to liquidity risk is then measured by regressing stock returns on L_t, alongside the Fama-French factors.",
+      "importance": 4,
+      "importance_reason": "This method is frequently referenced in empirical finance and is important for understanding how liquidity risk is quantified and incorporated into asset pricing models.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 11/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Pastor and Stambaugh perform monthly estimations of the following model for each stock j: r_{j,d+1}^e = θ_j + φ_j r_d + γ_j sign(r_{j,d}^e)·v_{j,d} + e_{j,d+1}. ... The liquidity measure L_t is the residual from an AR1 model of Δγ_t = γ_t - γ_{t-1} ... the stock's exposure to liquidity shocks is β^L."
+    },
+    {
+      "topic": "Acharya and Pedersen's Liquidity Pricing Model",
+      "description": "Acharya and Pedersen (2005) develop a model where expected excess returns depend on both expected illiquidity and four systematic risk components: traditional beta and three liquidity-related betas (β^L1, β^L2, β^L3). The model is: E(r_{t+1}^i) = r^f + κE(c_{t+1}^i) + λ(β + β^L1 - β^L2 - β^L3). This model generalizes the pricing of liquidity and liquidity risk, incorporating both level and sensitivity to liquidity shocks.",
+      "importance": 4,
+      "importance_reason": "This model is a key theoretical framework in liquidity risk pricing and appears in advanced finance exams, particularly when discussing conditional and unconditional asset pricing models.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 11/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Acharya and Pedersen (2005) study a broad model of pricing liquidity level and liquidity risk. Expected excess return over the risk-free rate, E(r_{j,t+1}^e), is a function of both the expected illiquidity, E(c_{j,t+1}), and four systematic risk variables ... E(r_{t+1}^i) = r^f + κE(c_{t+1}^i) + λ(β + β^L1 - β^L2 - β^L3)"
+    },
+    {
+      "topic": "Liquidity Factor and Risk Premium",
+      "description": "The liquidity factor, which captures the permanent price impact, is found to have a positive risk premium in asset pricing models. This is determined through a cross-sectional regression of monthly returns on factor loadings, including the liquidity factor (L) and the Fama-French three factors. The results support that liquidity risk is a significant determinant of expected stock returns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in asset pricing, directly tied to the pricing of liquidity risk, and appears frequently in exams. It builds on Kyle’s lambda and integrates it with modern asset pricing frameworks.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 12/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The results show that the liquidity factor is priced, with a positive risk premium, whereas the other factors are not. This supports the importance of liquidity risk in asset pricing."
+    },
+    {
+      "topic": "Liquidity Beta and Regime-Switching Models",
+      "description": "Fujimoto and Watanabe (2005) estimate liquidity beta using a regime-switching model applied to a liquidity index derived from the residuals of an AR(2) model of modified ILLIQ. They find that liquidity betas are higher in states where investors expect liquidity needs, such as during periods of high turnover. This beta is analogous to Pastor and Stambaugh (2003) and Acharya and Pedersen’s (2005) beta^{L2}.",
+      "importance": 4,
+      "importance_reason": "This method of measuring liquidity beta under different market regimes is a key technique in empirical finance and has appeared in several advanced exam questions related to liquidity risk modeling.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 12/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "They estimate the liquidity beta from a regression of portfolio return on a liquidity index... by a regime-switching model... they find that in states of high liquidity betas, there is a greater effect on stock returns of the level of liquidity and of the price of liquidity risk."
+    },
+    {
+      "topic": "PIN (Probability of Informed Trading)",
+      "description": "PIN is a measure of information risk derived from the imbalance between buy and sell trades, estimated using a structural model and maximum likelihood methods. It is negatively correlated with firm size and positively correlated with bid-ask spreads, indicating that asymmetric information risk is priced in asset returns.",
+      "importance": 4,
+      "importance_reason": "PIN is a key empirical measure in the study of asymmetric information and is often tested in exams related to microstructure and asset pricing anomalies.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 12/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "They test this hypothesis on the cross-section of asset returns, employing their measure PIN... They indeed find that across stocks, PIN is negatively correlated with size and positively correlated with the bid-ask spread."
+    },
+    {
+      "topic": "Liquidity Effect on Yield Differentials",
+      "description": "The liquidity of U.S. Treasury securities significantly affects their yield to maturity. Treasury bills, being more liquid than notes with the same maturity, tend to have lower yields. This difference is attributed to transaction costs such as brokerage fees and bid-ask spreads, which are higher for less liquid instruments like off-the-run notes.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how liquidity influences bond pricing and yield differentials, and it is directly supported by empirical studies (Amihud and Mendelson, 1991a) frequently cited in exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 13/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "This gives rise to the hypothesis that bills should have a lower yield to maturity than notes with the same time to maturity... The average bid-ask spread on the notes and bills are, respectively, 3 basis points and 0.78 basis point."
+    },
+    {
+      "topic": "Amihud and Mendelson (1991a) Empirical Findings",
+      "description": "Amihud and Mendelson (1991a) found that the average yield on Treasury notes was 6.52% compared to 6.09% for bills, a significant 43 basis point difference. This yield premium is attributed to the illiquidity of notes relative to bills. The study used 489 matched pairs over 37 trading days in 1987.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental empirical result in the literature on bond liquidity and yield premiums, often tested in exams due to its foundational nature.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 13/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "The average note yield is 6.52% compared to 6.09% for the bills, a difference of 43 basis points, which is significant both economically and statistically."
+    },
+    {
+      "topic": "Arbitrage and Transaction Costs",
+      "description": "Although the yield differential between notes and bills may suggest a riskless arbitrage opportunity, transaction costs such as bid-ask spreads, brokerage fees, and short-selling costs eliminate any potential profit. This shows that arbitrage is bounded by liquidity and transaction costs.",
+      "importance": 4,
+      "importance_reason": "This concept is crucial for understanding market efficiency and the limits of arbitrage, which are high-frequency exam topics in fixed income and asset pricing.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 13/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "However, this exercise ignores the very essence of the illiquidity: Arbitrage trades also entail transaction costs... the apparent arbitrage profit disappears (it is insignificantly different from zero)."
+    },
+    {
+      "topic": "Kamara (1994) Yield Determinants",
+      "description": "Kamara (1994) identifies that the yield differential between notes and bills is influenced by liquidity risk, tax treatment, and dealer inventories. He measures liquidity risk as the product of rate volatility and turnover ratio, and finds an average bid yield differential of 34 basis points, which is statistically and economically significant.",
+      "importance": 4,
+      "importance_reason": "This is a frequently tested extension of the liquidity premium theory, combining empirical finance with market microstructure, and is commonly referenced in exam questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 13/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "He posits that the notes-bills yield differential reflects differences in liquidity, tax treatment and dealer inventories... Kamara finds an average notes-bills bid yield differential of 34 basis points, a statistically and economically significant difference."
+    },
+    {
+      "topic": "Liquidity Effect on Bond Yields",
+      "description": "The liquidity effect refers to how the ease of buying or selling a bond (liquidity) influences its yield. More liquid bonds tend to have lower yields because investors are willing to accept lower returns for easier tradability. Studies such as Elton and Green (1998) and Longstaff (2004) show that less liquid bonds, such as off-the-run Treasuries or Refcorp bonds, command a yield premium, which reflects the compensation investors demand for holding less liquid securities.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in fixed income markets and frequently appears in exams. It connects liquidity, yield spreads, and market conditions, and is essential for understanding bond pricing and risk premiums.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 14/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Elton and Green fit a cubic spline price model to the after tax term structure, using the variable log(volume) to represent the bond's liquidity... Longstaff compares the yield differential between zero-coupon Treasury and Refcorp bonds and finds that the average yield premium on Refcorp bonds ranges from 10 to 16 basis points..."
+    },
+    {
+      "topic": "Corporate Bond Yield Spread",
+      "description": "The yield spread on corporate bonds is the excess yield over Treasury bonds of the same maturity. This spread is traditionally thought to reflect default risk, but empirical studies suggest it also includes a liquidity premium, especially for lower-rated bonds which are both riskier and less liquid.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency exam topic in corporate finance and fixed income valuation. It tests understanding of yield spreads, liquidity, and credit risk interplay.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 14/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "It has been suggested that the yield spread on corporate bonds – the yield in excess of the yield on Treasury bonds of the same maturity – is 'too high' to be explained by default risk alone... The results show a significant positive effect of illiquidity on the yield spread..."
+    },
+    {
+      "topic": "Liquidity Premium Estimation Using Refcorp Bonds",
+      "description": "Longstaff (2004) uses Refcorp bonds, which are default-free but less liquid than Treasury bonds, to estimate the liquidity premium. He finds an average yield premium of 10–16 basis points, indicating a significant liquidity component in bond pricing. This premium varies with market conditions such as consumer confidence and Treasury buybacks.",
+      "importance": 4,
+      "importance_reason": "This is a key empirical method used in exams to assess liquidity premiums in fixed income markets. It's often used in case studies and applied questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 14/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Longstaff compares the yield differential between zero-coupon Treasury and Refcorp bonds and finds that the average yield premium on Refcorp bonds ranges from 10 to 16 basis points... the liquidity premium reacts to varying market conditions."
+    },
+    {
+      "topic": "Illiquidity Measures in Corporate Bonds",
+      "description": "Chen et al. (2005) use three measures of illiquidity: (1) a bound around bond prices estimated using a limited dependent variable model, (2) quoted bid-ask spreads, and (3) percentage of zero returns. These measures are used to quantify the liquidity premium in corporate bond yield spreads after controlling for default risk and other bond/firm characteristics.",
+      "importance": 3,
+      "importance_reason": "Understanding how illiquidity is measured and its impact on yield spreads is important for advanced exam questions. While not a fundamental concept, it often appears in applied or empirical sections of exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 14/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Chen et al. measure illiquidity in three ways. One is the bound around the bond price... They find that moving from one liquidity cost to a lower liquidity cost increases the yield spread by 37 basis points for investment-grade bonds and 128 basis points for speculative-grade bonds."
+    },
+    {
+      "topic": "Liquidity Premium in Options",
+      "description": "The equilibrium price of an option may reflect a liquidity premium demanded by either the buyer or the seller. Brenner et al. (2001) found that illiquid options issued by the Bank of Israel traded at a significant discount (18%-21%) compared to their liquid synthetic counterparts, suggesting that liquidity plays a measurable role in pricing despite transaction costs involved in replication.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how liquidity affects derivative pricing, and it is supported by a significant empirical study. Frequently tested in advanced asset pricing exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 15/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Brenner et al. compare the prices of three- and six-month at-the-money-forward options auctioned by the Bank of Israel, which are illiquid, to the same-day prices of synthetic publicly-traded options... They find that the illiquid Bank of Israel option trades at a mean discount of 18% to 21% to the liquid (synthetic) option, highly significant."
+    },
+    {
+      "topic": "Index Option Pricing Puzzles",
+      "description": "Index options, especially out-of-the-money puts, are empirically priced higher than their theoretical values (i.e., exhibit high implied volatility relative to realized volatility). Garleanu et al. (2004) explain this through demand pressure models where market makers, being net short index volatility, require compensation for risk exposure. Bollen and Whaley (2004) further support this by showing that order flow affects implied volatility.",
+      "importance": 5,
+      "importance_reason": "This is a well-known empirical anomaly in option pricing and is frequently tested in exams. Understanding the intuition and possible explanations is crucial for asset pricing and derivatives courses.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 15/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Empirical asset-pricing puzzles related to options are that index options are 'expensive' (i.e. have high implied volatility relative to actual volatility), especially out-of-the-money put options... Garleanu et al. (2004) address these puzzles using a model of demand pressure in which market makers can only hedge imperfectly."
+    },
+    {
+      "topic": "Liquidity Discounts in Index-Linked Bonds",
+      "description": "Dimson and Hanke (2002) found that equity index-linked bonds trade at an average discount of 2.71% relative to their underlying value, with the discount increasing with the bond's bid-ask spread. This supports the idea that liquidity affects pricing even when payoffs are identical.",
+      "importance": 4,
+      "importance_reason": "This is a key empirical example of how liquidity affects pricing in fixed income and hybrid instruments. Frequently referenced in discussions of liquidity risk and asset pricing.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 15/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Dimson and Hanke use transaction data for all equity index-linked bonds traded on the London Stock Exchange... They find that the prices of these bonds is discounted by an average of 2.71% relative to their underlying value, with the discount being an increasing function of bonds' bid-ask spread."
+    },
+    {
+      "topic": "ADRs and Liquidity Differences",
+      "description": "American Depository Receipts (ADRs) allow for the comparison of identical payoffs traded in different markets. Chan et al. (2005a) propose that the ADR premium (price differential in USD) increases with U.S. market liquidity and decreases with the liquidity of the underlying foreign stock and its market. Three liquidity measures are used: Amihud ILLIQ, turnover, and trading infrequency.",
+      "importance": 4,
+      "importance_reason": "This is a key example of how asset pricing can differ due to market liquidity, even when payoffs are identical. It is commonly tested in international finance and asset pricing exams.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 15/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Chan et al. (2005a) study 401 pairs of ADRs and underlying stocks, relating the price difference between them to differences in their liquidity... The study employs three liquidity measures: (i) Amihud (2002) ILLIQ, (ii) the security's turnover, and (iii) the trading infrequency."
+    },
+    {
+      "topic": "Closed-End Fund Liquidity Premium",
+      "description": "Closed-end funds trade like ordinary stocks and have a market price that may differ from their net asset value (NAV). The premium or discount is defined as the excess of the fund's price over its NAV. Unlike open-end funds, closed-end funds have a fixed number of shares, and their premiums are influenced by the liquidity of their shares relative to the liquidity of the underlying portfolio assets.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental concept in understanding the pricing anomalies of closed-end funds, frequently tested in exams and central to empirical studies on fund premiums and discounts.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Closed-end funds, unlike their open-end counterparts, have a fixed number of shares, they trade like ordinary stocks and are priced in the market. Funds that hold domestic securities typically trade at a discount to their net asset value, or a negative premium, where the premium is the excess value of the fund's price over its NAV (net asset value)."
+    },
+    {
+      "topic": "Datar (2001) Liquidity Hypothesis",
+      "description": "Datar (2001) hypothesizes that within a group of funds holding similar assets, the closed-end fund premium increases as the liquidity of the fund's shares increases. He tests this using weekly data from NYSE-listed funds and confirms a positive relationship between fund premium and share liquidity, using measures such as trading volume, dollar volume, shares outstanding, fund size, turnover, and volatility.",
+      "importance": 4,
+      "importance_reason": "This study provides strong empirical support for the liquidity explanation of closed-end fund premiums and discounts, making it a high-frequency exam topic.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Datar (2001) studies the impact of market liquidity on the premium (= fund's price/NAV - 1) on closed-end funds... He tests the hypothesis that within a group of funds that hold similar assets (stocks or bonds), the closed-end fund premium increases as the liquidity of the funds' shares increases."
+    },
+    {
+      "topic": "Manzler (2004) Liquidity Risk Differential",
+      "description": "Manzler (2004) finds that the closed-end fund premium is affected by both liquidity and liquidity risk differentials. He constructs an illiquidity factor (IML) and uses a four-factor model (Fama-French + IML) to show that higher liquidity risk in the fund relative to its portfolio leads to a larger discount (lower premium).",
+      "importance": 4,
+      "importance_reason": "This builds on the liquidity explanation by introducing liquidity risk as a key determinant of fund premiums, often appearing in advanced exam questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Manzler proposes that as the liquidity risk of closed-end funds increases relative to the liquidity risk of their portfolios, the fund premium should be lower (or the discount greater)... the fund premium declines in the difference between the fund's illiquidity beta and the illiquidity beta of its portfolio."
+    },
+    {
+      "topic": "Cherkes et al. (2005) Liquidity-Based Model",
+      "description": "Cherkes et al. (2005) propose a model showing that closed-end funds allow investors to access illiquid securities at lower costs. They predict that IPOs occur in waves and that funds are initially issued at a premium which often turns into a discount. Their empirical findings support the negative relationship between market liquidity and fund premiums.",
+      "importance": 3,
+      "importance_reason": "This model explains the lifecycle of closed-end funds and their behavior in different liquidity environments, providing theoretical and empirical insights that are relevant for exam understanding.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Cherkes et al. (2005) develop a liquidity-based model of closed-end funds that shows they provide investors a way to buy illiquid securities at lower illiquidity costs... the coefficient is negative, suggesting that closed-end funds are more valuable when market liquidity worsens."
+    },
+    {
+      "topic": "Bid-Ask Spread Determinants",
+      "description": "The bid-ask spread is a measure of market liquidity and transaction costs. Studies such as Benston and Hagerman (1974) and Copeland and Galai (1983) examine the factors that determine the bid-ask spread, including inventory costs, information asymmetry, and trading activity. Understanding these determinants is crucial for analyzing market efficiency and trader behavior.",
+      "importance": 4,
+      "importance_reason": "This is a frequently tested topic in finance exams, especially in market microstructure and trading cost analysis. It provides foundational knowledge for understanding how liquidity affects market prices and trading decisions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 17/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Benston, G. and R. Hagerman (1974), 'Determinants of the bid-ask spreads in the over-the-counter markets'. Journal of Financial Economics 1, 353-364."
+    },
+    {
+      "topic": "Transaction Costs and Predictability",
+      "description": "This keypoint focuses on the impact of transaction costs on the predictability of asset returns and the utility of investors. Balduzzi and Lynch (1999) analyze how transaction costs reduce the effectiveness of trading strategies, particularly for investors with frequent trading behavior. It is essential for understanding the trade-off between return predictability and trading frictions.",
+      "importance": 4,
+      "importance_reason": "Transaction costs are a key component in portfolio management and asset pricing models. This concept often appears in exams related to investment theory and empirical finance, especially when evaluating active trading strategies.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 17/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Balduzzi, P. and A. Lynch (1999), 'Transaction costs and predictability: Some utility cost calculations'. Journal of Financial Economics 52, 47-78."
+    },
+    {
+      "topic": "Securities Lending and Pricing",
+      "description": "Securities lending plays a critical role in short selling and arbitrage activities. Duffie, Garleanu, and Pedersen (2002) analyze how the dynamics of securities lending markets affect asset pricing and the cost of shorting. This has implications for understanding liquidity risk and the pricing of derivatives and equities.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in modern asset pricing and market microstructure. It is frequently referenced in advanced finance exams and research papers, particularly in the context of short selling constraints and their impact on asset prices.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 17/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Duffie, D., N. Garleanu, and L. H. Pedersen (2002), 'Securities lending, shorting, and pricing'. Journal of Financial Economics 66, 307-339."
+    },
+    {
+      "topic": "Transaction Costs in Portfolio Choice",
+      "description": "Transaction costs significantly affect optimal portfolio decisions. Investors must balance the benefits of portfolio adjustments against the costs incurred from trading, leading to a more conservative trading strategy. Models incorporating transaction costs often result in wider 'no-trade' regions where investors refrain from rebalancing.",
+      "importance": 5,
+      "importance_reason": "Essential in modern portfolio theory and dynamic asset allocation; frequently tested in advanced finance exams; foundational for understanding real-world investment constraints.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Liu, H. (2004a), 'Optimal consumption and investment with transaction costs and multiple assets'. Journal of Finance 59, 289-338."
+    },
+    {
+      "topic": "Capital Asset Pricing Model (CAPM) with Liquidity",
+      "description": "The traditional CAPM is extended to incorporate liquidity effects, where the expected return on an asset depends not only on its systematic risk but also on its liquidity characteristics. This includes bid-ask spreads, trading frequency, and market impact.",
+      "importance": 4,
+      "importance_reason": "Frequently appears in finance exams and research papers; important for understanding how liquidity affects asset pricing and risk-return trade-offs.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Jacoby, G., D. J. Fowler, and A. A. Gottesman (2000), 'The capital asset pricing model and the liquidity effect: A theoretical approach'. Journal of Financial Markets 3, 69-81."
+    },
+    {
+      "topic": "Market Microstructure and Liquidity",
+      "description": "Market microstructure studies the mechanisms of asset trading, including how liquidity is determined through bid-ask spreads, order flow, and dealer behavior. It provides insights into how trading systems and market design influence asset prices and investor behavior.",
+      "importance": 4,
+      "importance_reason": "Highly relevant for exams on trading mechanisms and liquidity; foundational for understanding how markets function and how liquidity affects returns.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Madhavan, A. (2000), 'Market microstructure: A survey'. Journal of Financial Markets 3, 205-258."
+    },
+    {
+      "topic": "Anomaly: Definition",
+      "description": "An anomaly is a regularity in asset returns that cannot be explained by the benchmark asset-pricing model, typically the CAPM. It is identified by a significantly positive alpha, suggesting either mispricing (violating EMH) or an omitted risk factor in the model. Testing for anomalies inherently involves evaluating both the asset-pricing model and market efficiency.",
+      "importance": 5,
+      "importance_reason": "This is a foundational concept in empirical asset pricing and appears frequently in exams and discussions about market efficiency and model validity.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- Anomaly - a regularity in returns that cannot be explained by the benchmark asset-pricing model (most usually CAPM)\n- The significantly positive alpha of the HML strategy means that the value effect is an anomaly\n- All tests of CAPM are joint tests of CAPM and EMH"
+    },
+    {
+      "topic": "Three Explanations for Alpha",
+      "description": "There are three main interpretations of alpha in asset pricing: (1) compensation for unmodeled risk, (2) evidence of mispricing that can be exploited, and (3) pure chance or luck. These interpretations are crucial for determining whether the alpha is reliable for future investment decisions.",
+      "importance": 4,
+      "importance_reason": "This framework is commonly used in exam questions to assess understanding of alpha and its implications in empirical finance.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- Probably, the alpha is the compensation for some extra risk that is missing from our models\n- Probably, the alpha is the evidence of mispricing\n- Probably, the alpha is just luck"
+    },
+    {
+      "topic": "Fama-French Model Interpretation",
+      "description": "The Fama-French (FF) model includes the SMB (size) and HML (value) factors. If an anomaly shows zero alpha under the FF model, its explanation depends on how one interprets the FF factors: as risk factors (ICAPM), APT factors, or themselves anomalies. This distinction is critical in determining whether the anomaly reflects risk, mispricing, or is a repackaged version of existing effects.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in empirical asset pricing and is essential for interpreting anomalies in modern finance. Frequently appears in exams and paper discussions.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- If the CAPM fails to explain the anomaly, we can check if the Fama-French (FF) model does\n- If SMB and HML are risk factors (FF model is ICAPM), then zero alpha means the anomaly has a risk-based explanation\n- If SMB and HML are APT factors (FF model is APT), then zero alpha means the anomaly does not violate EMH"
+    },
+    {
+      "topic": "Ad-Hoc CCAPM and ICAPM",
+      "description": "Ad-hoc versions of the Consumption-based CAPM (CCAPM) or Intertemporal CAPM (ICAPM) can be developed to explain anomalies. CCAPM suggests that the beta of the anomalous strategy increases during periods of high market risk, while ICAPM implies that the strategy underperforms during bad market times. These models help identify the specific risk sources behind anomalies.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency topic in exams and research discussions, especially when evaluating the economic intuition behind anomalies.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- Develop an ad-hoc version of ICAPM or conditional CAPM that would fix the anomaly\n- CCAPM: the beta of the anomalous strategy goes up when market risk is high\n- ICAPM: the anomalous strategy trails the CAPM in bad times"
+    },
+    {
+      "topic": "Earnings Announcements as Evidence of Mispricing",
+      "description": "If an anomaly is due to mispricing, it should be partially corrected when new information is revealed, such as during earnings announcements. Value stocks tend to gain significantly during these days, while growth stocks underperform, suggesting that part of the value anomaly is a free lunch (unexplained alpha). This provides prima facie evidence of mispricing rather than risk-based returns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept linking anomalies directly to empirical testing using earnings announcements, a frequent exam topic. It distinguishes between risk and mispricing explanations using observable market behavior around a specific event.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 2/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "If an anomaly is mispricing, it will be partially corrected when the information is revealed. One example is earnings announcements: If something (e.g., value stocks) is underpriced, it will do very well at the announcements. If something (e.g., growths stocks) is overpriced, it will do very poorly then."
+    },
+    {
+      "topic": "Limits to Arbitrage vs. Trading Costs",
+      "description": "Trading costs prevent profitable exploitation of anomalies, even if they exist. Limits to arbitrage, on the other hand, suggest that arbitrage is possible but risky due to behavioral and financial constraints such as margin calls, fund volatility, and investor behavior. These factors limit the ability or willingness of arbitrageurs to correct mispricings.",
+      "importance": 4,
+      "importance_reason": "This concept is crucial for understanding why anomalies persist in financial markets and is frequently tested in exams. It differentiates between cost-based and behavioral/structural limits to correcting inefficiencies.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 2/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "Trading costs say: 'You cannot profit from trading'. Limits to arbitrage say: 'You can, but you do not want to'."
+    },
+    {
+      "topic": "Liquidity Risk and Anomaly Returns",
+      "description": "Liquidity risk refers to the increased trading costs during bad economic times, leading to higher expected returns for holding illiquid stocks. If a stock has higher trading costs during downturns, investors demand compensation for the additional risk, which can be modeled using the ICAPM framework.",
+      "importance": 4,
+      "importance_reason": "Liquidity risk is a key explanation for some anomalies and is often linked to behavioral and structural market inefficiencies. It is a high-frequency exam topic in asset pricing and behavioral finance discussions.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 2/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "If you go with the second stock, you will lose by 0.9% more in recessions. ICAPM: second stock should have higher return. This is called liquidity risk."
+    },
+    {
+      "topic": "Momentum Strategy Definition",
+      "description": "The momentum strategy, as defined by Jegadeesh and Titman (1993), involves sorting stocks monthly based on cumulative returns over the past six months, buying top 10% performers (winners), and shorting bottom 10% performers (losers), holding the positions for another six months (6-0-6 strategy). The return of the arbitrage portfolio is the average of six overlapping portfolios.",
+      "importance": 5,
+      "importance_reason": "This is the foundational definition of momentum in empirical finance and is a core concept in the course. It is essential for understanding how momentum is implemented and measured in practice.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "Basic momentum strategy: each month, sort on cumulative returns in the past six months. Then buy winners (top 10% on past returns) and short losers (bottom 10% on past returns), then hold for another six months (6-0-6 strategy)"
+    },
+    {
+      "topic": "Momentum Return and Alpha Generation",
+      "description": "The momentum return (Wt - Lt) can be as high as 1.6% per month, with an average of 1% commonly cited. Alpha generation from momentum strategies is based on constructing a zero-investment, zero-beta portfolio by buying winners, shorting the market proportionally to their beta, and shorting losers. The alpha is the excess return from this strategy, which is 0.58% per month in the example provided.",
+      "importance": 5,
+      "importance_reason": "This keypoint explains how to generate alpha through momentum strategies and the mechanics behind risk-adjusted returns. It is critical for exam understanding and frequently tested in finance courses.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "Alpha (0.58% per month) is the return from performing those two operations. Notice that this strategy requires no money down and its market beta is exactly zero"
+    },
+    {
+      "topic": "Short-Term Reversal and Trading Constraints",
+      "description": "Short-term reversal refers to the price bounce-back effect observed in the month following extreme returns, especially among small firms. Jegadeesh (1990) notes that this reversal can reach 0.5–1% after one month. However, attempting to profit from it is difficult due to high trading costs, which often exceed 1% for small-cap stocks.",
+      "importance": 4,
+      "importance_reason": "This concept is important for understanding the limitations and nuances of momentum strategies. It often appears in questions about the practical implementation of trading strategies and behavioral anomalies.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "You cannot trade on short-term reversal and make a profit: for small firms, round-trip trading costs can easily top 1%. Also keep in mind that you have to both buy and short to capture the 1–2% short term reversal"
+    },
+    {
+      "topic": "Long-Term Reversal and Investor Behavior",
+      "description": "Long-term reversal, as identified by DeBondt and Thaler (1985, 1987), shows that cumulative returns over t-60 to t-13 reveal a reversal pattern. Past losers recover some losses, and past winners underperform after five years. This suggests investor overreaction rather than underreaction, indicating the need to close momentum positions after a year to avoid losses from reversal.",
+      "importance": 4,
+      "importance_reason": "This keypoint connects behavioral finance with empirical findings in momentum and reversal. It is a high-frequency exam topic and essential for understanding the theoretical basis of momentum and its limitations.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "If investors overreact after big gains, recent winners are probably priced right at the portfolio formation date. Momentum is then created because they push recent winners higher than the true price. When investors realize their mistake, we see the long-term reversal"
+    },
+    {
+      "topic": "Momentum Strategy Performance in Different Market Conditions",
+      "description": "The momentum strategy, which involves going long on past winners and short on past losers, performs differently depending on the economic environment. In 2009, a bad year for consumption and economic growth, the strategy resulted in significant losses. This is attributed to the fact that losers rebounded substantially during that period, reversing prior trends. Momentum strategies are thus sensitive to macroeconomic conditions and can be risky during economic downturns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how momentum strategies behave in different economic cycles, especially during recessions and expansions. It directly relates to the empirical performance of the strategy and is essential for risk assessment in exams.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- If you were turning around $100 in the momentum strategy, in 2009 you would have lost $83\n- Very scary result, because 2009 was a very bad year in terms of consumption and economic growth\n- Happened because losers picked up by so much"
+    },
+    {
+      "topic": "Momentum and Macroeconomic Risk (Chordia and Shivakumar, JF 2002)",
+      "description": "Chordia and Shivakumar (2002) found that momentum returns are positive during economic expansions (53 basis points per month) but negative during recessions (-72 basis points per month). This suggests that momentum profits may be compensation for exposure to macroeconomic risk, which varies over time. The regression results also support this interpretation by linking momentum returns to macroeconomic variables.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental empirical finding that supports the 'momentum is risk' hypothesis, frequently tested in exams and essential for understanding the theoretical underpinnings of momentum strategies.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- Chordia and Shivakumar (JF 2002) find that $W_{t} - L_{t}$ makes 53 bp per month in expansions and -72 bp per month in recessions\n- Main idea: if we can predict momentum returns from something related to business conditions, it means that momentum is most probably caused by changes in risk"
+    },
+    {
+      "topic": "Momentum in Bull vs Bear Markets (Cooper et al., JF 2004)",
+      "description": "According to Cooper, Gutierrez, and Hameed (2004), momentum exists only after a bull market (positive cumulative market returns over the past three years). After bear markets (negative cumulative returns), momentum returns are negative but statistically insignificant. This suggests that momentum behavior is conditional on the prior market regime and may reflect risk patterns.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency exam topic, often used to test understanding of how momentum varies with market conditions. It also ties into the broader debate on whether momentum is risk-based or behavioral.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- Cooper, Gutierrez, and Hameed (JF 2004) show that momentum exists only after cumulative market return in the past three years is positive (bull market)\n- After bear markets... momentum is negative, but statistically insignificant"
+    },
+    {
+      "topic": "Predicting Momentum Using Macro Variables",
+      "description": "Chordia and Shivakumar (2006) regress the winners-minus-losers (W-L) portfolio returns on macroeconomic variables like DEF (default spread), TB (Treasury bill yield), and TERM (term spread) to assess whether momentum returns can be explained by macroeconomic risk. The regression results show that momentum returns are significantly predicted by these variables, suggesting that momentum profits may be compensation for risk rather than mispricing.",
+      "importance": 4,
+      "importance_reason": "This regression-based analysis is a key empirical method used in exams to evaluate the risk-based explanation of momentum. Understanding the coefficients and their implications is crucial for exam success.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "$$ W _ {t} - L _ {t} = - \\begin{array}{c} 5. 6 0 \\\\ (2. 4 2) \\end{array} - \\begin{array}{c} 6. 3 5 \\\\ (3. 0 8) \\end{array} D E F _ {t - 1} - \\\\ - \\begin{array}{c} 0. 4 2 \\\\ (0. 9 9) \\end{array} D I V _ {t - 1} + \\begin{array}{c} 2. 1 0 \\\\ (0. 6 1) \\end{array} T B _ {t - 1} + \\begin{array}{c} 2. 9 4 \\\\ (0. 7 5) \\end{array} T E R M _ {t - 1} $$"
+    },
+    {
+      "topic": "Momentum Effect and Market Conditions",
+      "description": "Momentum strategies in financial markets are influenced significantly by prior market returns and volatility. The cutoffs for forming momentum portfolios shift depending on whether the market has recently rallied or declined, and whether volatility (as measured by the VIX) has been high or low. In a high-volatility rally or a market sell-off, the dispersion between winners and losers increases, which affects the profitability and risk of momentum strategies. Understanding these dynamics is crucial for implementing momentum strategies effectively and avoiding losses from short-term reversals.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in empirical asset pricing and frequently appears in exams. It ties together momentum strategies with market conditions and volatility, which are essential for understanding market behavior and constructing profitable trading strategies.",
+      "source": "08 Momentum\\08 Momentum.md (片段 3/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- The cut-off for forming momentum portfolios depend a lot on both the market return and market volatility in the past 6-12 months\n- If the market was going up, the cut-offs will drift to the right and vice versa\n- If the market was volatile, the cut-offs for the losers and the winners will be further apart\n- You need the cut-offs above to form the momentum strategy and not to suffer from short-term reversal"
+    },
+    {
+      "topic": "Earnings Momentum and Stability of Earnings Growth Cutoffs",
+      "description": "Earnings momentum is constructed by sorting firms based on year-on-year earnings growth. The cutoffs for earnings growth are relatively stable across time and percentiles. Specifically, the 10th percentile ranges from -160% to -180%, the 25th from -75% to -100%, the 75th from +30% to +40%, and the 90th from +140% to +165%. Earnings momentum is more concentrated around earnings announcements than price momentum, which has implications for timing trading strategies around such events.",
+      "importance": 4,
+      "importance_reason": "Earnings momentum is a key subtopic within momentum strategies and often appears in exams. It connects behavioral finance, empirical anomalies, and practical trading strategy implementation, making it important to understand both conceptually and quantitatively.",
+      "source": "08 Momentum\\08 Momentum.md (片段 3/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- The easiest way to construct the earnings momentum portfolios is to sort firms on year-on-year earnings growth\n- It turns out that the cut-offs are pretty stable at:\n10th percentile: -160% to -180%\n25th percentile: -75% to -100%\n75th percentile: +30% to +40%\n90th percentile: +140% to +165%\n- Earnings momentum is strongly concentrated at earnings announcements"
+    }
+  ],
+  "timestamp": "2025-12-29T00:50:59.836277"
+}

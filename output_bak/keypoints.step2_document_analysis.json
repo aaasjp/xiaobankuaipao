@@ -1,0 +1,107 @@
+{
+  "step": "文档结构分析",
+  "document_analysis": {
+    "document_structure": {
+      "organization_type": "混合式",
+      "content_types": [
+        "文本",
+        "公式"
+      ],
+      "hierarchy_levels": 2,
+      "file_naming_pattern": "文件按课程主题编号命名（如01 alpha、02 Return Predictability），并包含'Answers'标识答案文件。部分文件使用反斜杠表示子目录结构（如'06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md'）。"
+    },
+    "content_characteristics": {
+      "average_file_length": 37198,
+      "has_formulas": true,
+      "has_tables": false,
+      "has_code": false,
+      "complexity_level": "复杂"
+    },
+    "chapters": [
+      {
+        "name": "Midterm Exam & Answers",
+        "files": [
+          "Midterm___Answers.pdf.md",
+          "Sample Midterm 1 - Answers.md",
+          "Sample Midterm 1.md",
+          "Sample Midterm 2 - Answers.md",
+          "Sample Midterm 2.md"
+        ],
+        "description": "包含期中考试样题及其答案解析，涵盖多选题与计算题，用于评估学生对课程核心概念的理解。",
+        "estimated_keypoints": 50
+      },
+      {
+        "name": "Alpha",
+        "files": [
+          "01 alpha\\01 Alpha.md"
+        ],
+        "description": "介绍CAPM模型中的Alpha概念，探讨其在资产定价中的意义及实证表现。",
+        "estimated_keypoints": 20
+      },
+      {
+        "name": "Return Predictability",
+        "files": [
+          "02 Return Predictability\\02 Return Predictability.md"
+        ],
+        "description": "分析市场风险溢价的可预测性，包括与国债收益率、通胀预期、经济周期等因素的关系。",
+        "estimated_keypoints": 25
+      },
+      {
+        "name": "Conditional CAPM",
+        "files": [
+          "03Conditional CAPM\\03 Conditional CAPM.md"
+        ],
+        "description": "探讨条件CAPM模型，考虑市场风险随时间变化的动态性，以及其对资产预期收益的影响。",
+        "estimated_keypoints": 30
+      },
+      {
+        "name": "Intertemporal CAPM",
+        "files": [
+          "04 Intertemporal CAPM\\04 Intertemporal CAPM.md"
+        ],
+        "description": "介绍跨期CAPM模型，结合消费与边际效用理论，解释投资者在不同经济状态下的风险偏好。",
+        "estimated_keypoints": 35
+      },
+      {
+        "name": "EMH and Trading Costs",
+        "files": [
+          "05 EMH and Trading Costs\\05 EMH and Trading Costs.md"
+        ],
+        "description": "讨论有效市场假说（EMH）与交易成本之间的关系，包括买卖价差、价格冲击等。",
+        "estimated_keypoints": 25
+      },
+      {
+        "name": "Liquidity and Liquidity Risk",
+        "files": [
+          "06 Liquidity and Liquidity Risk\\06 Liquidity and Liquidity Risk.md",
+          "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md"
+        ],
+        "description": "涵盖流动性及其风险的理论与实证研究，包括流动性成本、流动性因子对资产定价的影响。",
+        "estimated_keypoints": 40
+      },
+      {
+        "name": "Anomalies: Introduction",
+        "files": [
+          "07 Anomalies - Intro\\07 Anomalies - Intro.md"
+        ],
+        "description": "介绍金融异常现象的基本定义与分类，探讨价值效应、动量效应等是否属于异常现象。",
+        "estimated_keypoints": 30
+      },
+      {
+        "name": "Momentum",
+        "files": [
+          "08 Momentum\\08 Momentum.md"
+        ],
+        "description": "深入分析动量效应，包括其定义、理性解释、行为解释以及实证表现。",
+        "estimated_keypoints": 35
+      }
+    ],
+    "key_observations": [
+      "文档结构以主题/章节为主，部分章节包含多个子文件，如'06 Liquidity and Liquidity Risk'包含两份文档。",
+      "内容以文本和公式为主，无代码或表格，强调金融理论建模与实证分析。",
+      "课程内容聚焦资产定价模型（CAPM、Conditional CAPM、Intertemporal CAPM）、市场效率（EMH）、流动性风险与常见金融异常现象（如价值效应、动量效应）。"
+    ]
+  },
+  "file_count": 14,
+  "timestamp": "2025-12-29T00:05:17.936220"
+}

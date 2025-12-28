@@ -1,0 +1,493 @@
+{
+  "step": "反思评估迭代 3",
+  "iteration": 3,
+  "quality_score": 0.75,
+  "issues": [
+    "重复/过于相似的考点未被充分合并，例如多个关于CAPM、ICAPM、Alpha解释的keypoints存在内容重叠。",
+    "部分keypoint描述与来源片段不一致，例如'Alpha Interpretation in CAPM and Multifactor Models'和'Definition and Interpretation of Alpha'中引用的片段与描述内容不完全匹配。",
+    "部分重要考点未被提取，例如关于市场效率（EMH）与CAPM联合检验的内容、关于APT模型与Fama-French模型关系的考点等。",
+    "部分keypoint的topic命名不够简洁明确，如'CAPM vs Portfolio Performance'和'CAPM vs ICAPM Evaluation Using Alpha and Correlation'。",
+    "部分keypoint描述过于冗长，未能聚焦于核心概念或公式，偏离了“考点”应具备的精炼性。",
+    "部分keypoint的重要性等级评估不够合理，如'Cherkes et al. (2005) Liquidity-Based Model'仅评为3，但其理论背景与实证意义应不低于4。"
+  ],
+  "improvements": [
+    "合并所有与CAPM、Alpha、ICAPM相关的重复keypoints，形成统一的考点，如'Alpha Interpretation and Risk Adjustment in CAPM and Multifactor Models'。",
+    "对描述与来源片段不一致的keypoints进行校正，确保描述内容与来源片段直接对应。",
+    "补充缺失的重要考点，如EMH与CAPM的联合检验、APT与Fama-French模型的关系、市场摩擦与行为偏差对alpha的解释等。",
+    "统一topic命名标准，避免使用模糊或非标准化术语，如'CAPM vs Portfolio Performance'可改为更清晰的'CAPM-Based Portfolio Performance Evaluation'。",
+    "对重要但描述冗长的keypoints进行精简，聚焦核心定义、公式或考试重点。",
+    "重新评估部分keypoint的重要性等级，确保与考点在考试中的频率和理论地位一致。"
+  ],
+  "corrections": [
+    {
+      "keypoint_index": 1,
+      "issue": "描述与来源片段内容不一致，来源片段未直接支持描述中的ICAPM与CAPM对比。",
+      "corrected_topic": "Alpha Interpretation in CAPM and Multifactor Models",
+      "corrected_description": "Alpha (α) measures abnormal return after accounting for systematic risk. In CAPM, a positive alpha suggests outperformance or mispricing, but in multifactor models like Fama-French or ICAPM, alpha may become insignificant, indicating that the return was fair compensation for exposure to risk factors like value, momentum, or macroeconomic variables. In zero-investment portfolios, alpha must be interpreted without subtracting the risk-free rate.",
+      "corrected_importance": 5,
+      "corrected_reason": "该keypoint与考试中CAPM与多因子模型对比解释alpha的常见题型直接相关，应保持高重要性。"
+    },
+    {
+      "keypoint_index": 5,
+      "issue": "topic命名不够清晰，描述与CAPM应用有关，但未突出其作为评估工具的本质。",
+      "corrected_topic": "CAPM-Based Portfolio Performance Evaluation",
+      "corrected_description": "The Capital Asset Pricing Model (CAPM) predicts expected returns based on beta. A portfolio with a beta of 1.2, annual return of 17%, and risk-free rate of 4% can be evaluated against the CAPM's expected return given the market return of 12%. If the portfolio beats the CAPM return, it suggests mispricing or additional risk factors not captured by the model, such as those in the ICAPM.",
+      "corrected_importance": 5,
+      "corrected_reason": "该考点直接涉及CAPM在绩效评估中的应用，应为高重要性。"
+    },
+    {
+      "keypoint_index": 6,
+      "issue": "topic与描述重复，与keypoint 1、5、7、15等存在内容重叠。",
+      "corrected_topic": "Alpha Interpretation and Risk Adjustment in CAPM and ICAPM",
+      "corrected_description": "A portfolio with positive CAPM alpha and a positive correlation with GDP growth is riskier in the context of intertemporal CAPM (ICAPM), because it performs poorly during economic downturns. This implies that while it may beat the CAPM prediction, it may not beat the ICAPM prediction, which accounts for time-varying risk factors.",
+      "corrected_importance": 5,
+      "corrected_reason": "该keypoint涉及CAPM与ICAPM在alpha解释中的差异，是考试高频考点，应评为5。"
+    },
+    {
+      "keypoint_index": 16,
+      "issue": "topic命名不准确，描述与来源片段不一致。",
+      "corrected_topic": "Securities Lending and Asset Pricing",
+      "corrected_description": "Securities lending plays a critical role in short selling and arbitrage activities. Duffie, Garleanu, and Pedersen (2002) analyze how the dynamics of securities lending markets affect asset pricing and the cost of shorting. This has implications for understanding liquidity risk and the pricing of derivatives and equities.",
+      "corrected_importance": 5,
+      "corrected_reason": "该keypoint涉及证券借贷与资产定价的核心关系，应评为5。"
+    },
+    {
+      "keypoint_index": 20,
+      "issue": "topic命名不统一，描述可更聚焦于模型本身。",
+      "corrected_topic": "Fama-French Model and Anomaly Interpretation",
+      "corrected_description": "The Fama-French (FF) model includes the SMB (size) and HML (value) factors. If an anomaly shows zero alpha under the FF model, its explanation depends on how one interprets the FF factors: as risk factors (ICAPM), APT factors, or themselves anomalies. This distinction is critical in determining whether the anomaly reflects risk, mispricing, or is a repackaged version of existing effects.",
+      "corrected_importance": 5,
+      "corrected_reason": "该keypoint是理解现代资产定价模型与异常收益解释的核心，应评为5。"
+    },
+    {
+      "keypoint_index": 26,
+      "issue": "描述不够聚焦，重要性低估。",
+      "corrected_topic": "Earnings Momentum and Strategy Construction",
+      "corrected_description": "Earnings momentum is constructed by sorting firms based on year-on-year earnings growth. The cutoffs for earnings growth are relatively stable across time and percentiles: 10th percentile (-160% to -180%), 25th (-75% to -100%), 75th (+30% to +40%), and 90th (+140% to +165%). Earnings momentum is more concentrated around earnings announcements than price momentum, which has implications for timing trading strategies.",
+      "corrected_importance": 5,
+      "corrected_reason": "该考点涉及实证构建与交易策略，应评为5。"
+    }
+  ],
+  "duplicates": [
+    {
+      "keypoint_indices": [
+        1,
+        5,
+        6,
+        7,
+        20
+      ],
+      "similarity_reason": "多个keypoints围绕CAPM、alpha、ICAPM的解释与评估展开，内容高度重叠，应合并为统一的'Alpha Interpretation and Risk Adjustment in CAPM and Multifactor Models'。",
+      "suggested_merge": {
+        "topic": "Alpha Interpretation and Risk Adjustment in CAPM and Multifactor Models",
+        "description": "Alpha (α) measures abnormal return after accounting for systematic risk. In CAPM, a positive alpha suggests outperformance or mispricing, but in multifactor models like Fama-French or ICAPM, alpha may become insignificant, indicating fair compensation for exposure to risk factors such as value, momentum, or macroeconomic variables. In zero-investment portfolios, alpha must be interpreted without subtracting the risk-free rate. A portfolio with positive CAPM alpha and a positive correlation with GDP growth is riskier under ICAPM, as it performs poorly during economic downturns. If an anomaly shows zero alpha under the Fama-French model, its explanation depends on whether SMB and HML are viewed as risk factors (ICAPM), APT factors, or themselves anomalies. This distinction is critical in determining whether the anomaly reflects risk, mispricing, or is a repackaged version of existing effects.",
+        "importance": 5,
+        "importance_reason": "Alpha解释与CAPM、ICAPM、Fama-French模型的对比是资产定价考试中的核心内容，必须统一呈现以避免重复。"
+      }
+    },
+    {
+      "keypoint_indices": [
+        0,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        27
+      ],
+      "similarity_reason": "多个keypoints围绕流动性风险、流动性溢价、流动性测量、封闭式基金流动性溢价等展开，内容高度重叠，应合并为统一的流动性与资产定价核心考点。",
+      "suggested_merge": {
+        "topic": "Liquidity Risk, Liquidity Premium, and Asset Pricing",
+        "description": "Liquidity risk refers to the uncertainty investors face regarding future transaction costs when selling an asset. It introduces additional volatility to asset prices and is priced into expected returns in models like the Liquidity-Adjusted CAPM (LCAPM). Liquidity is measured using proxies such as the Roll measure, Amihud measure, Kyle’s lambda, and ILLIQ. Empirical studies show that liquidity risk is priced, with higher sensitivity to market-wide liquidity shocks leading to higher expected returns (Pastor and Stambaugh, 2003). Acharya and Pedersen (2005) extend this by modeling expected excess returns as a function of both expected illiquidity and four liquidity-related betas. In fixed income, the liquidity of U.S. Treasury securities affects their yield to maturity, with more liquid instruments like bills commanding lower yields than less liquid notes (Amihud and Mendelson, 1991a; Kamara, 1994; Longstaff, 2004). In closed-end funds, liquidity differences between the fund and its underlying assets determine the premium or discount to NAV (Datar, 2001; Manzler, 2004). Securities lending and trading costs also influence the pricing of equities and derivatives (Duffie et al., 2002). Transaction costs reduce the effectiveness of trading strategies and limit arbitrage opportunities (Balduzzi and Lynch, 1999).",
+        "importance": 5,
+        "importance_reason": "流动性风险与溢价是资产定价与固定收益考试中的核心高频考点，应合并并评为5。"
+      }
+    },
+    {
+      "keypoint_indices": [
+        3,
+        4,
+        26
+      ],
+      "similarity_reason": "关于流动性测量、动量策略构建与收益解释的keypoints存在内容交叉，应合并为统一的'Empirical Measures and Strategy Implementation in Liquidity and Momentum'。",
+      "suggested_merge": {
+        "topic": "Empirical Measures and Strategy Implementation in Liquidity and Momentum",
+        "description": "Liquidity is measured using various empirical proxies, including the Roll measure (bid-ask spread estimation), Amihud measure (price impact per dollar traded), Kyle’s lambda (price impact per unit trade), and ILLIQ (|R| / (P * VOL)). These measures are used in empirical studies to assess trading costs, market impact, and liquidity risk. Momentum strategies, as defined by Jegadeesh and Titman (1993), involve sorting stocks monthly on past six-month returns, buying top 10% (winners), shorting bottom 10% (losers), and holding for six months (6-0-6 strategy). The return is the average of six overlapping portfolios. Earnings momentum is constructed using year-on-year earnings growth cutoffs, which are stable across time and percentiles: 10th (-160% to -180%), 25th (-75% to -100%), 75th (+30% to +40%), and 90th (+140% to +165%). Earnings momentum is more concentrated around earnings announcements than price momentum, which has implications for strategy timing.",
+        "importance": 5,
+        "importance_reason": "该合并考点涵盖流动性测量与动量策略构建，是考试高频内容，应评为5。"
+      }
+    },
+    {
+      "keypoint_indices": [
+        14,
+        15
+      ],
+      "similarity_reason": "两个keypoints均涉及封闭式基金流动性溢价，描述内容高度重叠。",
+      "suggested_merge": {
+        "topic": "Liquidity Premium in Closed-End Funds",
+        "description": "Closed-end funds trade like ordinary stocks and may trade at a premium or discount to their net asset value (NAV). The premium is influenced by the liquidity of the fund's shares relative to its underlying assets. Datar (2001) finds a positive relationship between fund premium and share liquidity. Manzler (2004) introduces the illiquidity factor (IML) and shows that higher liquidity risk in the fund relative to its portfolio leads to a larger discount. This pricing anomaly is central to understanding how liquidity affects fund premiums and is often tested in exams.",
+        "importance": 5,
+        "importance_reason": "封闭式基金流动性溢价是资产定价与市场效率中的经典考点，应评为5。"
+      }
+    },
+    {
+      "keypoint_indices": [
+        11,
+        12
+      ],
+      "similarity_reason": "两个keypoints均涉及Acharya & Pedersen模型与Pastor & Stambaugh模型，内容高度相关。",
+      "suggested_merge": {
+        "topic": "Liquidity Beta and Asset Pricing Models",
+        "description": "Pastor and Stambaugh (2003) estimate liquidity risk exposure using a regression model that includes signed lagged dollar volume. The coefficient γ_j captures liquidity effects, with more negative values indicating less liquid stocks. The market liquidity factor L_t is derived from the residuals of an AR1 model of γ_t changes. Stock exposure to liquidity risk is then measured by regressing stock returns on L_t, alongside the Fama-French factors. Acharya and Pedersen (2005) extend this by modeling expected excess returns as a function of both expected illiquidity and four liquidity-related betas: traditional beta, β^L1, β^L2, β^L3. The model is: E(r_{t+1}^i) = r^f + κE(c_{t+1}^i) + λ(β + β^L1 - β^L2 - β^L3). This framework generalizes the pricing of liquidity and liquidity risk, incorporating both level and sensitivity to liquidity shocks.",
+        "importance": 5,
+        "importance_reason": "流动性贝塔是资产定价模型中的关键扩展，应合并并评为5。"
+      }
+    }
+  ],
+  "keypoints_before": 55,
+  "keypoints_after": 33,
+  "refined_keypoints": [
+    {
+      "topic": "Alpha Interpretation and Risk Adjustment in CAPM and Multifactor Models",
+      "description": "Alpha (α) measures abnormal return after accounting for systematic risk. In CAPM, a positive alpha suggests outperformance or mispricing, but in multifactor models like Fama-French or ICAPM, alpha may become insignificant, indicating fair compensation for exposure to risk factors such as value, momentum, or macroeconomic variables. In zero-investment portfolios, alpha must be interpreted without subtracting the risk-free rate. A portfolio with positive CAPM alpha and a positive correlation with GDP growth is riskier under ICAPM, as it performs poorly during economic downturns. If an anomaly shows zero alpha under the Fama-French model, its explanation depends on whether SMB and HML are viewed as risk factors (ICAPM), APT factors, or themselves anomalies. This distinction is critical in determining whether the anomaly reflects risk, mispricing, or is a repackaged version of existing effects.",
+      "importance": 5,
+      "importance_reason": "Alpha解释与CAPM、ICAPM、Fama-French模型的对比是资产定价考试中的核心内容，必须统一呈现以避免重复。",
+      "source": "Sample Midterm 2.md (片段 1/1)",
+      "source_file": "Sample Midterm 2.md",
+      "source_page": null,
+      "source_snippet": "Distress risk puzzle refers to the puzzling tendency of healthy firms to have higher expected returns than distressed firms. What of the following suggests that liquidity risk can be an explanation of the distress risk puzzle?"
+    },
+    {
+      "topic": "Liquidity Risk, Liquidity Premium, and Asset Pricing",
+      "description": "Liquidity risk refers to the uncertainty investors face regarding future transaction costs when selling an asset. It introduces additional volatility to asset prices and is priced into expected returns in models like the Liquidity-Adjusted CAPM (LCAPM). Liquidity is measured using proxies such as the Roll measure, Amihud measure, Kyle’s lambda, and ILLIQ. Empirical studies show that liquidity risk is priced, with higher sensitivity to market-wide liquidity shocks leading to higher expected returns (Pastor and Stambaugh, 2003). Acharya and Pedersen (2005) extend this by modeling expected excess returns as a function of both expected illiquidity and four liquidity-related betas. In fixed income, the liquidity of U.S. Treasury securities affects their yield to maturity, with more liquid instruments like bills commanding lower yields than less liquid notes (Amihud and Mendelson, 1991a; Kamara, 1994; Longstaff, 2004). In closed-end funds, liquidity differences between the fund and its underlying assets determine the premium or discount to NAV (Datar, 2001; Manzler, 2004). Securities lending and trading costs also influence the pricing of equities and derivatives (Duffie et al., 2002). Transaction costs reduce the effectiveness of trading strategies and limit arbitrage opportunities (Balduzzi and Lynch, 1999).",
+      "importance": 5,
+      "importance_reason": "流动性风险与溢价是资产定价与固定收益考试中的核心高频考点，应合并并评为5。",
+      "source": "Sample Midterm 1.md (片段 1/1)",
+      "source_file": "Sample Midterm 1.md",
+      "source_page": null,
+      "source_snippet": "If the value effect is explained by risk, then the value minus growth portfolio should... / Assuming that the value effect is caused by risk, you would expect the realized returns to the HML factor to be..."
+    },
+    {
+      "topic": "Empirical Measures and Strategy Implementation in Liquidity and Momentum",
+      "description": "Liquidity is measured using various empirical proxies, including the Roll measure (bid-ask spread estimation), Amihud measure (price impact per dollar traded), Kyle’s lambda (price impact per unit trade), and ILLIQ (|R| / (P * VOL)). These measures are used in empirical studies to assess trading costs, market impact, and liquidity risk. Momentum strategies, as defined by Jegadeesh and Titman (1993), involve sorting stocks monthly on past six-month returns, buying top 10% (winners), shorting bottom 10% (losers), and holding for six months (6-0-6 strategy). The return is the average of six overlapping portfolios. Earnings momentum is constructed using year-on-year earnings growth cutoffs, which are stable across time and percentiles: 10th (-160% to -180%), 25th (-75% to -100%), 75th (+30% to +40%), and 90th (+140% to +165%). Earnings momentum is more concentrated around earnings announcements than price momentum, which has implications for strategy timing.",
+      "importance": 5,
+      "importance_reason": "该合并考点涵盖流动性测量与动量策略构建，是考试高频内容，应评为5。",
+      "source": "Sample Midterm 2.md (片段 1/1)",
+      "source_file": "Sample Midterm 2.md",
+      "source_page": null,
+      "source_snippet": "You are creating a multifactor model with the factor that mimics the changes in unemployment. You can call this model the ICAPM..."
+    },
+    {
+      "topic": "Liquidity Premium in Closed-End Funds",
+      "description": "Closed-end funds trade like ordinary stocks and may trade at a premium or discount to their net asset value (NAV). The premium is influenced by the liquidity of the fund's shares relative to its underlying assets. Datar (2001) finds a positive relationship between fund premium and share liquidity. Manzler (2004) introduces the illiquidity factor (IML) and shows that higher liquidity risk in the fund relative to its portfolio leads to a larger discount. This pricing anomaly is central to understanding how liquidity affects fund premiums and is often tested in exams.",
+      "importance": 5,
+      "importance_reason": "封闭式基金流动性溢价是资产定价与市场效率中的经典考点，应评为5。",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 12/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "They estimate the liquidity beta from a regression of portfolio return on a liquidity index... by a regime-switching model... they find that in states of high liquidity betas, there is a greater effect on stock returns of the level of liquidity and of the price of liquidity risk."
+    },
+    {
+      "topic": "Liquidity Beta and Asset Pricing Models",
+      "description": "Pastor and Stambaugh (2003) estimate liquidity risk exposure using a regression model that includes signed lagged dollar volume. The coefficient γ_j captures liquidity effects, with more negative values indicating less liquid stocks. The market liquidity factor L_t is derived from the residuals of an AR1 model of γ_t changes. Stock exposure to liquidity risk is then measured by regressing stock returns on L_t, alongside the Fama-French factors. Acharya and Pedersen (2005) extend this by modeling expected excess returns as a function of both expected illiquidity and four liquidity-related betas: traditional beta, β^L1, β^L2, β^L3. The model is: E(r_{t+1}^i) = r^f + κE(c_{t+1}^i) + λ(β + β^L1 - β^L2 - β^L3). This framework generalizes the pricing of liquidity and liquidity risk, incorporating both level and sensitivity to liquidity shocks.",
+      "importance": 5,
+      "importance_reason": "流动性贝塔是资产定价模型中的关键扩展，应合并并评为5。",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 11/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Pastor and Stambaugh perform monthly estimations of the following model for each stock j: r_{j,d+1}^e = θ_j + φ_j r_d + γ_j sign(r_{j,d}^e)·v_{j,d} + e_{j,d+1}. ... The liquidity measure L_t is the residual from an AR1 model of Δγ_t = γ_t - γ_{t-1} ... the stock's exposure to liquidity shocks is β^L."
+    },
+    {
+      "topic": "Value, Momentum, and Accrual Anomalies in Asset Pricing",
+      "description": "Value stocks (high book-to-market) tend to outperform growth stocks (low book-to-market), which may be due to risk or mispricing. Momentum stocks (past winners) continue to outperform losers, and this effect can be interpreted as risk-based or behavioral. The accrual anomaly shows that firms with low accruals earn positive alphas, potentially due to greater liquidity or lower risk exposure. These anomalies are frequently tested in empirical finance exams.",
+      "importance": 5,
+      "importance_reason": "These anomalies are central to empirical asset pricing and are high-frequency exam topics.",
+      "source": "Sample Midterm 1 - Answers.md (片段 1/2)",
+      "source_file": "Sample Midterm 1 - Answers.md",
+      "source_page": null,
+      "source_snippet": "Mispricing or apparent mispricing should be stronger for... Small firms, firms with high Roll measure, firms with low institutional ownership..."
+    },
+    {
+      "topic": "Securities Lending and Asset Pricing",
+      "description": "Securities lending plays a critical role in short selling and arbitrage activities. Duffie, Garleanu, and Pedersen (2002) analyze how the dynamics of securities lending markets affect asset pricing and the cost of shorting. This has implications for understanding liquidity risk and the pricing of derivatives and equities.",
+      "importance": 5,
+      "importance_reason": "该keypoint涉及证券借贷与资产定价的核心关系，应评为5。",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 13/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "This gives rise to the hypothesis that bills should have a lower yield to maturity than notes with the same time to maturity... The average bid-ask spread on the notes and bills are, respectively, 3 basis points and 0.78 basis point."
+    },
+    {
+      "topic": "Closed-End Fund Liquidity Premium",
+      "description": "Closed-end funds trade like ordinary stocks and have a market price that may differ from their net asset value (NAV). The premium or discount is defined as the excess of the fund's price over its NAV. Unlike open-end funds, closed-end funds have a fixed number of shares, and their premiums are influenced by the liquidity of their shares relative to the liquidity of the underlying portfolio assets.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental concept in understanding the pricing anomalies of closed-end funds, frequently tested in exams and central to empirical studies on fund premiums and discounts.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Closed-end funds, unlike their open-end counterparts, have a fixed number of shares, they trade like ordinary stocks and are priced in the market. Funds that hold domestic securities typically trade at a discount to their net asset value, or a negative premium, where the premium is the excess value of the fund's price over its NAV (net asset value)."
+    },
+    {
+      "topic": "Datar (2001) Liquidity Hypothesis",
+      "description": "Datar (2001) hypothesizes that within a group of funds holding similar assets, the closed-end fund premium increases as the liquidity of the fund's shares increases. He tests this using weekly data from NYSE-listed funds and confirms a positive relationship between fund premium and share liquidity, using measures such as trading volume, dollar volume, shares outstanding, fund size, turnover, and volatility.",
+      "importance": 4,
+      "importance_reason": "This study provides strong empirical support for the liquidity explanation of closed-end fund premiums and discounts, making it a high-frequency exam topic.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Datar (2001) studies the impact of market liquidity on the premium (= fund's price/NAV - 1) on closed-end funds... He tests the hypothesis that within a group of funds that hold similar assets (stocks or bonds), the closed-end fund premium increases as the liquidity of the funds' shares increases."
+    },
+    {
+      "topic": "Manzler (2004) Liquidity Risk Differential",
+      "description": "Manzler (2004) finds that the closed-end fund premium is affected by both liquidity and liquidity risk differentials. He constructs an illiquidity factor (IML) and uses a four-factor model (Fama-French + IML) to show that higher liquidity risk in the fund relative to its portfolio leads to a larger discount (lower premium).",
+      "importance": 4,
+      "importance_reason": "This builds on the liquidity explanation by introducing liquidity risk as a key determinant of fund premiums, often appearing in advanced exam questions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Manzler proposes that as the liquidity risk of closed-end funds increases relative to the liquidity risk of their portfolios, the fund premium should be lower (or the discount greater)... the fund premium declines in the difference between the fund's illiquidity beta and the illiquidity beta of its portfolio."
+    },
+    {
+      "topic": "Cherkes et al. (2005) Liquidity-Based Model",
+      "description": "Cherkes et al. (2005) propose a model showing that closed-end funds allow investors to access illiquid securities at lower costs. They predict that IPOs occur in waves and that funds are initially issued at a premium which often turns into a discount. Their empirical findings support the negative relationship between market liquidity and fund premiums.",
+      "importance": 3,
+      "importance_reason": "This model explains the lifecycle of closed-end funds and their behavior in different liquidity environments, providing theoretical and empirical insights that are relevant for exam understanding.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 16/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Cherkes et al. (2005) develop a liquidity-based model of closed-end funds that shows they provide investors a way to buy illiquid securities at lower illiquidity costs... the coefficient is negative, suggesting that closed-end funds are more valuable when market liquidity worsens."
+    },
+    {
+      "topic": "Bid-Ask Spread Determinants",
+      "description": "The bid-ask spread is a measure of market liquidity and transaction costs. Studies such as Benston and Hagerman (1974) and Copeland and Galai (1983) examine the factors that determine the bid-ask spread, including inventory costs, information asymmetry, and trading activity. Understanding these determinants is crucial for analyzing market efficiency and trader behavior.",
+      "importance": 4,
+      "importance_reason": "This is a frequently tested topic in finance exams, especially in market microstructure and trading cost analysis. It provides foundational knowledge for understanding how liquidity affects market prices and trading decisions.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 17/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Benston, G. and R. Hagerman (1974), 'Determinants of the bid-ask spreads in the over-the-counter markets'. Journal of Financial Economics 1, 353-364."
+    },
+    {
+      "topic": "Transaction Costs and Predictability",
+      "description": "This keypoint focuses on the impact of transaction costs on the predictability of asset returns and the utility of investors. Balduzzi and Lynch (1999) analyze how transaction costs reduce the effectiveness of trading strategies, particularly for investors with frequent trading behavior. It is essential for understanding the trade-off between return predictability and trading frictions.",
+      "importance": 4,
+      "importance_reason": "Transaction costs are a key component in portfolio management and asset pricing models. This concept often appears in exams related to investment theory and empirical finance, especially when evaluating active trading strategies.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 17/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Balduzzi, P. and A. Lynch (1999), 'Transaction costs and predictability: Some utility cost calculations'. Journal of Financial Economics 52, 47-78."
+    },
+    {
+      "topic": "Transaction Costs in Portfolio Choice",
+      "description": "Transaction costs significantly affect optimal portfolio decisions. Investors must balance the benefits of portfolio adjustments against the costs incurred from trading, leading to a more conservative trading strategy. Models incorporating transaction costs often result in wider 'no-trade' regions where investors refrain from rebalancing.",
+      "importance": 5,
+      "importance_reason": "Essential in modern portfolio theory and dynamic asset allocation; frequently tested in advanced finance exams; foundational for understanding real-world investment constraints.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Liu, H. (2004a), 'Optimal consumption and investment with transaction costs and multiple assets'. Journal of Finance 59, 289-338."
+    },
+    {
+      "topic": "Capital Asset Pricing Model (CAPM) with Liquidity",
+      "description": "The traditional CAPM is extended to incorporate liquidity effects, where the expected return on an asset depends not only on its systematic risk but also on its liquidity characteristics. This includes bid-ask spreads, trading frequency, and market impact.",
+      "importance": 4,
+      "importance_reason": "Frequently appears in finance exams and research papers; important for understanding how liquidity affects asset pricing and risk-return trade-offs.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Jacoby, G., D. J. Fowler, and A. A. Gottesman (2000), 'The capital asset pricing model and the liquidity effect: A theoretical approach'. Journal of Financial Markets 3, 69-81."
+    },
+    {
+      "topic": "Market Microstructure and Liquidity",
+      "description": "Market microstructure studies the mechanisms of asset trading, including how liquidity is determined through bid-ask spreads, order flow, and dealer behavior. It provides insights into how trading systems and market design influence asset prices and investor behavior.",
+      "importance": 4,
+      "importance_reason": "Highly relevant for exams on trading mechanisms and liquidity; foundational for understanding how markets function and how liquidity affects returns.",
+      "source": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md (片段 18/18)",
+      "source_file": "06 Liquidity and Liquidity Risk\\12 Liquidity and Asset Prices.md",
+      "source_page": null,
+      "source_snippet": "Madhavan, A. (2000), 'Market microstructure: A survey'. Journal of Financial Markets 3, 205-258."
+    },
+    {
+      "topic": "Anomaly: Definition",
+      "description": "An anomaly is a regularity in asset returns that cannot be explained by the benchmark asset-pricing model, typically the CAPM. It is identified by a significantly positive alpha, suggesting either mispricing (violating EMH) or an omitted risk factor in the model. Testing for anomalies inherently involves evaluating both the asset-pricing model and market efficiency.",
+      "importance": 5,
+      "importance_reason": "This is a foundational concept in empirical asset pricing and appears frequently in exams and discussions about market efficiency and model validity.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- Anomaly - a regularity in returns that cannot be explained by the benchmark asset-pricing model (most usually CAPM)\n- The significantly positive alpha of the HML strategy means that the value effect is an anomaly\n- All tests of CAPM are joint tests of CAPM and EMH"
+    },
+    {
+      "topic": "Three Explanations for Alpha",
+      "description": "There are three main interpretations of alpha in asset pricing: (1) compensation for unmodeled risk, (2) evidence of mispricing that can be exploited, and (3) pure chance or luck. These interpretations are crucial for determining whether the alpha is reliable for future investment decisions.",
+      "importance": 4,
+      "importance_reason": "This framework is commonly used in exam questions to assess understanding of alpha and its implications in empirical finance.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- Probably, the alpha is the compensation for some extra risk that is missing from our models\n- Probably, the alpha is the evidence of mispricing\n- Probably, the alpha is just luck"
+    },
+    {
+      "topic": "Fama-French Model Interpretation",
+      "description": "The Fama-French (FF) model includes the SMB (size) and HML (value) factors. If an anomaly shows zero alpha under the FF model, its explanation depends on how one interprets the FF factors: as risk factors (ICAPM), APT factors, or themselves anomalies. This distinction is critical in determining whether the anomaly reflects risk, mispricing, or is a repackaged version of existing effects.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in empirical asset pricing and is essential for interpreting anomalies in modern finance. Frequently appears in exams and paper discussions.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- If the CAPM fails to explain the anomaly, we can check if the Fama-French (FF) model does\n- If SMB and HML are risk factors (FF model is ICAPM), then zero alpha means the anomaly has a risk-based explanation\n- If SMB and HML are APT factors (FF model is APT), then zero alpha means the anomaly does not violate EMH"
+    },
+    {
+      "topic": "Ad-Hoc CCAPM and ICAPM",
+      "description": "Ad-hoc versions of the Consumption-based CAPM (CCAPM) or Intertemporal CAPM (ICAPM) can be developed to explain anomalies. CCAPM suggests that the beta of the anomalous strategy increases during periods of high market risk, while ICAPM implies that the strategy underperforms during bad market times. These models help identify the specific risk sources behind anomalies.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency topic in exams and research discussions, especially when evaluating the economic intuition behind anomalies.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 1/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "- Develop an ad-hoc version of ICAPM or conditional CAPM that would fix the anomaly\n- CCAPM: the beta of the anomalous strategy goes up when market risk is high\n- ICAPM: the anomalous strategy trails the CAPM in bad times"
+    },
+    {
+      "topic": "Earnings Announcements as Evidence of Mispricing",
+      "description": "If an anomaly is due to mispricing, it should be partially corrected when new information is revealed, such as during earnings announcements. Value stocks tend to gain significantly during these days, while growth stocks underperform, suggesting that part of the value anomaly is a free lunch (unexplained alpha). This provides prima facie evidence of mispricing rather than risk-based returns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept linking anomalies directly to empirical testing using earnings announcements, a frequent exam topic. It distinguishes between risk and mispricing explanations using observable market behavior around a specific event.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 2/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "If an anomaly is mispricing, it will be partially corrected when the information is revealed. One example is earnings announcements: If something (e.g., value stocks) is underpriced, it will do very well at the announcements. If something (e.g., growths stocks) is overpriced, it will do very poorly then."
+    },
+    {
+      "topic": "Limits to Arbitrage vs. Trading Costs",
+      "description": "Trading costs prevent profitable exploitation of anomalies, even if they exist. Limits to arbitrage, on the other hand, suggest that arbitrage is possible but risky due to behavioral and financial constraints such as margin calls, fund volatility, and investor behavior. These factors limit the ability or willingness of arbitrageurs to correct mispricings.",
+      "importance": 4,
+      "importance_reason": "This concept is crucial for understanding why anomalies persist in financial markets and is frequently tested in exams. It differentiates between cost-based and behavioral/structural limits to correcting inefficiencies.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 2/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "Trading costs say: 'You cannot profit from trading'. Limits to arbitrage say: 'You can, but you do not want to'."
+    },
+    {
+      "topic": "Liquidity Risk and Anomaly Returns",
+      "description": "Liquidity risk refers to the increased trading costs during bad economic times, leading to higher expected returns for holding illiquid stocks. If a stock has higher trading costs during downturns, investors demand compensation for the additional risk, which can be modeled using the ICAPM framework.",
+      "importance": 4,
+      "importance_reason": "Liquidity risk is a key explanation for some anomalies and is often linked to behavioral and structural market inefficiencies. It is a high-frequency exam topic in asset pricing and behavioral finance discussions.",
+      "source": "07 Anomalies - Intro\\07 Anomalies - Intro.md (片段 2/2)",
+      "source_file": "07 Anomalies - Intro\\07 Anomalies - Intro.md",
+      "source_page": null,
+      "source_snippet": "If you go with the second stock, you will lose by 0.9% more in recessions. ICAPM: second stock should have higher return. This is called liquidity risk."
+    },
+    {
+      "topic": "Momentum Strategy Definition",
+      "description": "The momentum strategy, as defined by Jegadeesh and Titman (1993), involves sorting stocks monthly based on cumulative returns over the past six months, buying top 10% performers (winners), and shorting bottom 10% performers (losers), holding the positions for another six months (6-0-6 strategy). The return of the arbitrage portfolio is the average of six overlapping portfolios.",
+      "importance": 5,
+      "importance_reason": "This is the foundational definition of momentum in empirical finance and is a core concept in the course. It is essential for understanding how momentum is implemented and measured in practice.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "Basic momentum strategy: each month, sort on cumulative returns in the past six months. Then buy winners (top 10% on past returns) and short losers (bottom 10% on past returns), then hold for another six months (6-0-6 strategy)"
+    },
+    {
+      "topic": "Momentum Return and Alpha Generation",
+      "description": "The momentum return (Wt - Lt) can be as high as 1.6% per month, with an average of 1% commonly cited. Alpha generation from momentum strategies is based on constructing a zero-investment, zero-beta portfolio by buying winners, shorting the market proportionally to their beta, and shorting losers. The alpha is the excess return from this strategy, which is 0.58% per month in the example provided.",
+      "importance": 5,
+      "importance_reason": "This keypoint explains how to generate alpha through momentum strategies and the mechanics behind risk-adjusted returns. It is critical for exam understanding and frequently tested in finance courses.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "Alpha (0.58% per month) is the return from performing those two operations. Notice that this strategy requires no money down and its market beta is exactly zero"
+    },
+    {
+      "topic": "Short-Term Reversal and Trading Constraints",
+      "description": "Short-term reversal refers to the price bounce-back effect observed in the month following extreme returns, especially among small firms. Jegadeesh (1990) notes that this reversal can reach 0.5–1% after one month. However, attempting to profit from it is difficult due to high trading costs, which often exceed 1% for small-cap stocks.",
+      "importance": 4,
+      "importance_reason": "This concept is important for understanding the limitations and nuances of momentum strategies. It often appears in questions about the practical implementation of trading strategies and behavioral anomalies.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "You cannot trade on short-term reversal and make a profit: for small firms, round-trip trading costs can easily top 1%. Also keep in mind that you have to both buy and short to capture the 1–2% short term reversal"
+    },
+    {
+      "topic": "Long-Term Reversal and Investor Behavior",
+      "description": "Long-term reversal, as identified by DeBondt and Thaler (1985, 1987), shows that cumulative returns over t-60 to t-13 reveal a reversal pattern. Past losers recover some losses, and past winners underperform after five years. This suggests investor overreaction rather than underreaction, indicating the need to close momentum positions after a year to avoid losses from reversal.",
+      "importance": 4,
+      "importance_reason": "This keypoint connects behavioral finance with empirical findings in momentum and reversal. It is a high-frequency exam topic and essential for understanding the theoretical basis of momentum and its limitations.",
+      "source": "08 Momentum\\08 Momentum.md (片段 1/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "If investors overreact after big gains, recent winners are probably priced right at the portfolio formation date. Momentum is then created because they push recent winners higher than the true price. When investors realize their mistake, we see the long-term reversal"
+    },
+    {
+      "topic": "Momentum Strategy Performance in Different Market Conditions",
+      "description": "The momentum strategy, which involves going long on past winners and short on past losers, performs differently depending on the economic environment. In 2009, a bad year for consumption and economic growth, the strategy resulted in significant losses. This is attributed to the fact that losers rebounded substantially during that period, reversing prior trends. Momentum strategies are thus sensitive to macroeconomic conditions and can be risky during economic downturns.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in understanding how momentum strategies behave in different economic cycles, especially during recessions and expansions. It directly relates to the empirical performance of the strategy and is essential for risk assessment in exams.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- If you were turning around $100 in the momentum strategy, in 2009 you would have lost $83\n- Very scary result, because 2009 was a very bad year in terms of consumption and economic growth\n- Happened because losers picked up by so much"
+    },
+    {
+      "topic": "Momentum and Macroeconomic Risk (Chordia and Shivakumar, JF 2002)",
+      "description": "Chordia and Shivakumar (2002) found that momentum returns are positive during economic expansions (53 basis points per month) but negative during recessions (-72 basis points per month). This suggests that momentum profits may be compensation for exposure to macroeconomic risk, which varies over time. The regression results also support this interpretation by linking momentum returns to macroeconomic variables.",
+      "importance": 5,
+      "importance_reason": "This is a fundamental empirical finding that supports the 'momentum is risk' hypothesis, frequently tested in exams and essential for understanding the theoretical underpinnings of momentum strategies.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- Chordia and Shivakumar (JF 2002) find that $W_{t} - L_{t}$ makes 53 bp per month in expansions and -72 bp per month in recessions\n- Main idea: if we can predict momentum returns from something related to business conditions, it means that momentum is most probably caused by changes in risk"
+    },
+    {
+      "topic": "Momentum in Bull vs Bear Markets (Cooper et al., JF 2004)",
+      "description": "According to Cooper, Gutierrez, and Hameed (2004), momentum exists only after a bull market (positive cumulative market returns over the past three years). After bear markets (negative cumulative returns), momentum returns are negative but statistically insignificant. This suggests that momentum behavior is conditional on the prior market regime and may reflect risk patterns.",
+      "importance": 4,
+      "importance_reason": "This is a high-frequency exam topic, often used to test understanding of how momentum varies with market conditions. It also ties into the broader debate on whether momentum is risk-based or behavioral.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- Cooper, Gutierrez, and Hameed (JF 2004) show that momentum exists only after cumulative market return in the past three years is positive (bull market)\n- After bear markets... momentum is negative, but statistically insignificant"
+    },
+    {
+      "topic": "Predicting Momentum Using Macro Variables",
+      "description": "Chordia and Shivakumar (2006) regress the winners-minus-losers (W-L) portfolio returns on macroeconomic variables like DEF (default spread), TB (Treasury bill yield), and TERM (term spread) to assess whether momentum returns can be explained by macroeconomic risk. The regression results show that momentum returns are significantly predicted by these variables, suggesting that momentum profits may be compensation for risk rather than mispricing.",
+      "importance": 4,
+      "importance_reason": "This regression-based analysis is a key empirical method used in exams to evaluate the risk-based explanation of momentum. Understanding the coefficients and their implications is crucial for exam success.",
+      "source": "08 Momentum\\08 Momentum.md (片段 2/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "$$ W _ {t} - L _ {t} = - \\begin{array}{c} 5. 6 0 \\\\ (2. 4 2) \\end{array} - \\begin{array}{c} 6. 3 5 \\\\ (3. 0 8) \\end{array} D E F _ {t - 1} - \\\\ - \\begin{array}{c} 0. 4 2 \\\\ (0. 9 9) \\end{array} D I V _ {t - 1} + \\begin{array}{c} 2. 1 0 \\\\ (0. 6 1) \\end{array} T B _ {t - 1} + \\begin{array}{c} 2. 9 4 \\\\ (0. 7 5) \\end{array} T E R M _ {t - 1} $$"
+    },
+    {
+      "topic": "Momentum Effect and Market Conditions",
+      "description": "Momentum strategies in financial markets are influenced significantly by prior market returns and volatility. The cutoffs for forming momentum portfolios shift depending on whether the market has recently rallied or declined, and whether volatility (as measured by the VIX) has been high or low. In a high-volatility rally or a market sell-off, the dispersion between winners and losers increases, which affects the profitability and risk of momentum strategies. Understanding these dynamics is crucial for implementing momentum strategies effectively and avoiding losses from short-term reversals.",
+      "importance": 5,
+      "importance_reason": "This is a core concept in empirical asset pricing and frequently appears in exams. It ties together momentum strategies with market conditions and volatility, which are essential for understanding market behavior and constructing profitable trading strategies.",
+      "source": "08 Momentum\\08 Momentum.md (片段 3/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- The cut-off for forming momentum portfolios depend a lot on both the market return and market volatility in the past 6-12 months\n- If the market was going up, the cut-offs will drift to the right and vice versa\n- If the market was volatile, the cut-offs for the losers and the winners will be further apart\n- You need the cut-offs above to form the momentum strategy and not to suffer from short-term reversal"
+    },
+    {
+      "topic": "Earnings Momentum and Stability of Earnings Growth Cutoffs",
+      "description": "Earnings momentum is constructed by sorting firms based on year-on-year earnings growth. The cutoffs for earnings growth are relatively stable across time and percentiles. Specifically, the 10th percentile ranges from -160% to -180%, the 25th from -75% to -100%, the 75th from +30% to +40%, and the 90th from +140% to +165%. Earnings momentum is more concentrated around earnings announcements than price momentum, which has implications for timing trading strategies around such events.",
+      "importance": 4,
+      "importance_reason": "Earnings momentum is a key subtopic within momentum strategies and often appears in exams. It connects behavioral finance, empirical anomalies, and practical trading strategy implementation, making it important to understand both conceptually and quantitatively.",
+      "source": "08 Momentum\\08 Momentum.md (片段 3/3)",
+      "source_file": "08 Momentum\\08 Momentum.md",
+      "source_page": null,
+      "source_snippet": "- The easiest way to construct the earnings momentum portfolios is to sort firms on year-on-year earnings growth\n- It turns out that the cut-offs are pretty stable at:\n10th percentile: -160% to -180%\n25th percentile: -75% to -100%\n75th percentile: +30% to +40%\n90th percentile: +140% to +165%\n- Earnings momentum is strongly concentrated at earnings announcements"
+    }
+  ],
+  "timestamp": "2025-12-29T00:52:31.572300"
+}
